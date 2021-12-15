@@ -13,7 +13,7 @@ TaleChapterDto _$TaleChapterDtoFromJson(Map<String, dynamic> json) =>
       audio: json['audio'] == null
           ? null
           : ChapterAudioDto.fromJson(json['audio'] as Map<String, dynamic>),
-      imagesCount: json['images_count'] as int,
+      imageCount: json['image_count'] as int,
     );
 
 Map<String, dynamic> _$TaleChapterDtoToJson(TaleChapterDto instance) {
@@ -28,6 +28,6 @@ Map<String, dynamic> _$TaleChapterDtoToJson(TaleChapterDto instance) {
   writeNotNull('title', instance.title);
   writeNotNull('text', instance.text);
   writeNotNull('audio', instance.audio);
-  val['images_count'] = instance.imagesCount;
+  val['image_count'] = instance.imageCount;
   return val;
 }

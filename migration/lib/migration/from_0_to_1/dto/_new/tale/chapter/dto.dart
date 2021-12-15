@@ -18,15 +18,15 @@ class TaleChapterDto {
 
   final ChapterAudioDto? audio;
 
-  final int imagesCount;
+  final int imageCount;
 
   TaleChapterDto({
     required this.title,
     required this.text,
     required this.audio,
-    required this.imagesCount,
+    required this.imageCount,
   }) : assert(
-          imagesCount >= 1,
+          imageCount >= 1,
           'There always should be at least one, main image',
         );
 

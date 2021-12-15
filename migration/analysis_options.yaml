@@ -28,3 +28,15 @@ include: package:lints/recommended.yaml
 
 # For additional information about configuring this file, see
 # https://dart.dev/guides/language/analysis-options
+
+linter:
+  rules:
+    - await_only_futures
+    - avoid_returning_null_for_future
+    - unawaited_futures
+
+analyzer:
+  errors:
+    await_only_futures: error
+    avoid_returning_null_for_future: error
+    unawaited_futures: error

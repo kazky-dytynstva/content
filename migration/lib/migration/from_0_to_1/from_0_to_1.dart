@@ -3,19 +3,28 @@ import 'dart:io';
 import 'package:migration/migration/from_0_to_1/dto/_new/tale_dto.dart';
 import 'package:migration/migration/from_0_to_1/dto/_old/tale/tale_dto.dart'
     as old;
-import 'package:migration/util/base_migration.dart';
+import 'package:migration/migration/base_migration.dart';
 import 'package:mp3_info/mp3_info.dart';
 
 class From0to1 extends BaseDataMigration {
-  From0to1() : super(oldDataVersion: 0);
+  @override
+  int get appBuildNumberOld => 147;
 
-  String get taleDataPathOld => '$oldDataPath/tales';
+  @override
+  String get appVersionOld => '4.8.1';
 
-  String get taleDataPathNew => '$newDataPath/tales';
+  @override
+  int get dataVersionOld => 0;
 
-  String get peopleDataPathOld => '$oldDataPath/people';
+  String get taleDataPathOld => '$dataPathOld/tales';
 
-  String get peopleDataPathNew => '$newDataPath/people';
+  String get taleDataPathNew => '$dataPathNew/tales';
+
+  String get peopleDataPathOld => '$dataPathOld/people';
+
+  String get peopleDataPathNew => '$dataPathNew/people';
+
+  String get _originalSeparator => '.original.';
 
   @override
   Future<bool> migrate() async =>
@@ -25,29 +34,21 @@ class From0to1 extends BaseDataMigration {
     log('>>> people started');
     // lets copy json data
     final oldFile = File('$peopleDataPathOld/list.json');
-    final newJsonFile = File('$peopleDataPathNew/list.json')
-      ..create(recursive: true);
+    final newJsonFile =
+        await File('$peopleDataPathNew/list.json').create(recursive: true);
     await newJsonFile.writeAsBytes(await oldFile.readAsBytes());
 
     // lets copy images
-    final images = Directory('$peopleDataPathOld/img').listSync();
-    for (var element in images) {
-      final name = element.path.split('/').last;
-      final newImg = File('$peopleDataPathNew/img/$name')
-        ..create(recursive: true);
-      await newImg.writeAsBytes(await File(element.path).readAsBytes());
-    }
+    await _migratePeopleImages(
+      pathOld: peopleDataPathOld,
+      pathNew: peopleDataPathNew,
+    );
 
-    // lets copy original images
-    final originalImages =
-        Directory('$peopleDataPathOld/img_original').listSync();
-    for (var element in originalImages) {
-      final oldName = element.path.split('/').last;
-      final newName = oldName.split('.').join('.origin.');
-      final newImg = File('$peopleDataPathNew/img/$newName')
-        ..create(recursive: true);
-      await newImg.writeAsBytes(await File(element.path).readAsBytes());
-    }
+    // lets copy image originals
+    await _migratePeopleImageOriginals(
+      pathOld: peopleDataPathOld,
+      pathNew: peopleDataPathNew,
+    );
 
     log('<<< people dane');
     return true;
@@ -55,6 +56,14 @@ class From0to1 extends BaseDataMigration {
 
   Future<bool> _migrateTales() async {
     log('>>> tales started');
+    await _migrateTaleJson();
+    await _migrateTaleImagesAndAudio();
+
+    log('<<< tales done');
+    return true;
+  }
+
+  Future<void> _migrateTaleJson() async {
     final talesJsonPath = '$taleDataPathOld/v2/list.json';
     final json = await readJsonList(talesJsonPath);
 
@@ -69,13 +78,153 @@ class From0to1 extends BaseDataMigration {
       newTales.add(newTale);
     }
 
+    newTales.sort((a, b) => a.id.compareTo(b.id));
+
+    //region asserts
+    final oldIdList = oldTales.map((e) => e.id).toList();
+    assert(oldTales.length == oldIdList.length);
+    final newIdList = newTales.map((e) => e.id).toList();
+    assert(newTales.length == newIdList.length);
+    assert(newTales.length == oldIdList.length);
+    var id = -1;
+    for (final tale in newTales) {
+      assert(tale.id == id + 1);
+      id = tale.id;
+    }
+    //endregion asserts
+
     await saveJsonListToFile(
       data: newTales.map((e) => e.toJson()).toList(),
       filePath: '$taleDataPathNew/list.json',
     );
+  }
 
-    log('<<< tales done');
-    return true;
+  Future<void> _migrateTaleImagesAndAudio() async {
+    File getNewFile({
+      required int id,
+      required String format,
+      int? index,
+      String? extraFolder,
+      String fileName = '0',
+      bool isOriginal = false,
+    }) {
+      // 0 here is a first chapter with index 0
+      final pathBuilder = StringBuffer('$taleDataPathNew/$id/0/')
+        ..write(extraFolder ?? '')
+        ..write(fileName)
+        ..write(index == null ? '' : '_$index')
+        ..write(isOriginal ? _originalSeparator : '.')
+        ..write(format);
+      return File(pathBuilder.toString());
+    }
+
+    Future<Iterable<FileSystemEntity>> getElements(String folder) async =>
+        (await Directory('$taleDataPathOld/$folder').list().toList())
+            .where((element) => !element.path.contains('.DS_Store'));
+
+    // region copy images
+    final images = await getElements('img');
+    for (var element in images) {
+      final oldName = element.path.split('/').last;
+      final format = oldName.split('.').last;
+      final id = int.parse(oldName.split('.').first.replaceAll('id_', ''));
+      final newFile = getNewFile(id: id, format: format, extraFolder: 'img/');
+      final oldFile = File(element.path);
+
+      await (await (newFile.create(recursive: true)))
+          .writeAsBytes(await oldFile.readAsBytes());
+    }
+    // endregion copy images
+
+    // region copy original images
+    final imageOriginals = await getElements('img_originals');
+    for (var element in imageOriginals) {
+      final oldName = element.path.split('/').last;
+      final format = oldName.split('.').last;
+      final nameParts = oldName.split('.').first.split('_');
+      nameParts.removeAt(0);
+      final id = int.parse(nameParts.first);
+      final newFile = getNewFile(
+        id: id,
+        format: format,
+        extraFolder: 'img/',
+        index: nameParts.length == 1 ? null : int.parse(nameParts.last),
+        isOriginal: true,
+      );
+      final oldFile = File(element.path);
+
+      await (await (newFile.create(recursive: true)))
+          .writeAsBytes(await oldFile.readAsBytes());
+    }
+    // endregion copy image originals
+
+    // region copy audio
+    final audios = await getElements('audio');
+    for (var element in audios) {
+      final oldName = element.path.split('/').last;
+      final format = oldName.split('.').last;
+      final id = int.parse(oldName.split('.').first.replaceAll('id_', ''));
+      final newFile = getNewFile(id: id, format: format, fileName: 'audio');
+      final oldFile = File(element.path);
+
+      await (await (newFile.create(recursive: true)))
+          .writeAsBytes(await oldFile.readAsBytes());
+    }
+    // endregion copy audio
+
+    // region copy audio originals
+    final audioOriginals = await getElements('audio_originals');
+    for (var element in audioOriginals) {
+      final oldName = element.path.split('/').last;
+      final format = oldName.split('.').last;
+      final id = int.parse(oldName.split('.').first.replaceAll('id_', ''));
+      final newFile = getNewFile(
+        id: id,
+        format: format,
+        fileName: 'audio',
+        isOriginal: true,
+      );
+      final oldFile = File(element.path);
+
+      await (await (newFile.create(recursive: true)))
+          .writeAsBytes(await oldFile.readAsBytes());
+    }
+    // endregion copy audio originals
+
+    return;
+  }
+
+  Future<void> _migratePeopleImages({
+    required String pathOld,
+    required String pathNew,
+  }) async {
+    final images = await Directory('$pathOld/img').list().toList();
+    for (var element in images) {
+      final name = _getNameFromPath(element.path);
+      await (await File('$pathNew/img/$name').create(recursive: true))
+          .writeAsBytes(await File(element.path).readAsBytes());
+    }
+  }
+
+  Future<void> _migratePeopleImageOriginals({
+    required String pathOld,
+    required String pathNew,
+  }) async {
+    final originalImages =
+        await Directory('$pathOld/img_originals').list().toList();
+    for (var element in originalImages) {
+      final oldName = _getNameFromPath(element.path);
+      final newName = oldName.split('.').join(_originalSeparator);
+      await (await File('$pathNew/img/$newName').create(recursive: true))
+          .writeAsBytes(await File(element.path).readAsBytes());
+    }
+  }
+
+  String _getNameFromPath(String path) {
+    final oldName = path.split('/').last;
+    final parts = oldName.split('.');
+    final name = parts.first.replaceAll('id_', '').trim();
+    return '$name.${parts.last}';
   }
 }
 
@@ -96,16 +245,17 @@ class _MigrateTalesHelper {
   Set<String> _mapTaleTags(old.TaleDto old) {
     final tags = <String>{};
 
-    if (old.text != null) {
-      tags.add('text');
-    }
-
     if (old.hasAudio == true) {
       tags.add('audio');
     }
-
+    if (old.crewIds?.authors?.isNotEmpty == true) {
+      tags.add('author');
+    }
     if (old.lullaby == true) {
       tags.add('lullaby');
+    }
+    if (old.text != null) {
+      tags.add('text');
     }
 
     assert(tags.isNotEmpty, 'Tags can not be empty. Tale id=${old.id}');
@@ -187,7 +337,7 @@ class _MigrateTalesHelper {
         title: null,
         audio: audioDto,
         text: text.isEmpty ? null : text,
-        imagesCount: 1,
+        imageCount: 1,
       )
     ];
   }

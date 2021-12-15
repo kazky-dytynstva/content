@@ -16,7 +16,13 @@ class TaleCrewIdsDto {
     this.musicians,
     this.translators,
     this.graphics,
-  });
+  }) : assert(
+          (authors?.isNotEmpty == true) ||
+              (readers?.isNotEmpty == true) ||
+              (musicians?.isNotEmpty == true) ||
+              (translators?.isNotEmpty == true) ||
+              (graphics?.isNotEmpty == true),
+        );
 
   factory TaleCrewIdsDto.fromJson(Map<String, dynamic> json) =>
       _$TaleCrewIdsDtoFromJson(json);
