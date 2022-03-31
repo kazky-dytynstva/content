@@ -27,6 +27,10 @@ class AddPersonHelper extends AddItemHelper {
         idList.length == nameList.length,
         'Looks like we have duplicate',
       );
+      assert(
+        idList.length == all.length,
+        'Looks like we have duplicate',
+      );
 
       if (post) {
         final path = '$dataPath/img/$nextId.jpg';
