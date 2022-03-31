@@ -1,12 +1,11 @@
-## Data was migrated from version **1** to **2**
+## Data was migrated from version **2** to **2**
 ---------
 
 Old data was used in the app with:
- - app build number = 147
- - app version = 4.8.1
- - ‼️ Current version is just for modification content, not the data scheme
+ - app build number = 149
+ - app version = 5.0.0
 
 ---------
 
 ## Modified:
- - 2022-03-26 by _Andrii_
+ - 2022-03-31 12:11:34.483046Z, by _migration tool_
