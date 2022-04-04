@@ -16,10 +16,13 @@ abstract class BaseDataMigration {
 
   String get dataPathNew => '$_dataPath/$dataVersionNew';
 
+  bool canCleanNewDirectory = true;
+
   Future<void> run() async {
     assert(dataVersionOld >= 0);
 
     Future<void> cleanNewDirectory() async {
+      if (!canCleanNewDirectory) return;
       final directory = Directory(dataPathNew);
       if (await directory.exists()) {
         await directory.delete(recursive: true);

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:migration/utils/to_json.dart';
 
 import 'chapter/dto.dart';
 import 'crew/dto.dart';
@@ -6,7 +7,7 @@ import 'crew/dto.dart';
 part 'dto.g.dart';
 
 @JsonSerializable()
-class TaleDto {
+class TaleDto implements ToJson {
   final int id;
   final String name;
   final int createDate;
@@ -34,5 +35,6 @@ class TaleDto {
   factory TaleDto.fromJson(Map<String, dynamic> json) =>
       _$TaleDtoFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TaleDtoToJson(this);
 }
