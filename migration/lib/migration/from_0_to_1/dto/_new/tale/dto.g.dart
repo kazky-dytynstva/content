@@ -17,6 +17,7 @@ TaleDto _$TaleDtoFromJson(Map<String, dynamic> json) => TaleDto(
       crew: json['crew'] == null
           ? null
           : TaleCrewDto.fromJson(json['crew'] as Map<String, dynamic>),
+      ignore: json['ignore'] as bool?,
     );
 
 Map<String, dynamic> _$TaleDtoToJson(TaleDto instance) {
@@ -35,5 +36,6 @@ Map<String, dynamic> _$TaleDtoToJson(TaleDto instance) {
   }
 
   writeNotNull('crew', instance.crew);
+  writeNotNull('ignore', instance.ignore);
   return val;
 }
