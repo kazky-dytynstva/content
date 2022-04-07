@@ -15,6 +15,7 @@ class TaleDto implements ToJson {
   final List<TaleChapterDto> content;
 
   final TaleCrewDto? crew;
+  final bool? ignore;
 
   TaleDto({
     required this.id,
@@ -23,6 +24,7 @@ class TaleDto implements ToJson {
     required this.tags,
     required this.content,
     required this.crew,
+    this.ignore,
   })  : assert(
           content.isNotEmpty == true,
           'Content can not be empty',
