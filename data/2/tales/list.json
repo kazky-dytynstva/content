@@ -123,7 +123,7 @@
   {
     "id": 211,
     "name": "Дракончик Оллі",
-    "create_date": 1649184272250,
+    "create_date": 1649339165522,
     "tags": [
       "text",
       "author"
@@ -165,13 +165,12 @@
       "graphics": [
         78
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 210,
     "name": "Зозуля й півень",
-    "create_date": 1648842692277,
+    "create_date": 1649339165522,
     "tags": [
       "text",
       "author",
@@ -226,8 +225,7 @@
       "authors": [
         36
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 209,
