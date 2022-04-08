@@ -1,7 +1,7 @@
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
 import 'package:migration/utils/to_json.dart';
 
-abstract class AddItemHelper {
+abstract class BaseAddHelper {
   final From2to2 migration;
 
   final String addItemName;
@@ -9,7 +9,7 @@ abstract class AddItemHelper {
 
   late int nextId;
 
-  AddItemHelper(
+  BaseAddHelper(
     this.migration, {
     required this.addItemName,
     required this.folderName,

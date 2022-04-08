@@ -1,5 +1,6 @@
 import 'package:migration/migration/from_2_to_2/add_item/add_person_herlper.dart';
 import 'package:migration/migration/from_2_to_2/add_item/add_tale_helper.dart';
+import 'package:migration/migration/from_2_to_2/add_item/prepare_tales_for_prod_helper.dart';
 
 import '../base_migration.dart';
 
@@ -24,7 +25,8 @@ class From2to2 extends BaseDataMigration {
   @override
   Future<bool> migrate() async {
     final addPersonOk = true ?? (await AddPersonHelper(this).run());
-    final addTaleOk = await AddTaleHelper(this).run();
-    return addPersonOk && addTaleOk;
+    final addTaleOk = true ?? await AddTaleHelper(this).run();
+    final prepareTalesForProdOk = await PrepareTalesForProdHelper(this).run();
+    return addPersonOk && addTaleOk && prepareTalesForProdOk;
   }
 }
