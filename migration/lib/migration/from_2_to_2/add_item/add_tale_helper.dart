@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:migration/migration/from_0_to_1/dto/_new/tale_dto.dart';
-import 'package:migration/migration/from_2_to_2/add_item/add_item_helper.dart';
+import 'package:migration/migration/from_2_to_2/add_item/base_add_helper.dart';
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
 import 'package:migration/utils/audio_util.dart';
 
@@ -38,7 +38,7 @@ class AddTaleHelper extends _AddTaleHelper {
 
 }
 
-abstract class _AddTaleHelper extends AddItemHelper {
+abstract class _AddTaleHelper extends BaseAddHelper {
   _AddTaleHelper(From2to2 migration)
       : super(
           migration,
@@ -55,7 +55,7 @@ abstract class _AddTaleHelper extends AddItemHelper {
   @override
   Future<bool> validate({bool post = false}) async {
     try {
-      final all = await _getAll();
+      final all = await getAll();
 
       final idList = all.map((e) => e.id).toSet();
 
@@ -99,7 +99,7 @@ abstract class _AddTaleHelper extends AddItemHelper {
     }
   }
 
-  Future<List<TaleDto>> _getAll() async {
+  Future<List<TaleDto>> getAll() async {
     final json = await migration.readJsonList(jsonPath);
     final people = json.map((e) => TaleDto.fromJson(e)).toList();
     if (originalList.isEmpty) {
@@ -109,7 +109,7 @@ abstract class _AddTaleHelper extends AddItemHelper {
   }
 
   Future<int> _getLastId() async {
-    final people = (await _getAll()).map((e) => e.id);
+    final people = (await getAll()).map((e) => e.id);
     return people.reduce(max);
   }
 
@@ -138,7 +138,7 @@ abstract class _AddTaleHelper extends AddItemHelper {
       ignore: true,
     );
 
-    final all = await _getAll();
+    final all = await getAll();
     all.add(tale);
     await saveJson(all);
   }

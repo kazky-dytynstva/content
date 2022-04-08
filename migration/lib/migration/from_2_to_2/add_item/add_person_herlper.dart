@@ -2,10 +2,10 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:migration/migration/from_0_to_1/dto/_new/person/person_dto.dart';
-import 'package:migration/migration/from_2_to_2/add_item/add_item_helper.dart';
+import 'package:migration/migration/from_2_to_2/add_item/base_add_helper.dart';
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
 
-class AddPersonHelper extends AddItemHelper {
+class AddPersonHelper extends BaseAddHelper {
   AddPersonHelper(From2to2 migration)
       : super(
           migration,
