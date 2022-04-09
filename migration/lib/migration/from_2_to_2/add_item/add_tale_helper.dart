@@ -10,12 +10,15 @@ class AddTaleHelper extends _AddTaleHelper {
   AddTaleHelper(From2to2 migration) : super(migration);
 
   @override
-  String get taleName => 'Богатир Хома';
+  String get taleName => 'Пасха';
+
+  @override
+  Set<String> get extraTags => {};
 
   @override
   TaleCrewDto? _getCrew() => TaleCrewDto(
-        authors: [72],
-        readers: [72],
+        authors: [79],
+        readers: [79],
         musicians: null,
         translators: null,
         graphics: null,
@@ -33,9 +36,29 @@ class AddTaleHelper extends _AddTaleHelper {
   }
 
   @override
-  List<String>? _getText() => null;
-
-
+  List<String>? _getText() => [
+        "У невеличкому лісі жило маленьке Зайченя – Вухастик, яке з нетерпінням чекало на Великдень, адже його улюбленим заняттям було розфарбовування писанок. Настала субота – день, коли матуся пече паски, розфарбовує крашанки.",
+        "– Матусю, – мовив Вухастик, – я хочу допомогти тобі розфарбовувати писанки.",
+        "– Добре, йди-но до курятнику, попроси у курочки яйце, – сказала мама.",
+        "Зайчику стало не по собі, адже понад усе він боявся півня, який міг дзьобнути маленького. Вухастик з обережністю відчинив скрипучі двері курятнику, виглянув один оком із-за дверей.",
+        "– Бррр... страшно, – мовило зайченя.",
+        "– Куд-кудах... тобі чого, Вухастику, – прокудкудахлала квочка.",
+        "– Я хочу розфарбувати великоднє яйце, тому мама сказала йти до вас.",
+        "– То чого ти весь трясешся?",
+        "– Минулого разу, коли я прийшов по яйця, мене клюнув півень. Курочка сміючись сказала: «Авжеж, ти ж хотів забрати його дитя. Тому він злився на тебе».",
+        "– Я не хотів забрати його дитя, мені потрібно було лише яйце,– сказав Вухастик.",
+        "– У середині яйця знаходиться зародок майбутнього циплятка. Ми, курочки, висиджуємо яйця протягом 20 днів, а потім на світ з’являються жовтенькі циплятка.",
+        "– Невже! – з подивом вигукнуло зайченя й додало: я й не знав цього. Тепер зрозуміло, чого півник мене не любить.",
+        "– Ко-ко-ко! Але я знаю, Вухастику, як ти любиш розфарбовувати писанки, тому залюбки поділюся з тобою одним яйцем. Воно порожнє, без ципля. Ось, тримай.",
+        "– Дякую, курочко, ти дуже добра.",
+        "Вухастик пострибав до свого будиночку. – Матусю, мені курочка дала яйце. Тепер я зрозумів, чому півник ганяв мене, бо це майбутнє ципля.",
+        "– Саме так, Вухастику. Тож почнімо фарбувати?",
+        "Вухастик узяв фарби, пензлик и скляночку води. Пензлик у мочив у воду, набрав фарби на кінчик й почав розфарбовувати.",
+        "– Готово! – сказало зайченя і простягнуло до мами лапку з розфарбованою писанкою.",
+        "– Яка краса, – мовила матуся.",
+        "На яйці було намальоване мале ципля, курочка і півник, якого більше не боявся Вухастик.",
+        "– Це яйце стане справжнім символом Великодня,– мовила матуся й поклала його у кошик.",
+      ];
 }
 
 abstract class _AddTaleHelper extends BaseAddHelper {
@@ -64,7 +87,7 @@ abstract class _AddTaleHelper extends BaseAddHelper {
         'Looks like we have duplicate',
       );
 
-      if(!post){
+      if (!post) {
         nextId = (await _getLastId()) + 1;
       }
 
@@ -124,9 +147,7 @@ abstract class _AddTaleHelper extends BaseAddHelper {
       if (content.first.text != null) Tags.text,
       if (content.first.audio != null) Tags.audio,
       if (crew?.authors?.isNotEmpty == true) Tags.author,
-      // Tags.lullaby,
-      // Tags.poem,
-    };
+    }..addAll(extraTags);
 
     tale = TaleDto(
       id: nextId,
@@ -146,6 +167,9 @@ abstract class _AddTaleHelper extends BaseAddHelper {
   String get taleName;
 
   TaleCrewDto? _getCrew();
+
+  /// Other than [Tags.author],[Tags.text],[Tags.audio]
+  Set<String> get extraTags;
 
   List<TaleChapterDto> _getContent() => [
         _createChapter0(),
@@ -168,9 +192,13 @@ abstract class _AddTaleHelper extends BaseAddHelper {
 class Tags {
   Tags._();
 
+  //region added automatically
   static const String text = 'text';
   static const String author = 'author';
   static const String audio = 'audio';
+
+  //endregion added automatically
+
   static const String poem = 'poem';
   static const String lullaby = 'lullaby';
 }

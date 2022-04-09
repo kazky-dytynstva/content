@@ -5,8 +5,21 @@ import 'package:migration/migration/from_0_to_1/dto/_new/person/person_dto.dart'
 import 'package:migration/migration/from_2_to_2/add_item/base_add_helper.dart';
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
 
-class AddPersonHelper extends BaseAddHelper {
-  AddPersonHelper(From2to2 migration)
+class AddPersonHelper extends _AddPersonHelper {
+  AddPersonHelper(From2to2 migration) : super(migration);
+
+  @override
+  String get name => 'Анна Чернявська';
+
+  @override
+  String? get info => 'Письменниця-початківець, громадська діячка, учителька';
+
+  @override
+  String? get url => 'https://www.instagram.com/anna_cherniavska9';
+}
+
+abstract class _AddPersonHelper extends BaseAddHelper {
+  _AddPersonHelper(From2to2 migration)
       : super(
           migration,
           addItemName: 'Person',
@@ -47,15 +60,21 @@ class AddPersonHelper extends BaseAddHelper {
     }
   }
 
+  String get name;
+
+  String? get info;
+
+  String? get url;
+
   @override
   Future<void> add() async {
     nextId = (await _getLastId()) + 1;
 
     final person = PersonDto(
       id: nextId,
-      name: 'Ніка Балаж',
-      info:
-          'Ілюстратор дитячого періодичного видання «Перший інтерактивний журнал для дітей Чарівний ліхтарик»',
+      name: name,
+      info: info,
+      url: url,
     );
     final allPeople = await _getAll();
     allPeople.add(person);
