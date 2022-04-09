@@ -276,7 +276,7 @@
   {
     "id": 215,
     "name": "Лісові пригоди",
-    "create_date": 1649501466950,
+    "create_date": 1649531204326,
     "tags": [
       "text",
       "audio",
@@ -344,13 +344,12 @@
       "readers": [
         79
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 214,
     "name": "Богатир Хома",
-    "create_date": 1649255572202,
+    "create_date": 1649531204326,
     "tags": [
       "audio",
       "author"
@@ -371,8 +370,7 @@
       "readers": [
         72
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 213,
