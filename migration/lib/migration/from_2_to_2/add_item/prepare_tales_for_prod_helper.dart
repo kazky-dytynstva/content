@@ -9,7 +9,7 @@ class PrepareTalesForProdHelper extends AddTaleHelper {
           migration,
         );
 
-  int prepareTalesCount = 2;
+  int prepareTalesCount = 1;
 
   @override
   Future<void> add() async {

@@ -203,7 +203,7 @@
   {
     "id": 216,
     "name": "Хоробрий Мурчик",
-    "create_date": 1649505750316,
+    "create_date": 1649596566032,
     "tags": [
       "text",
       "audio",
@@ -270,8 +270,7 @@
       "readers": [
         79
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 215,
