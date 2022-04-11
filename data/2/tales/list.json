@@ -157,7 +157,7 @@
   {
     "id": 217,
     "name": "Різдвяне диво",
-    "create_date": 1649507166656,
+    "create_date": 1649667859744,
     "tags": [
       "text",
       "audio",
@@ -197,8 +197,7 @@
       "readers": [
         79
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 216,
