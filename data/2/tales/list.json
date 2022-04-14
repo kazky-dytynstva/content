@@ -54,7 +54,7 @@
   {
     "id": 219,
     "name": "Рибалки",
-    "create_date": 1649508703016,
+    "create_date": 1649949555995,
     "tags": [
       "text",
       "audio",
@@ -105,13 +105,12 @@
       "readers": [
         79
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 218,
     "name": "Сонячні млинці",
-    "create_date": 1649508340446,
+    "create_date": 1649949555995,
     "tags": [
       "text",
       "audio",
@@ -151,8 +150,7 @@
       "readers": [
         79
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 217,
