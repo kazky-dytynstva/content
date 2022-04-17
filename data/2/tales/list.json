@@ -2,7 +2,7 @@
   {
     "id": 220,
     "name": "Пасха",
-    "create_date": 1649509317713,
+    "create_date": 1650177042460,
     "tags": [
       "text",
       "audio",
@@ -48,8 +48,7 @@
       "readers": [
         79
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 219,
