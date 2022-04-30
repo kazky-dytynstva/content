@@ -9,13 +9,13 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Діна Кравцова';
+  String get name => 'Леся Горова';
 
   @override
-  String? get info => null;
+  String? get info => 'Співачка, композиторка, народна артистка України';
 
   @override
-  String? get url => 'https://www.instagram.com/dina_kravtsova';
+  String? get url => 'https://uk.wikipedia.org/wiki/Горова_Леся_Володимирівна';
 }
 
 abstract class _AddPersonHelper extends BaseAddHelper {
