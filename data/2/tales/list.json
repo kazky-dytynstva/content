@@ -2,7 +2,7 @@
   {
     "id": 224,
     "name": "Кольорові сни",
-    "create_date": 1651515507034,
+    "create_date": 1651480664951,
     "tags": [
       "text",
       "audio",
@@ -63,8 +63,7 @@
       "musicians": [
         82
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 223,
