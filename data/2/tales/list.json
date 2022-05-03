@@ -2,7 +2,7 @@
   {
     "id": 225,
     "name": "Не може заснути малюк",
-    "create_date": 1651567891406,
+    "create_date": 1651609757269,
     "tags": [
       "text",
       "audio",
@@ -60,8 +60,7 @@
       "musicians": [
         81
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 224,
