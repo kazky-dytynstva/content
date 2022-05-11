@@ -9,13 +9,14 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Руслан Грех';
+  String get name => 'Ірина Гармаш';
 
   @override
-  String? get info => 'Священник церкви Різдва Пресвятої Богородиці УГКЦ';
+  String? get info =>
+      'Практичний психолог-методист, фахівець з пісочної психотерапії, з НЛП та МАК';
 
   @override
-  String? get url => 'https://www.facebook.com/oruslan0303/';
+  String? get url => 'https://www.facebook.com/profile.php?id=100013905045104';
 }
 
 abstract class _AddPersonHelper extends BaseAddHelper {
