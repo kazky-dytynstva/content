@@ -50,7 +50,7 @@
   {
     "id": 228,
     "name": "Жабеня Ква-Квака",
-    "create_date": 1652541860430,
+    "create_date": 1652641558272,
     "tags": [
       "text",
       "audio",
@@ -96,8 +96,7 @@
       "readers": [
         83
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 227,
