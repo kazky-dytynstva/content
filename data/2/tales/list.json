@@ -2,7 +2,7 @@
   {
     "id": 229,
     "name": "Мишеня Пік-Пік",
-    "create_date": 1652727897923,
+    "create_date": 1652821428566,
     "tags": [
       "text",
       "audio",
@@ -44,8 +44,7 @@
       "readers": [
         83
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 228,
