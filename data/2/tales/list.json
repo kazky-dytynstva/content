@@ -2,7 +2,7 @@
   {
     "id": 230,
     "name": "Намалюю тобі зорі",
-    "create_date": 1653208299547,
+    "create_date": 1653122007986,
     "tags": [
       "text",
       "audio",
@@ -60,8 +60,7 @@
       "readers": [
         84
       ]
-    },
-    "ignore": true
+    }
   },
   {
     "id": 229,
