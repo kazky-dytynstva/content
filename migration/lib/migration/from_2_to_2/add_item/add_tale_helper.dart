@@ -10,7 +10,7 @@ class AddTaleHelper extends _AddTaleHelper {
   AddTaleHelper(From2to2 migration) : super(migration);
 
   @override
-  String get taleName => 'Намалюю тобі зорі';
+  String get taleName => 'Рученьки, ніженьки';
 
   @override
   Set<String> get extraTags => {
@@ -20,9 +20,9 @@ class AddTaleHelper extends _AddTaleHelper {
 
   @override
   TaleCrewDto? _getCrew() => TaleCrewDto(
-        authors: [84],
-        readers: [84],
-        musicians: null,
+        authors: [_mykolaSom],
+        readers: [_olgaTokar],
+        musicians: [_oskarSandler],
         translators: null,
         graphics: null,
       );
@@ -40,38 +40,25 @@ class AddTaleHelper extends _AddTaleHelper {
 
   @override
   List<String>? _getText() => [
-        "Намалюю тобі зорі,",
-        "Що падуть з небес вночі",
-        "І малюнок той складу,",
-        "І в куточку підпишу,",
-        "Що ті зорі, то є ти.",
-        "Намалюю тобі сонце,",
-        "Що блищить в твоїх очах,",
-        "А ти скажеш воно є,",
-        "Коли бачиш ти мене,",
-        "Що то сонце, то є я.",
+        "Заходить за хмари зоря-зоряниця,",
+        "І гомін стихає кругом,",
+        "А місяць злітає, неначе жар-птиця,",
+        "Над сонним і тихим вікном.",
         " ",
-        "Ла-ла-ла-ла-ла-ла-ла-ла",
-        "Солодка любов твоя.",
-        "Ла-ла-ла-ла-ла-ла-ла-ла",
-        "В обійма твої хочу я",
+        "Рученьки-ніженьки, лагідні очі,",
+        "Спокійної ночі, скінчилася гра.",
+        "Рученьки-ніженьки, лагідні очі,",
+        "Спокійної ночи, спати пора!",
         " ",
-        "Моє серденько, послухай,",
-        "Сльози поцілуй мої",
-        "І любов свою в долонях,",
-        "Намалюю я тобі,",
-        "Моє серце, то є ти.",
+        "Хай сниться вам, діти, дідусева казка,",
+        "В якої щасливий кінець.",
+        "Хай татова сила і мамина ласка",
+        "Іде до маленьких сердець.",
         " ",
-        "Ла-ла-ла-ла-ла-ла-ла-ла",
-        "Солодка любов твоя.",
-        "Ла-ла-ла-ла-ла-ла-ла-ла",
-        "В обійма твої хочу я",
-        " ",
-        "Намалюю тобі зорі,",
-        "Що падуть з небес внoчі",
-        "І малюнок той складу,",
-        "І в куточку підпишу,",
-        "Що ті зорі, то є ти.",
+        "Рученьки-ніженьки, лагідні очі,",
+        "Спокійної ночі, скінчилася гра.",
+        "Рученьки-ніженьки, лагідні очі,",
+        "Спокійної ночи, спати пора!",
       ];
 }
 
@@ -217,3 +204,177 @@ class Tags {
   static const String poem = 'poem';
   static const String lullaby = 'lullaby';
 }
+
+const int _olgaTokar = 87;
+const int _oskarSandler = 86;
+const int _mykolaSom = 85;
+//
+// const int "Тіна Кароль" = 84;
+//
+// const int "Ірина Гармаш" = 83;
+//
+// const int "Руслан Грех" = 82;
+//
+// const int "Леся Горова" = 81;
+//
+// const int "Діна Кравцова" = 80;
+//
+// const int "Анна Чернявська" = 79;
+//
+// const int "Ніка Балаж" = 78;
+//
+// const int "Шарль Перро" = 77;
+//
+// const int "Уля " = 76;
+//
+// const int "Алла Мігай" = 75;
+//
+// const int "Емілія Саталкіна" = 74;
+//
+// const int "Кость Дяченко" = 73;
+//
+// const int "Сашко Лірник" = 72;
+//
+// const int "Михайло Слабошпицький" = 71;
+//
+// const int "Анатолій Давидов" = 70;
+//
+// const int "Василь Вакуленко" = 69;
+//
+// const int "Євгенія Бурчак" = 68;
+//
+// const int "Вікторія Кузьміна" = 67;
+//
+// const int "Тарас Сліпець" = 66;
+//
+// const int "Оксана Смільська" = 65;
+//
+// const int "Владислава Сойма = 64;
+//
+// const int "Анатолій Михайленко" = 63;
+//
+// const int "Віра Карасьова = 62;
+//
+// const int "Микола Стеценко" = 61;
+//
+// const int "Олег Буцень" = 60;
+//
+// const int "Мирослав Вересюк" = 59;
+//
+// const int "Євген Башенко = 58;
+//
+// const int "Костянтин Ротов" = 57;
+//
+// const int "Максим Незгода = 56;
+//
+// const int "Олександр Єрох" = 55;
+//
+// const int "Олена Чичик = 54;
+//
+// const int "Леся Борсук = 53;
+//
+// const int "Анастасія Ножка" = 52;
+//
+// const int "Юлія Антонова" = 51;
+//
+// const int "Андрій Антонов" = 50;
+//
+// const int "Джоель Гарріс" = 49;
+//
+// const int "Денис Проуторов" = 48;
+//
+// const int "Світлана Харчук" = 47;
+//
+// const int "Анастасія Білянська" = 46;
+//
+// const int "Таріна Карасівна" = 45;
+//
+// const int "Дмитро Соколов" = 44;
+//
+// const int "Керстін Шьоне" = 43;
+//
+// const int "Світлана Колесник = 42;
+//
+// const int "Забіне Больман" = 41;
+//
+// const int "Костянтин Ушинський" = 40;
+//
+// const int "Ніна Матвієнко" = 39;
+//
+// const int _ivanFranko = 38;
+//
+// const int _stepanRudanskyj = 37;
+//
+// const int _leonidGlibov = 36;
+//
+// const int _bratyGrim = 35;
+//
+// const int _marijkaPidgiryanka = 34;
+//
+// const int _myhailoStelmah = 33;
+//
+// const int _valentynaYurchenko = 32;
+//
+// const int _serhijTatienko = 31;
+//
+// const int _mykolaSygnaivskyj = 30;
+//
+// const int _irynaKyrylina = 29;
+//
+// const int _dmytroPavlychko = 28;
+//
+// const int _andrijMalyshko = 27;
+//
+// const int _platonMajboroda = 26;
+//
+// const int _nataliyaZabila = 25;
+//
+// const int _annaSereda = 24;
+//
+// const int _grygorijBojko = 23;
+//
+// const int _marijaHorosnytska = 22;
+//
+// const int _anatolijKosteckyj = 21;
+//
+// const int _samuilMarshak = 20;
+//
+// const int _ivanMalkovych = 19;
+//
+// const int _pavloGlaovyj = 18;
+//
+// const int _valentynaBajkova = 17;
+//
+// const int _anatolijGrygoruk = 16;
+//
+// const int _yulianTuvim = 15;
+//
+// const int _vasylChuhlib = 14;
+//
+// const int _yanikaTereshenko = 13;
+//
+// const int _viktorPavlik = 12;
+//
+// const int _jannaHoma = 11;
+//
+// const int _liliyaGudz = 10;
+//
+// const int _tetanaLeonteva = 9;
+//
+// const int _yuliaZadorojna = 8;
+//
+// const int _katerynaGavrylova = 7;
+//
+// const int _mariyaSoltysSmyrnove = 6;
+//
+// const int _galynaMyroslava = 5;
+//
+// const int _innaYavorska = 4;
+//
+// const int _vasylSuhomlynskyi = 3;
+//
+// const int _oksanaKrotyuk = 2;
+//
+// const int _gansAndersen = 1;
+//
+// const int _lesyaUkrainka = 0;
