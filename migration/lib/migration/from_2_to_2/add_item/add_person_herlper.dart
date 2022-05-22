@@ -9,14 +9,14 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Оскар Сандлер';
+  String get name => 'Ольга Токар';
 
   @override
   String? get info =>
       'Український композитор, автор опер, музичних комедій, балету, музики до фільмів, вистав, пісень.';
 
   @override
-  String? get url => 'https://uk.wikipedia.org/wiki/Сандлер_Оскар_Аронович';
+  String? get url => 'https://www.facebook.com/notyolgatokar/';
 }
 
 abstract class _AddPersonHelper extends BaseAddHelper {
