@@ -1,7 +1,6 @@
+import 'package:dto/dto.dart';
 import 'package:migration/migration/from_2_to_2/add_item/add_tale_helper.dart';
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
-
-import '../../from_0_to_1/dto/_new/tale/dto.dart';
 
 class PrepareTalesForProdHelper extends AddTaleHelper {
   PrepareTalesForProdHelper(From2to2 migration)
@@ -57,6 +56,7 @@ class PrepareTalesForProdHelper extends AddTaleHelper {
               id: e.id,
               name: e.name,
               createDate: now.millisecondsSinceEpoch,
+              updateDate: null,
               tags: e.tags,
               content: e.content,
               crew: e.crew,

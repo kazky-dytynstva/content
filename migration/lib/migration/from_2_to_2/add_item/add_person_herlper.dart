@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:migration/migration/from_0_to_1/dto/_new/person/person_dto.dart';
+import 'package:dto/dto.dart';
 import 'package:migration/migration/from_2_to_2/add_item/base_add_helper.dart';
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
 

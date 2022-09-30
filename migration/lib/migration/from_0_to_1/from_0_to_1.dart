@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:migration/migration/from_0_to_1/dto/_new/tale_dto.dart';
 import 'package:migration/migration/from_0_to_1/dto/_old/tale/tale_dto.dart'
     as old;
+import 'package:dto/dto.dart';
 import 'package:migration/migration/base_migration.dart';
 import 'package:mp3_info/mp3_info.dart';
 
@@ -237,25 +237,27 @@ class _MigrateTalesHelper {
         id: old.id,
         name: old.name,
         createDate: old.createDate,
+        updateDate: null,
         tags: _mapTaleTags(old),
         content: await _mapContent(old),
         crew: _mapCrew(old),
+        ignore: null,
       );
 
-  Set<String> _mapTaleTags(old.TaleDto old) {
-    final tags = <String>{};
+  Set<TaleTag> _mapTaleTags(old.TaleDto old) {
+    final tags = <TaleTag>{};
 
     if (old.hasAudio == true) {
-      tags.add('audio');
+      tags.add(TaleTag.audio);
     }
     if (old.crewIds?.authors?.isNotEmpty == true) {
-      tags.add('author');
+      tags.add(TaleTag.author);
     }
     if (old.lullaby == true) {
-      tags.add('lullaby');
+      tags.add(TaleTag.lullaby);
     }
     if (old.text != null) {
-      tags.add('text');
+      tags.add(TaleTag.text);
     }
 
     assert(tags.isNotEmpty, 'Tags can not be empty. Tale id=${old.id}');
@@ -263,7 +265,7 @@ class _MigrateTalesHelper {
     return tags;
   }
 
-  TaleCrewDto? _mapCrew(old.TaleDto old) {
+  CrewDto? _mapCrew(old.TaleDto old) {
     final crew = old.crewIds;
     if (crew == null) return null;
 
@@ -297,7 +299,7 @@ class _MigrateTalesHelper {
       'Tale graphics should be unique. Tale id = ${old.id}',
     );
 
-    return TaleCrewDto(
+    return CrewDto(
       authors: crew.authors,
       readers: crew.readers,
       musicians: crew.musicians,
@@ -308,7 +310,7 @@ class _MigrateTalesHelper {
 
   String _getOldTaleAudioPathById(int id) => '$oldTalePath/audio/id_$id.mp3';
 
-  Future<List<TaleChapterDto>> _mapContent(old.TaleDto old) async {
+  Future<List<ChapterDto>> _mapContent(old.TaleDto old) async {
     final text = <String>[];
 
     if (old.text != null) {
@@ -333,7 +335,7 @@ class _MigrateTalesHelper {
     }
 
     return [
-      TaleChapterDto(
+      ChapterDto(
         title: null,
         audio: audioDto,
         text: text.isEmpty ? null : text,

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:migration/migration/from_0_to_1/dto/_new/tale_dto.dart';
+import 'package:dto/dto.dart';
 import 'package:migration/migration/from_2_to_2/add_item/base_add_helper.dart';
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
 import 'package:migration/utils/audio_util.dart';
@@ -13,10 +13,10 @@ class AddTaleHelper extends _AddTaleHelper {
   String get taleName => 'Чарівна хустинка';
 
   @override
-  Set<String> get extraTags => {Tags.poem};
+  Set<TaleTag> get extraTags => {TaleTag.poem};
 
   @override
-  TaleCrewDto? _getCrew() => TaleCrewDto(
+  CrewDto? _getCrew() => CrewDto(
         authors: [_nataliyaZabila],
         readers: null,
         musicians: null,
@@ -665,7 +665,7 @@ abstract class _AddTaleHelper extends BaseAddHelper {
 
   String getTalePath(int chapterIndex) => '$dataPath/$nextId/$chapterIndex/';
 
-  String audioPath(int chapterIndex) => getTalePath(chapterIndex) + 'audio.mp3';
+  String audioPath(int chapterIndex) => '${getTalePath(chapterIndex)}audio.mp3';
 
   @override
   Future<bool> validate({bool post = false}) async {
@@ -685,7 +685,7 @@ abstract class _AddTaleHelper extends BaseAddHelper {
 
       final chapterIndex = 0;
       final path = getTalePath(chapterIndex);
-      final dir = Directory(path + 'img');
+      final dir = Directory('${path}img');
       if (!dir.existsSync()) {
         dir.createSync(recursive: true);
         migration.log('Empty folder for tale was created');
@@ -693,14 +693,14 @@ abstract class _AddTaleHelper extends BaseAddHelper {
       }
 
       if (post) {
-        final imageFile = File(path + 'img/0.jpg');
+        final imageFile = File('${path}img/0.jpg');
         assert(
           imageFile.existsSync(),
           'Image for the tale was not found',
         );
 
-        if (tale.tags.contains(Tags.audio)) {
-          final audioFile = File(path + 'audio.mp3');
+        if (tale.tags.contains(TaleTag.audio)) {
+          final audioFile = File('${path}audio.mp3');
           assert(
             audioFile.existsSync(),
             'Image for the tale was not found',
@@ -716,11 +716,11 @@ abstract class _AddTaleHelper extends BaseAddHelper {
 
   Future<List<TaleDto>> getAll() async {
     final json = await migration.readJsonList(jsonPath);
-    final people = json.map((e) => TaleDto.fromJson(e)).toList();
+    final list = json.map((e) => TaleDto.fromJson(e)).toList();
     if (originalList.isEmpty) {
-      originalList.addAll(people);
+      originalList.addAll(list);
     }
-    return people;
+    return list;
   }
 
   Future<int> _getLastId() async {
@@ -735,16 +735,17 @@ abstract class _AddTaleHelper extends BaseAddHelper {
     final crew = _getCrew();
 
     final content = _getContent();
-    final tags = <String>{
-      if (content.first.text != null) Tags.text,
-      if (content.first.audio != null) Tags.audio,
-      if (crew?.authors?.isNotEmpty == true) Tags.author,
+    final tags = <TaleTag>{
+      if (content.first.text != null) TaleTag.text,
+      if (content.first.audio != null) TaleTag.audio,
+      if (crew?.authors?.isNotEmpty == true) TaleTag.author,
     }..addAll(extraTags);
 
     tale = TaleDto(
       id: nextId,
       name: taleName,
       createDate: DateTime.now().millisecondsSinceEpoch + createDateDelta,
+      updateDate: null,
       tags: tags,
       content: content,
       crew: crew,
@@ -758,16 +759,16 @@ abstract class _AddTaleHelper extends BaseAddHelper {
 
   String get taleName;
 
-  TaleCrewDto? _getCrew();
+  CrewDto? _getCrew();
 
   /// Other than [Tags.author],[Tags.text],[Tags.audio]
-  Set<String> get extraTags;
+  Set<TaleTag> get extraTags;
 
-  List<TaleChapterDto> _getContent() => [
+  List<ChapterDto> _getContent() => [
         _createChapter0(),
       ];
 
-  TaleChapterDto _createChapter0() => TaleChapterDto(
+  ChapterDto _createChapter0() => ChapterDto(
         title: null,
         imageCount: 1,
         text: _getText()?.map((e) => e.replaceAll(spaceRegExp, ' ')).toList(),
@@ -779,20 +780,6 @@ abstract class _AddTaleHelper extends BaseAddHelper {
   });
 
   List<String>? _getText();
-}
-
-class Tags {
-  Tags._();
-
-  //region added automatically
-  static const String text = 'text';
-  static const String author = 'author';
-  static const String audio = 'audio';
-
-  //endregion added automatically
-
-  static const String poem = 'poem';
-  static const String lullaby = 'lullaby';
 }
 
 const int _olgaTokar = 87;

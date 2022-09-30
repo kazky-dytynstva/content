@@ -1,5 +1,5 @@
+import 'package:dto/dto.dart';
 import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
-import 'package:migration/utils/to_json.dart';
 
 abstract class BaseAddHelper {
   final From2to2 migration;
@@ -15,7 +15,7 @@ abstract class BaseAddHelper {
     required this.folderName,
   });
 
-  final List<ToJson> originalList = [];
+  final List<ToJsonItem> originalList = [];
 
   String get dataPath => '${migration.dataPathOld}/$folderName';
 
@@ -50,7 +50,7 @@ abstract class BaseAddHelper {
     await saveJson(originalList);
   }
 
-  Future<void> saveJson(List<ToJson> list) async {
+  Future<void> saveJson(List<ToJsonItem> list) async {
     list.sort((a, b) => b.id.compareTo(a.id));
     final json = list.map((e) => e.toJson()).toList();
     await migration.saveJsonListToFile(data: json, filePath: jsonPath);
