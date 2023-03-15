@@ -26,9 +26,10 @@ class From2to2 extends BaseDataMigration {
   Future<bool> migrate() async {
     final addPersonOk = true;
     // final addPersonOk = await AddPersonHelper(this).run();
-    final addTaleOk = await AddTaleHelper(this).run();
-    final prepareTalesForProdOk = true;
-    // final prepareTalesForProdOk = await PrepareTalesForProdHelper(this).run();
+    final addTaleOk = true;
+    // final addTaleOk = await AddTaleHelper(this).run();
+    // final prepareTalesForProdOk = true;
+    final prepareTalesForProdOk = await PrepareTalesForProdHelper(this).run();
     return addPersonOk && addTaleOk && prepareTalesForProdOk;
   }
 }
