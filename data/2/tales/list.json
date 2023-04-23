@@ -1554,6 +1554,9 @@
       ],
       "graphics": [
         80
+      ],
+      "readers": [
+        88
       ]
     },
     "ignore": false
