@@ -9,10 +9,11 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Ангеліна Ратушенко ';
+  String get name => 'Ангеліна Ратушенко';
 
   @override
-  String? get info => null;
+  String? get info =>
+      'Мені 13 років, живу в Хмельницькій області. Дуже рада писати казки, складала навіть вірші.';
 
   @override
   String? get url => null;
