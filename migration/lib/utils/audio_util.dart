@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:mp3_info/mp3_info.dart';
 
-AudioUtilData getAudioData(String filePath) {
+AudioUtilData getAudioUtilData(String filePath) {
   final file = File(filePath);
 
   final info = MP3Processor.fromFile(file);

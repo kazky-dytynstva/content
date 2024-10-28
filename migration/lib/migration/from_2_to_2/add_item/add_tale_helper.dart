@@ -29,7 +29,7 @@ class AddTaleHelper extends _AddTaleHelper {
     required int chapterIndex,
   }) {
     return null;
-    final data = getAudioData(audioPath(chapterIndex));
+    final data = getAudioUtilData(audioPath(chapterIndex));
     return ChapterAudioDto(
       size: data.size,
       duration: data.duration.inMilliseconds,
