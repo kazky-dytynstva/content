@@ -1,5 +1,14 @@
 [
   {
+    "id": 93,
+    "name": "Сергій Бондаренко",
+    "url": "https://www.linkedin.com/in/sergii-bondarenko-i/",
+    "info": "Fullstack magic developer",
+    "roles": [
+      "crew"
+    ]
+  },
+  {
     "id": 92,
     "name": "Богдан Дмитрів",
     "url": "https://www.linkedin.com/in/bohdan-dmytriv/",
