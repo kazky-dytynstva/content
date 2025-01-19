@@ -9,13 +9,13 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Анна Антонова';
+  String get name => 'Сергій Бондаренко';
 
   @override
-  String? get info => 'Дизайнер застосунку "Казки дитинства"';
+  String? get info => 'Fullstack magic developer';
 
   @override
-  String? get url => 'https://t.me/suprun_anne';
+  String? get url => 'https://www.linkedin.com/in/sergii-bondarenko-i/';
 
   @override
   List<PersonRoleDto> get roles => [

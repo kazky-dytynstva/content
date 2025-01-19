@@ -27,7 +27,7 @@ class From2to2 extends BaseDataMigration {
     final addPersonHelper = AddPersonHelper(this);
     final addTaleHelper = AddTaleHelper(this);
 
-    final addPersonOk = await addPersonHelper.run(fastReturn: true);
+    final addPersonOk = await addPersonHelper.run(fastReturn: false);
 
     final addTaleOk = await addTaleHelper.run(fastReturn: true);
 
