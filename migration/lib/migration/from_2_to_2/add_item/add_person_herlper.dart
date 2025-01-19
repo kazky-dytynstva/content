@@ -32,7 +32,7 @@ abstract class _AddPersonHelper extends BaseAddHelper {
     bool post = false,
   }) async {
     try {
-      final all = await _getAll();
+      final all = await getAll();
 
       final idList = all.map((e) => e.id).toSet();
       final nameList = all.map((e) => e.name).toSet();
@@ -80,12 +80,12 @@ abstract class _AddPersonHelper extends BaseAddHelper {
       url: url,
       roles: roles,
     );
-    final allPeople = await _getAll();
+    final allPeople = await getAll();
     allPeople.add(person);
     await saveJson(allPeople);
   }
 
-  Future<List<PersonDto>> _getAll() async {
+  Future<List<PersonDto>> getAll() async {
     final json = await migration.readJsonList(jsonPath);
     final people = json.map((e) => PersonDto.fromJson(e)).toList();
     if (originalList.isEmpty) {
@@ -95,7 +95,7 @@ abstract class _AddPersonHelper extends BaseAddHelper {
   }
 
   Future<int> _getLastId() async {
-    final people = (await _getAll()).map((e) => e.id);
+    final people = (await getAll()).map((e) => e.id);
     return people.reduce(max);
   }
 }

@@ -2,8 +2,8 @@ import 'package:dto/dto.dart';
 import 'package:migration/migration/from_2_to_2/add_item/add_person_herlper.dart';
 import 'package:migration/migration/from_2_to_2/add_item/add_tale_helper.dart';
 
-class UpdatePeoplePersonRoleDtos {
-  UpdatePeoplePersonRoleDtos({
+class UpdatePeopleRoles {
+  UpdatePeopleRoles({
     required AddTaleHelper addTaleHelper,
     required AddPersonHelper addPersonHelper,
   })  : _addTalesHelper = addTaleHelper,
@@ -18,6 +18,22 @@ class UpdatePeoplePersonRoleDtos {
     final personPersonRoleDtos = _mapPeoplePersonRoleDtos(tales);
 
     final allPeople = await _addPersonHelper.getAll();
+
+    _populatePeopleRoles(allPeople, personPersonRoleDtos);
+
+    await _addPersonHelper.saveJson(allPeople);
+  }
+
+  void _populatePeopleRoles(
+    List<PersonDto> allPeople,
+    Map<int, List<PersonRoleDto>> personPersonRoleDtos,
+  ) {
+    for (var person in allPeople) {
+      final roles = personPersonRoleDtos[person.id];
+      if (roles == null) continue;
+      person.roles.clear();
+      person.roles.addAll(roles);
+    }
   }
 
   Map<int, List<PersonRoleDto>> _mapPeoplePersonRoleDtos(List<TaleDto> tales) {
