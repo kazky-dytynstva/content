@@ -3,7 +3,6 @@ description: A starting point for Dart libraries or applications.
 version: 1.0.0
 publish_to: none
 # homepage: https://www.example.com
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
