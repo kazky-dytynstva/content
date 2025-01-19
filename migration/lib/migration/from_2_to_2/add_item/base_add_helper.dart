@@ -21,7 +21,10 @@ abstract class BaseAddHelper {
 
   String get jsonPath => '$dataPath/list.json';
 
-  Future<bool> run() async {
+  Future<bool> run({bool fastReturn = false}) async {
+    if (fastReturn) {
+      return true;
+    }
     migration.log('Add new $addItemName started ⏱');
     migration.log('   - pre validation started');
     assert(await validate());
