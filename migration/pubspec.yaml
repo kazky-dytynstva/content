@@ -2,22 +2,22 @@ name: migration
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 # homepage: https://www.example.com
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   fast_immutable_collections: ^9.2.0
   dto:
     git:
       url: https://github.com/kazky-dytynstva/dto
-      ref: 1.0.5
+      ref: 1.1.0
 
 dev_dependencies:
-  lints: 2.0.0
-  json_annotation: 4.7.0
+  lints: ^2.0.0
+  json_annotation: ^4.7.0
   test: ^1.16.0
-  build_runner: 2.2.1
-  json_serializable: 6.4.1
-  mp3_info: 0.2.0
-
+  build_runner: ^2.2.1
+  json_serializable: ^6.4.1
+  mp3_info: ^0.2.0
