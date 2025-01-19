@@ -67,6 +67,8 @@ abstract class _AddPersonHelper extends BaseAddHelper {
 
   String? get url;
 
+  List<PersonRoleDto> get roles => [];
+
   @override
   Future<void> add() async {
     nextId = (await _getLastId()) + 1;
@@ -76,6 +78,7 @@ abstract class _AddPersonHelper extends BaseAddHelper {
       name: name,
       info: info,
       url: url,
+      roles: roles,
     );
     final allPeople = await _getAll();
     allPeople.add(person);

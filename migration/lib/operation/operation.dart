@@ -67,7 +67,7 @@ abstract class Operation<T extends ToJsonItem> {
       _storeDataToFile(updated, jsonFile);
       logger.info('"store data" - done ✅');
       operationCompleted();
-      
+
       logger.success('Completed');
     } catch (e, trace) {
       logger.info('Start "fallback"');
@@ -138,7 +138,16 @@ abstract class Operation<T extends ToJsonItem> {
   }
 
   void _storeDataToFile(IList<T> data, File jsonFile) {
-    final sorted = data.sort((a, b) => b.id.compareTo(a.id));
+    final sorted = data.sort((a, b) {
+      if (a is! IdHolder) {
+        throw StateError('Item does not implement $IdHolder');
+      }
+      if (b is! IdHolder) {
+        throw StateError('Item does not implement $IdHolder');
+      }
+
+      return (b as IdHolder).id.compareTo((a as IdHolder).id);
+    });
     final jsonList = sorted.map(itemToJson).toList();
     _saveJsonListToFile(
       data: jsonList,

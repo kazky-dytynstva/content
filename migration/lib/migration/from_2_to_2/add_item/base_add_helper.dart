@@ -51,7 +51,16 @@ abstract class BaseAddHelper {
   }
 
   Future<void> saveJson(List<ToJsonItem> list) async {
-    list.sort((a, b) => b.id.compareTo(a.id));
+    list.sort((a, b) {
+      if (a is! IdHolder) {
+        throw StateError('Item does not implement $IdHolder');
+      }
+      if (b is! IdHolder) {
+        throw StateError('Item does not implement $IdHolder');
+      }
+
+      return (b as IdHolder).id.compareTo((a as IdHolder).id);
+    });
     final json = list.map((e) => e.toJson()).toList();
     await migration.saveJsonListToFile(data: json, filePath: jsonPath);
   }
