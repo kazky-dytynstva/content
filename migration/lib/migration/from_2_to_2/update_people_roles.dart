@@ -19,21 +19,39 @@ class UpdatePeopleRoles {
 
     final allPeople = await _addPersonHelper.getAll();
 
-    _populatePeopleRoles(allPeople, personPersonRoleDtos);
+    final updatedPeople = _updatePeopleWithRoles(
+      allPeople,
+      personPersonRoleDtos,
+    );
 
-    await _addPersonHelper.saveJson(allPeople);
+    await _addPersonHelper.saveJson(updatedPeople);
   }
 
-  void _populatePeopleRoles(
+  List<PersonDto> _updatePeopleWithRoles(
     List<PersonDto> allPeople,
     Map<int, List<PersonRoleDto>> personPersonRoleDtos,
   ) {
+    final result = <PersonDto>[];
     for (var person in allPeople) {
       final roles = personPersonRoleDtos[person.id];
-      if (roles == null) continue;
-      person.roles.clear();
-      person.roles.addAll(roles);
+      final updatedPerson = _updatePersonRoles(person, roles);
+      result.add(updatedPerson);
     }
+
+    return result;
+  }
+
+  PersonDto _updatePersonRoles(PersonDto person, List<PersonRoleDto>? roles) {
+    if (roles == null) {
+      return person;
+    }
+    return PersonDto(
+      id: person.id,
+      name: person.name,
+      url: person.url,
+      info: person.info,
+      roles: roles,
+    );
   }
 
   Map<int, List<PersonRoleDto>> _mapPeoplePersonRoleDtos(List<TaleDto> tales) {
