@@ -9,14 +9,18 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Ангеліна Ратушенко';
+  String get name => 'Анна Антонова';
 
   @override
-  String? get info =>
-      'Мені 13 років, живу в Хмельницькій області. Дуже рада писати казки, складала навіть вірші.';
+  String? get info => 'Дизайнер застосунку "Казки дитинства"';
 
   @override
-  String? get url => null;
+  String? get url => 'https://t.me/suprun_anne';
+
+  @override
+  List<PersonRoleDto> get roles => [
+        PersonRoleDto.crew,
+      ];
 }
 
 abstract class _AddPersonHelper extends BaseAddHelper {
