@@ -48,6 +48,8 @@ class UpdatePeopleRoles {
     return PersonDto(
       id: person.id,
       name: person.name,
+      surname: person.surname,
+      gender: person.gender,
       url: person.url,
       info: person.info,
       roles: roles,

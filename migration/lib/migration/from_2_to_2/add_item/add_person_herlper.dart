@@ -9,7 +9,10 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Сергій Бондаренко';
+  String get name => 'Сергій';
+
+  @override
+  String get surname => 'Бондаренко';
 
   @override
   String? get info => 'Fullstack magic developer';
@@ -21,6 +24,9 @@ class AddPersonHelper extends _AddPersonHelper {
   List<PersonRoleDto> get roles => [
         PersonRoleDto.crew,
       ];
+
+  @override
+  PersonGenderDto get gender => PersonGenderDto.male;
 }
 
 abstract class _AddPersonHelper extends BaseAddHelper {
@@ -67,6 +73,10 @@ abstract class _AddPersonHelper extends BaseAddHelper {
 
   String get name;
 
+  String get surname;
+
+  PersonGenderDto get gender;
+
   String? get info;
 
   String? get url;
@@ -80,6 +90,8 @@ abstract class _AddPersonHelper extends BaseAddHelper {
     final person = PersonDto(
       id: nextId,
       name: name,
+      surname: surname,
+      gender: gender,
       info: info,
       url: url,
       roles: roles,
