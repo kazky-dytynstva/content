@@ -1,4 +1,4 @@
-## Data was migrated from version **2** to **2**
+## Data was migrated from version **3** to **3**
 ---------
 
 Old data was used in the app with:
@@ -8,4 +8,4 @@ Old data was used in the app with:
 ---------
 
 ## Modified:
- - 2025-01-19 16:53:51.606837Z, by _migration tool_
+ - 2025-02-15 16:52:38.126257Z, by _migration tool_

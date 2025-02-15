@@ -37,7 +37,6 @@
     "name": "Юрій",
     "surname": "Качур",
     "gender": "male",
-    "url": null,
     "info": "Захоплюсь футболом та обожнюю море. Через тренування та сумлінне навчання досягну усього бажаного у житті!",
     "roles": [
       "author"
@@ -48,8 +47,6 @@
     "name": "Ангеліна",
     "surname": "Ратушенко",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "author"
     ]
@@ -154,7 +151,6 @@
     "surname": "Кравцова",
     "gender": "female",
     "url": "https://www.instagram.com/dina_kravtsova",
-    "info": null,
     "roles": [
       "graphic"
     ]
@@ -198,7 +194,6 @@
     "name": "Уля",
     "surname": "",
     "gender": "female",
-    "url": null,
     "info": "Власниця кішки Пушки",
     "roles": [
       "reader"
@@ -222,7 +217,6 @@
     "name": "Емілія",
     "surname": "Саталкіна",
     "gender": "female",
-    "url": null,
     "info": "Дитяча поетеса",
     "roles": [
       "author"
@@ -278,7 +272,6 @@
     "name": "Василь",
     "surname": "Вакуленко",
     "gender": "male",
-    "url": null,
     "info": "Художник",
     "roles": [
       "graphic"
@@ -289,7 +282,6 @@
     "name": "Євгенія",
     "surname": "Бурчак",
     "gender": "female",
-    "url": null,
     "info": "Художниця-графік",
     "roles": [
       "graphic"
@@ -333,8 +325,6 @@
     "name": "Владислава",
     "surname": "Сойма",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "graphic"
     ]
@@ -355,8 +345,6 @@
     "name": "Віра",
     "surname": "Карасьова",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "author"
     ]
@@ -399,8 +387,6 @@
     "name": "Євген",
     "surname": "Башенко",
     "gender": "male",
-    "url": null,
-    "info": null,
     "roles": [
       "author"
     ]
@@ -410,7 +396,6 @@
     "name": "Костянтин",
     "surname": "Ротов",
     "gender": "male",
-    "url": null,
     "info": "Радянський художник-графік, карикатурист, ілюстратор книг",
     "roles": [
       "graphic"
@@ -421,8 +406,6 @@
     "name": "Максим",
     "surname": "Незгода",
     "gender": "male",
-    "url": null,
-    "info": null,
     "roles": [
       "reader"
     ]
@@ -444,8 +427,6 @@
     "name": "Олена",
     "surname": "Чичик",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "graphic"
     ]
@@ -455,8 +436,6 @@
     "name": "Леся",
     "surname": "Борсук",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "translator"
     ]
@@ -556,7 +535,6 @@
     "name": "Дмитро",
     "surname": "Соколов",
     "gender": "male",
-    "url": null,
     "info": "Дитячий психотерапевт, казкар",
     "roles": [
       "author"
@@ -578,8 +556,6 @@
     "name": "Світлана",
     "surname": "Колесник",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "translator"
     ]
@@ -710,8 +686,6 @@
     "name": "Сергій",
     "surname": "Татієнко",
     "gender": "male",
-    "url": null,
-    "info": null,
     "roles": [
       "musician"
     ]
@@ -865,8 +839,6 @@
     "name": "Валентина",
     "surname": "Байкова",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "author"
     ]
@@ -909,8 +881,6 @@
     "name": "Яніка",
     "surname": "Терещенко",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "author"
     ]
@@ -945,7 +915,6 @@
     "surname": "Гудзь",
     "gender": "female",
     "url": "https://www.facebook.com/profile.php?id=100002231488558",
-    "info": null,
     "roles": [
       "author"
     ]
@@ -967,7 +936,6 @@
     "surname": "Задорожна",
     "gender": "female",
     "url": "https://www.youtube.com/channel/UCniv-ty1Yrmf7S29eNHFQvg",
-    "info": null,
     "roles": [
       "reader"
     ]
@@ -977,7 +945,6 @@
     "name": "Катерина",
     "surname": "Гаврилова",
     "gender": "female",
-    "url": null,
     "info": "Дитяча казкарка",
     "roles": [
       "author"
@@ -988,7 +955,6 @@
     "name": "Марія",
     "surname": "Солтис-Смирнова",
     "gender": "female",
-    "url": null,
     "info": "Дитяча письменниця, громадська діячка, художниця-ілюстраторка",
     "roles": [
       "author"
@@ -1010,8 +976,6 @@
     "name": "Інна",
     "surname": "Яворська",
     "gender": "female",
-    "url": null,
-    "info": null,
     "roles": [
       "reader"
     ]
