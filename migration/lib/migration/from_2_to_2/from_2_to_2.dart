@@ -14,10 +14,10 @@ class From2to2 extends BaseDataMigration {
   String get appVersionOld => '5.0.0';
 
   @override
-  int get dataVersionOld => 2;
+  int get dataVersionOld => 3;
 
   @override
-  int get dataVersionNew => 2;
+  int get dataVersionNew => 3;
 
   @override
   bool get canCleanNewDirectory => false;
@@ -27,7 +27,7 @@ class From2to2 extends BaseDataMigration {
     final addPersonHelper = AddPersonHelper(this);
     final addTaleHelper = AddTaleHelper(this);
 
-    final addPersonOk = await addPersonHelper.run(fastReturn: false);
+    final addPersonOk = await addPersonHelper.run(fastReturn: true);
 
     final addTaleOk = await addTaleHelper.run(fastReturn: true);
 
