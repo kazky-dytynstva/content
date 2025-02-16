@@ -25,13 +25,11 @@ class AddTaleHelper extends _AddTaleHelper {
       );
 
   @override
-  ChapterAudioDto? _getAudio({
-    required int chapterIndex,
-  }) {
+  AudioContentDto? _getAudioContent() {
     return null;
-    final data = getAudioUtilData(audioPath(chapterIndex));
-    return ChapterAudioDto(
-      size: data.size,
+    final data = getAudioUtilData(audioPath());
+    return AudioContentDto(
+      fileSize: data.size,
       duration: data.duration.inMilliseconds,
     );
   }
@@ -96,9 +94,9 @@ abstract class _AddTaleHelper extends BaseAddHelper {
   final spaceRegExp = RegExp(r"\s{2,}");
   late TaleDto tale;
 
-  String getTalePath(int chapterIndex) => '$dataPath/$nextId/$chapterIndex/';
+  String getTalePath() => '$dataPath/$nextId/';
 
-  String audioPath(int chapterIndex) => '${getTalePath(chapterIndex)}audio.mp3';
+  String audioPath() => '${getTalePath()}audio.mp3';
 
   @override
   Future<bool> validate({bool post = false}) async {
@@ -116,8 +114,7 @@ abstract class _AddTaleHelper extends BaseAddHelper {
         nextId = (await _getLastId()) + 1;
       }
 
-      final chapterIndex = 0;
-      final path = getTalePath(chapterIndex);
+      final path = getTalePath();
       final dir = Directory('${path}img');
       if (!dir.existsSync()) {
         dir.createSync(recursive: true);
@@ -167,10 +164,12 @@ abstract class _AddTaleHelper extends BaseAddHelper {
 
     final crew = _getCrew();
 
-    final content = _getContent();
+    final audio = _getAudioContent();
+    final text = _textContentDto();
+
     final tags = <TaleTag>{
-      if (content.first.text != null) TaleTag.text,
-      if (content.first.audio != null) TaleTag.audio,
+      if (text != null) TaleTag.text,
+      if (audio != null) TaleTag.audio,
       if (crew?.authors?.isNotEmpty == true) TaleTag.author,
     }..addAll(extraTags);
 
@@ -180,7 +179,8 @@ abstract class _AddTaleHelper extends BaseAddHelper {
       createDate: DateTime.now().millisecondsSinceEpoch + createDateDelta,
       updateDate: null,
       tags: tags,
-      content: content,
+      text: text,
+      audio: audio,
       crew: crew,
       ignore: true,
     );
@@ -197,20 +197,18 @@ abstract class _AddTaleHelper extends BaseAddHelper {
   /// Other than [Tags.author],[Tags.text],[Tags.audio]
   Set<TaleTag> get extraTags;
 
-  List<ChapterDto> _getContent() => [
-        _createChapter0(),
-      ];
+  TextContentDto? _textContentDto() {
+    final text = _getText();
+    if (text == null) return null;
 
-  ChapterDto _createChapter0() => ChapterDto(
-        title: null,
-        imageCount: 1,
-        text: _getText()?.map((e) => e.replaceAll(spaceRegExp, ' ')).toList(),
-        audio: _getAudio(chapterIndex: 0),
-      );
+    return TextContentDto(
+      text: text,
+      minReadingTime: 1,
+      maxReadingTime: 2,
+    );
+  }
 
-  ChapterAudioDto? _getAudio({
-    required int chapterIndex,
-  });
+  AudioContentDto? _getAudioContent();
 
   List<String>? _getText();
 }

@@ -25,7 +25,8 @@ extension on TaleDto {
     DateTime? createDate,
     DateTime? updateDate,
     Set<TaleTag>? tags,
-    List<ChapterDto>? content,
+    TextContentDto? text,
+    AudioContentDto? audio,
     CrewDto? crew,
     bool? ignore,
   }) {
@@ -35,7 +36,8 @@ extension on TaleDto {
       createDate: createDate?.millisecondsSinceEpoch ?? this.createDate,
       updateDate: updateDate?.millisecondsSinceEpoch ?? this.updateDate,
       tags: tags ?? this.tags,
-      content: content ?? this.content,
+      text: text ?? this.text,
+      audio: audio ?? this.audio,
       crew: crew ?? this.crew,
       ignore: ignore ?? this.ignore,
     );
