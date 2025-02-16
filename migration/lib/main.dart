@@ -4,7 +4,7 @@ import 'package:migration/migration/from_2_to_2/from_2_to_2.dart';
 
 void main() async {
   final migrationsList = <BaseDataMigration>[
-    From0to1(),
+    // From0to1(),
     From2to2(),
   ];
 

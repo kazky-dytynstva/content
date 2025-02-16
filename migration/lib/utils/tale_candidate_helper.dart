@@ -12,9 +12,6 @@ abstract class TaleCandidateHelper {
 
   void setTaleDirectory(Directory directory);
 
-  /// Returns number of images
-  int copyImageFiles();
-
   void copyAudioFiles();
 
   List<String>? getTaleTextFromFile();

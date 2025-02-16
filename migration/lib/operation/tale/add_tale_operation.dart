@@ -55,24 +55,20 @@ abstract class _AddTaleOperation extends TaleOperation {
   TaleDto getNew({required int newTaleId}) {
     createTaleDir(newTaleId: newTaleId);
 
-    final imageCount = _candidateHelper.copyImageFiles();
     _candidateHelper.copyAudioFiles();
 
     final tags = this.tags;
 
-    final text = _candidateHelper.getTaleTextFromFile();
-    if (text != null) tags.add(TaleTag.text);
+    final text = _getTextContent();
+    if (text != null) {
+      tags.add(TaleTag.text);
+    }
 
-    final audio = _getAudio();
-    if (audio != null) tags.add(TaleTag.audio);
+    final audio = _getAudioContent();
 
-    // for now only 1 chapter can be created
-    final chapter = ChapterDto(
-      title: null,
-      text: text,
-      imageCount: imageCount,
-      audio: audio,
-    );
+    if (audio != null) {
+      tags.add(TaleTag.audio);
+    }
 
     return TaleDto(
       id: newTaleId,
@@ -80,18 +76,30 @@ abstract class _AddTaleOperation extends TaleOperation {
       createDate: DateTime.now().millisecondsSinceEpoch,
       updateDate: null,
       tags: tags,
-      content: [chapter],
+      text: text,
+      audio: audio,
       crew: crew,
       ignore: true,
     );
   }
 
-  ChapterAudioDto? _getAudio() {
+  TextContentDto? _getTextContent() {
+    final text = _candidateHelper.getTaleTextFromFile();
+    if (text == null) return null;
+
+    return TextContentDto(
+      text: text,
+      minReadingTime: 1,
+      maxReadingTime: 2,
+    );
+  }
+
+  AudioContentDto? _getAudioContent() {
     final data = _candidateHelper.getAudioData();
     if (data == null) return null;
 
-    return ChapterAudioDto(
-      size: data.size,
+    return AudioContentDto(
+      fileSize: data.size,
       duration: data.duration.inMilliseconds,
     );
   }
