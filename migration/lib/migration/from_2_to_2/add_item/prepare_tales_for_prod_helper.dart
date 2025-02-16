@@ -57,6 +57,7 @@ class PrepareTalesForProdHelper extends AddTaleHelper {
               name: e.name,
               createDate: now.millisecondsSinceEpoch,
               updateDate: null,
+              summary: e.summary,
               tags: e.tags,
               text: e.text,
               audio: e.audio,

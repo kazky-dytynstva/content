@@ -27,6 +27,9 @@ class _SimpleAddTaleOperation extends _AddTaleOperation {
       graphics: null,
     );
   }
+
+  @override
+  String get summary => 'lalala';
 }
 
 abstract class _AddTaleOperation extends TaleOperation {
@@ -36,6 +39,8 @@ abstract class _AddTaleOperation extends TaleOperation {
   String get name;
 
   Set<TaleTag> get tags;
+
+  String get summary;
 
   CrewDto? get crew;
   //////////
@@ -75,6 +80,7 @@ abstract class _AddTaleOperation extends TaleOperation {
       name: name,
       createDate: DateTime.now().millisecondsSinceEpoch,
       updateDate: null,
+      summary: summary,
       tags: tags,
       text: text,
       audio: audio,
