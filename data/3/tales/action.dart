@@ -7,35 +7,11 @@ void main() {
   final content = file.readAsStringSync();
   final jsonContent = jsonDecode(content) as List<dynamic>;
 
-  // final result = <String, String>{};
-
   for (final item in jsonContent) {
     item as Map<String, dynamic>;
 
-    final content = item['content'][0];
-
-    item.remove('content');
-    if (item['ignore'] == false) {
-      item.remove('ignore');
-    }
-
-    final text = content['text'];
-
-    if (text != null) {
-      final newText = {
-        'text': text,
-        'minReadingTime': 1,
-        'maxReadingTime': 2,
-      };
-
-      item['text'] = newText;
-    }
-
-    final audio = content['audio'];
-
-    if (audio != null) {
-      item['audio'] = audio;
-    }
+    item['summary'] =
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.';
   }
 
   file.writeAsStringSync(jsonEncode(jsonContent));
