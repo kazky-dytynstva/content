@@ -1,20 +1,53 @@
 import 'dart:convert';
 import 'dart:io';
 
-void main() {
-  final file =
-      File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/list.json');
-  final content = file.readAsStringSync();
-  final jsonContent = jsonDecode(content) as List<dynamic>;
-
-  for (final item in jsonContent) {
-    item as Map<String, dynamic>;
-
-    item['summary'] =
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.';
+void copyContents(Directory source, Directory destination) {
+  if (!source.existsSync()) {
+    throw Exception("Source directory does not exist: ${source.path}");
   }
 
-  file.writeAsStringSync(jsonEncode(jsonContent));
+  for (final entity in source.listSync(recursive: false)) {
+    String newPath = '${destination.path}/${entity.uri.pathSegments.last}';
+
+    if (entity is File) {
+      entity.copySync(newPath); // Copy file directly
+    } else if (entity is Directory) {
+      copyContents(entity, Directory(newPath)); // Recursively copy contents
+    }
+  }
+}
+
+void main() {
+  final dir = Directory(
+    '/Users/andrii.antonov/dev/kazky/content/data/3/tales/',
+  );
+
+  final files = dir.listSync();
+
+  for (final entity in files) {
+    if (entity is! Directory) {
+      continue;
+    }
+
+    final destination = entity;
+    final source = Directory(destination.path + '/0');
+    copyContents(source, destination);
+    source.deleteSync(recursive: true);
+  }
+
+  // final file =
+  //     File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/list.json');
+  // final content = file.readAsStringSync();
+  // final jsonContent = jsonDecode(content) as List<dynamic>;
+
+  // for (final item in jsonContent) {
+  //   item as Map<String, dynamic>;
+
+  //   item['summary'] =
+  //       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.';
+  // }
+
+  // file.writeAsStringSync(jsonEncode(jsonContent));
 
   // // final newFile =
   // //     File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/action.json');
@@ -39,9 +72,7 @@ String jsonToCsv(Map<String, dynamic> jsonData) {
   });
 
   // Create CSV string
-  String csv = ListToCsvConverter().convert(
-    rows,
-  );
+  String csv = ListToCsvConverter().convert(rows);
 
   return csv;
 }

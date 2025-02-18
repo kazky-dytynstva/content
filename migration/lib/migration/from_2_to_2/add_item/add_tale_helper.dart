@@ -81,9 +81,9 @@ class AddTaleHelper extends _AddTaleHelper {
         'Миколай попрощався з тваринками і зник.',
         'Так звірята готувалися до Різдва і згадували про цю розповідь ще багато років.',
       ];
-      
-        @override
-        String get summary => 'Lalala';
+
+  @override
+  String get summary => 'Lalala';
 }
 
 abstract class _AddTaleHelper extends BaseAddHelper {
@@ -357,8 +357,3 @@ const int _vasylSuhomlynskyi = 3;
 const int _oksanaKrotyuk = 2;
 const int _gansAndersen = 1;
 const int _lesyaUkrainka = 0;
-
-
-void main(){
-  final file = File();
-}
