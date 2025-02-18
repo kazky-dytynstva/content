@@ -915,7 +915,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 7431647,
+            "file_size": 7431647,
             "duration": 464000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -959,7 +959,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 7223922,
+            "file_size": 7223922,
             "duration": 451000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1013,7 +1013,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 8710394,
+            "file_size": 8710394,
             "duration": 725000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1066,7 +1066,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2006028,
+            "file_size": 2006028,
             "duration": 167000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1129,7 +1129,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2198695,
+            "file_size": 2198695,
             "duration": 182000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1176,7 +1176,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3828736,
+            "file_size": 3828736,
             "duration": 318000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1227,7 +1227,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4792027,
+            "file_size": 4792027,
             "duration": 398000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1290,7 +1290,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5260664,
+            "file_size": 5260664,
             "duration": 438000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1342,7 +1342,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5962522,
+            "file_size": 5962522,
             "duration": 496000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1405,7 +1405,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2744421,
+            "file_size": 2744421,
             "duration": 171000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1471,7 +1471,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3573968,
+            "file_size": 3573968,
             "duration": 220000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1518,7 +1518,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3343170,
+            "file_size": 3343170,
             "duration": 208000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1581,7 +1581,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2672013,
+            "file_size": 2672013,
             "duration": 222000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1634,7 +1634,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2955069,
+            "file_size": 2955069,
             "duration": 211000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1685,7 +1685,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2903895,
+            "file_size": 2903895,
             "duration": 181000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1741,7 +1741,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3516624,
+            "file_size": 3516624,
             "duration": 219000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1786,7 +1786,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2532330,
+            "file_size": 2532330,
             "duration": 158000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1831,7 +1831,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3913685,
+            "file_size": 3913685,
             "duration": 244000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1903,7 +1903,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5934517,
+            "file_size": 5934517,
             "duration": 370000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1976,7 +1976,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 6085401,
+            "file_size": 6085401,
             "duration": 380000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -1998,7 +1998,7 @@
             ]
         },
         "audio": {
-            "size": 11261536,
+            "file_size": 11261536,
             "duration": 703000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -2020,7 +2020,7 @@
             ]
         },
         "audio": {
-            "size": 9858029,
+            "file_size": 9858029,
             "duration": 616000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -2212,7 +2212,7 @@
             ]
         },
         "audio": {
-            "size": 11963579,
+            "file_size": 11963579,
             "duration": 747000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -2314,7 +2314,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5663262,
+            "file_size": 5663262,
             "duration": 353000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -2832,7 +2832,7 @@
             ]
         },
         "audio": {
-            "size": 6292629,
+            "file_size": 6292629,
             "duration": 524000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -2854,7 +2854,7 @@
             ]
         },
         "audio": {
-            "size": 6954990,
+            "file_size": 6954990,
             "duration": 579000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -2876,7 +2876,7 @@
             ]
         },
         "audio": {
-            "size": 4565099,
+            "file_size": 4565099,
             "duration": 380000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -2951,7 +2951,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3586102,
+            "file_size": 3586102,
             "duration": 298000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3010,7 +3010,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4388584,
+            "file_size": 4388584,
             "duration": 365000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3053,7 +3053,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1001088,
+            "file_size": 1001088,
             "duration": 83000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3090,7 +3090,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 876096,
+            "file_size": 876096,
             "duration": 73000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3126,7 +3126,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 811008,
+            "file_size": 811008,
             "duration": 67000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3168,7 +3168,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1158336,
+            "file_size": 1158336,
             "duration": 96000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3253,7 +3253,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 922176,
+            "file_size": 922176,
             "duration": 76000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3451,7 +3451,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2882371,
+            "file_size": 2882371,
             "duration": 239000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3503,7 +3503,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 597597,
+            "file_size": 597597,
             "duration": 37000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3767,7 +3767,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 10031472,
+            "file_size": 10031472,
             "duration": 1253000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3819,7 +3819,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4371948,
+            "file_size": 4371948,
             "duration": 546000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -3949,7 +3949,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1823277,
+            "file_size": 1823277,
             "duration": 227000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4021,7 +4021,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2581293,
+            "file_size": 2581293,
             "duration": 322000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4226,7 +4226,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3547561,
+            "file_size": 3547561,
             "duration": 221000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4297,7 +4297,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3623212,
+            "file_size": 3623212,
             "duration": 226000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4337,7 +4337,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3147880,
+            "file_size": 3147880,
             "duration": 261000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4365,7 +4365,7 @@
             ]
         },
         "audio": {
-            "size": 5838701,
+            "file_size": 5838701,
             "duration": 486000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4387,7 +4387,7 @@
             ]
         },
         "audio": {
-            "size": 6718296,
+            "file_size": 6718296,
             "duration": 559000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4430,7 +4430,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4056312,
+            "file_size": 4056312,
             "duration": 202000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4464,7 +4464,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2396280,
+            "file_size": 2396280,
             "duration": 119000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -4615,7 +4615,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2423660,
+            "file_size": 2423660,
             "duration": 151000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -5329,7 +5329,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 18878401,
+            "file_size": 18878401,
             "duration": 1572000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -5351,7 +5351,7 @@
             ]
         },
         "audio": {
-            "size": 3397271,
+            "file_size": 3397271,
             "duration": 212000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -5537,7 +5537,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4763839,
+            "file_size": 4763839,
             "duration": 396000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -5593,7 +5593,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5348121,
+            "file_size": 5348121,
             "duration": 334000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -5772,7 +5772,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5186295,
+            "file_size": 5186295,
             "duration": 370000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -5971,7 +5971,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3557585,
+            "file_size": 3557585,
             "duration": 296000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6022,7 +6022,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1757330,
+            "file_size": 1757330,
             "duration": 146000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6125,7 +6125,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1957574,
+            "file_size": 1957574,
             "duration": 159000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6178,7 +6178,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2293362,
+            "file_size": 2293362,
             "duration": 190000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6284,7 +6284,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2142374,
+            "file_size": 2142374,
             "duration": 133000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6351,7 +6351,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3245786,
+            "file_size": 3245786,
             "duration": 202000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6415,7 +6415,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2315619,
+            "file_size": 2315619,
             "duration": 192000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6492,7 +6492,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2642567,
+            "file_size": 2642567,
             "duration": 219000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6694,7 +6694,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 19196572,
+            "file_size": 19196572,
             "duration": 1599000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6777,7 +6777,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1611787,
+            "file_size": 1611787,
             "duration": 100000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -6913,7 +6913,7 @@
             ]
         },
         "audio": {
-            "size": 6588858,
+            "file_size": 6588858,
             "duration": 549000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -7854,7 +7854,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2733497,
+            "file_size": 2733497,
             "duration": 170000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8056,7 +8056,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 603762,
+            "file_size": 603762,
             "duration": 49000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8198,7 +8198,7 @@
             ]
         },
         "audio": {
-            "size": 3388335,
+            "file_size": 3388335,
             "duration": 282000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8322,7 +8322,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 6952394,
+            "file_size": 6952394,
             "duration": 434000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8374,7 +8374,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 13162902,
+            "file_size": 13162902,
             "duration": 548000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8399,7 +8399,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2463946,
+            "file_size": 2463946,
             "duration": 153000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8444,7 +8444,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2896792,
+            "file_size": 2896792,
             "duration": 180000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8480,7 +8480,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4058971,
+            "file_size": 4058971,
             "duration": 253000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8515,7 +8515,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3787921,
+            "file_size": 3787921,
             "duration": 236000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8697,7 +8697,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3551315,
+            "file_size": 3551315,
             "duration": 295000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8824,7 +8824,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1505300,
+            "file_size": 1505300,
             "duration": 125000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8922,7 +8922,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1721908,
+            "file_size": 1721908,
             "duration": 143000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -8992,7 +8992,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 896856,
+            "file_size": 896856,
             "duration": 74000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9106,7 +9106,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2151674,
+            "file_size": 2151674,
             "duration": 178000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9188,7 +9188,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1556082,
+            "file_size": 1556082,
             "duration": 129000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9228,7 +9228,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3473865,
+            "file_size": 3473865,
             "duration": 216000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9286,7 +9286,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3412607,
+            "file_size": 3412607,
             "duration": 568000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9334,7 +9334,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3918044,
+            "file_size": 3918044,
             "duration": 195000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9402,7 +9402,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2439125,
+            "file_size": 2439125,
             "duration": 152000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9453,7 +9453,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2072000,
+            "file_size": 2072000,
             "duration": 172000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9487,7 +9487,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2660480,
+            "file_size": 2660480,
             "duration": 66000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9542,7 +9542,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3206301,
+            "file_size": 3206301,
             "duration": 200000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9576,7 +9576,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2639181,
+            "file_size": 2639181,
             "duration": 164000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -9627,7 +9627,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2922741,
+            "file_size": 2922741,
             "duration": 182000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -10653,7 +10653,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1671881,
+            "file_size": 1671881,
             "duration": 138000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -10692,7 +10692,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1033310,
+            "file_size": 1033310,
             "duration": 85000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -10751,7 +10751,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2469803,
+            "file_size": 2469803,
             "duration": 205000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -10818,7 +10818,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3421688,
+            "file_size": 3421688,
             "duration": 284000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -10858,7 +10858,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2284995,
+            "file_size": 2284995,
             "duration": 190000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -11071,7 +11071,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2956269,
+            "file_size": 2956269,
             "duration": 184000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12042,7 +12042,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 8434855,
+            "file_size": 8434855,
             "duration": 702000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12134,7 +12134,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5021854,
+            "file_size": 5021854,
             "duration": 627000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12201,7 +12201,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4119062,
+            "file_size": 4119062,
             "duration": 514000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12269,7 +12269,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1340228,
+            "file_size": 1340228,
             "duration": 167000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12348,7 +12348,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1116360,
+            "file_size": 1116360,
             "duration": 139000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12411,7 +12411,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 5428236,
+            "file_size": 5428236,
             "duration": 678000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12482,7 +12482,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 11492406,
+            "file_size": 11492406,
             "duration": 1436000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12610,7 +12610,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 6676014,
+            "file_size": 6676014,
             "duration": 555000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12673,7 +12673,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2267002,
+            "file_size": 2267002,
             "duration": 282000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12727,7 +12727,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1546339,
+            "file_size": 1546339,
             "duration": 192000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12773,7 +12773,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2538092,
+            "file_size": 2538092,
             "duration": 316000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12828,7 +12828,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1984717,
+            "file_size": 1984717,
             "duration": 247000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12915,7 +12915,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4651090,
+            "file_size": 4651090,
             "duration": 580000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -12989,7 +12989,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4214532,
+            "file_size": 4214532,
             "duration": 526000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -13071,7 +13071,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3025493,
+            "file_size": 3025493,
             "duration": 377000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -13123,7 +13123,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 6128034,
+            "file_size": 6128034,
             "duration": 510000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -13196,7 +13196,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1599103,
+            "file_size": 1599103,
             "duration": 199000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -13287,7 +13287,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2548214,
+            "file_size": 2548214,
             "duration": 318000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -13331,7 +13331,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1510034,
+            "file_size": 1510034,
             "duration": 188000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -13399,7 +13399,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2338511,
+            "file_size": 2338511,
             "duration": 291000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -13924,7 +13924,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1194206,
+            "file_size": 1194206,
             "duration": 148000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -14034,7 +14034,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1104702,
+            "file_size": 1104702,
             "duration": 137000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -14074,7 +14074,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1582333,
+            "file_size": 1582333,
             "duration": 197000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -14166,7 +14166,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1447853,
+            "file_size": 1447853,
             "duration": 180000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -14298,7 +14298,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 6461251,
+            "file_size": 6461251,
             "duration": 538000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -14343,7 +14343,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2765998,
+            "file_size": 2765998,
             "duration": 197000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15273,7 +15273,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 7535363,
+            "file_size": 7535363,
             "duration": 1506000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15354,7 +15354,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 7384396,
+            "file_size": 7384396,
             "duration": 1476000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15499,7 +15499,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3451991,
+            "file_size": 3451991,
             "duration": 689000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15548,7 +15548,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1653046,
+            "file_size": 1653046,
             "duration": 329000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15653,7 +15653,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3011622,
+            "file_size": 3011622,
             "duration": 601000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15687,7 +15687,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1999724,
+            "file_size": 1999724,
             "duration": 399000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15749,7 +15749,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1796922,
+            "file_size": 1796922,
             "duration": 358000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15802,7 +15802,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2065412,
+            "file_size": 2065412,
             "duration": 412000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -15878,7 +15878,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3193202,
+            "file_size": 3193202,
             "duration": 637000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16032,7 +16032,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 3973906,
+            "file_size": 3973906,
             "duration": 794000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16096,7 +16096,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1048921,
+            "file_size": 1048921,
             "duration": 209000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16165,7 +16165,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2520767,
+            "file_size": 2520767,
             "duration": 503000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16279,7 +16279,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 14142580,
+            "file_size": 14142580,
             "duration": 1767000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16341,7 +16341,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2428468,
+            "file_size": 2428468,
             "duration": 202000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16491,7 +16491,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4930443,
+            "file_size": 4930443,
             "duration": 985000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16528,7 +16528,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1689862,
+            "file_size": 1689862,
             "duration": 337000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16605,7 +16605,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2973770,
+            "file_size": 2973770,
             "duration": 594000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16640,7 +16640,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 895487,
+            "file_size": 895487,
             "duration": 178000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16731,7 +16731,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2957386,
+            "file_size": 2957386,
             "duration": 590000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16782,7 +16782,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2225968,
+            "file_size": 2225968,
             "duration": 277000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16836,7 +16836,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1644169,
+            "file_size": 1644169,
             "duration": 205000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16870,7 +16870,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1297263,
+            "file_size": 1297263,
             "duration": 161000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -16985,7 +16985,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 4934971,
+            "file_size": 4934971,
             "duration": 616000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -17024,7 +17024,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 1322341,
+            "file_size": 1322341,
             "duration": 164000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
@@ -17057,7 +17057,7 @@
             "max_reading_time": 2
         },
         "audio": {
-            "size": 2277795,
+            "file_size": 2277795,
             "duration": 284000
         },
         "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
