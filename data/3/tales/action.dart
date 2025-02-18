@@ -1,20 +1,35 @@
 import 'dart:convert';
 import 'dart:io';
 
-void copyContents(Directory source, Directory destination) {
-  if (!source.existsSync()) {
-    throw Exception("Source directory does not exist: ${source.path}");
-  }
+void copyContents(Directory taleDir) {
+  final zeroDir = Directory(taleDir.path + '/0');
 
-  for (final entity in source.listSync(recursive: false)) {
-    String newPath = '${destination.path}/${entity.uri.pathSegments.last}';
-
-    if (entity is File) {
-      entity.copySync(newPath); // Copy file directly
-    } else if (entity is Directory) {
-      copyContents(entity, Directory(newPath)); // Recursively copy contents
+  // copy audio
+  for (final entity in zeroDir.listSync()) {
+    if (entity is! File) {
+      continue;
     }
+
+    String newPath = '${taleDir.path}/${entity.uri.pathSegments.last}';
+    entity.copySync(newPath);
   }
+
+  final newImageDir = Directory(taleDir.path + '/img');
+  newImageDir.createSync();
+
+  final zeroImgDir = Directory(zeroDir.path + '/img');
+
+  // copy images
+  for (final entity in zeroImgDir.listSync()) {
+    if (entity is! File) {
+      continue;
+    }
+
+    String newPath = '${newImageDir.path}/${entity.uri.pathSegments.last}';
+    entity.copySync(newPath);
+  }
+
+  zeroDir.deleteSync(recursive: true);
 }
 
 void main() {
@@ -29,10 +44,7 @@ void main() {
       continue;
     }
 
-    final destination = entity;
-    final source = Directory(destination.path + '/0');
-    copyContents(source, destination);
-    source.deleteSync(recursive: true);
+    copyContents(entity);
   }
 
   // final file =
