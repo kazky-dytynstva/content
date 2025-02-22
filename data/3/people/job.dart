@@ -24,8 +24,8 @@ void main() {
 
     final incrementedId = id + 1;
 
-    final newFileName = fileName.replaceFirst('$id.', '$incrementedId.');
-    final newPath = filePath.replaceFirst('$fileName.', '$newFileName.');
+    final newFileName = fileName.replaceFirst('$id', '$incrementedId');
+    final newPath = filePath.replaceFirst('$fileName', '$newFileName');
 
     if (id == 35) {
       file.copySync(newPath);
