@@ -1,7 +1,9 @@
+import 'dart:math';
+
 class AddTaleReadingTime {
   const AddTaleReadingTime();
 
-  final int _wordsPerMinuteSlow = 150;
+  final int _wordsPerMinuteSlow = 140;
   final int _wordsPerMinuteFast = 190;
 
   ReadingTime getReadingTime({
@@ -21,7 +23,8 @@ class AddTaleReadingTime {
     }
 
     int minReadingTime = (wordCount / _wordsPerMinuteFast).ceil();
-    int maxReadingTime = (wordCount / _wordsPerMinuteSlow).ceil();
+    int maxReadingTime =
+        max((wordCount / _wordsPerMinuteSlow).ceil(), minReadingTime + 1);
 
     return ReadingTime(minimum: minReadingTime, maximum: maxReadingTime);
   }
@@ -44,7 +47,11 @@ class ReadingTime {
   ReadingTime({
     required this.minimum,
     required this.maximum,
-  });
+  })  : assert(minimum >= 0 && maximum >= 0),
+        assert(
+          maximum > minimum,
+          'Maximum reading time should be greater than minimum reading time.',
+        );
 
   /// The minimum reading time in minutes.
   final int minimum;
