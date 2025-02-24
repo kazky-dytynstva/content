@@ -1,69 +1,87 @@
 import 'dart:convert';
 import 'dart:io';
 
-void copyContents(Directory taleDir) {
-  final zeroDir = Directory(taleDir.path + '/0');
+import 'add_tale_reading_time.dart';
 
-  // copy audio
-  for (final entity in zeroDir.listSync()) {
-    if (entity is! File) {
-      continue;
-    }
+// void copyContents(Directory taleDir) {
+//   final zeroDir = Directory(taleDir.path + '/0');
 
-    String newPath = '${taleDir.path}/${entity.uri.pathSegments.last}';
-    entity.copySync(newPath);
-  }
+//   // copy audio
+//   for (final entity in zeroDir.listSync()) {
+//     if (entity is! File) {
+//       continue;
+//     }
 
-  final newImageDir = Directory(taleDir.path + '/img');
-  newImageDir.createSync();
+//     String newPath = '${taleDir.path}/${entity.uri.pathSegments.last}';
+//     entity.copySync(newPath);
+//   }
 
-  final zeroImgDir = Directory(zeroDir.path + '/img');
+//   final newImageDir = Directory(taleDir.path + '/img');
+//   newImageDir.createSync();
 
-  // copy images
-  for (final entity in zeroImgDir.listSync()) {
-    if (entity is! File) {
-      continue;
-    }
+//   final zeroImgDir = Directory(zeroDir.path + '/img');
 
-    String newPath = '${newImageDir.path}/${entity.uri.pathSegments.last}';
-    entity.copySync(newPath);
-  }
+//   // copy images
+//   for (final entity in zeroImgDir.listSync()) {
+//     if (entity is! File) {
+//       continue;
+//     }
 
-  zeroDir.deleteSync(recursive: true);
-}
+//     String newPath = '${newImageDir.path}/${entity.uri.pathSegments.last}';
+//     entity.copySync(newPath);
+//   }
+
+//   zeroDir.deleteSync(recursive: true);
+// }
 
 void main() {
-  final dir = Directory(
-    '/Users/andrii.antonov/dev/kazky/content/data/3/tales/',
-  );
+  // final dir = Directory(
+  //   '/Users/andrii.antonov/dev/kazky/content/data/3/tales/',
+  // );
 
-  final files = dir.listSync();
+  // final files = dir.listSync();
 
-  for (final entity in files) {
-    if (entity is! Directory) {
+  // for (final entity in files) {
+  //   if (entity is! Directory) {
+  //     continue;
+  //   }
+
+  //   copyContents(entity);
+  // }
+
+  final file =
+      File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/list.json');
+  final content = file.readAsStringSync();
+  final jsonContent = jsonDecode(content) as List<dynamic>;
+
+  final addTaleReadingTime = AddTaleReadingTime();
+
+  for (final item in jsonContent) {
+    item as Map<String, dynamic>;
+
+    final text = item['text'] as Map<String, dynamic>;
+
+    if (text['text'] == null) {
       continue;
     }
 
-    copyContents(entity);
+    final paragraphs = (text['text'] as List).map((e) => e as String).toList();
+
+    text.remove('text');
+    text['paragraphs'] = paragraphs;
+
+    final readingTime =
+        addTaleReadingTime.getReadingTime(paragraphs: paragraphs);
+
+    text['min_reading_time'] = readingTime.minimum;
+    text['max_reading_time'] = readingTime.maximum;
   }
 
-  // final file =
-  //     File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/list.json');
-  // final content = file.readAsStringSync();
-  // final jsonContent = jsonDecode(content) as List<dynamic>;
+  file.writeAsStringSync(jsonEncode(jsonContent));
 
-  // for (final item in jsonContent) {
-  //   item as Map<String, dynamic>;
-
-  //   item['summary'] =
-  //       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.';
-  // }
-
-  // file.writeAsStringSync(jsonEncode(jsonContent));
-
-  // // final newFile =
-  // //     File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/action.json');
-  // // newFile.writeAsStringSync(jsonEncode(result));
+  // final newFile =
+  //     File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/action.json');
+  // newFile.writeAsStringSync(jsonEncode(result));
 
   // // Convert JSON to CSV
   // String csvData = jsonToCsv(result);
