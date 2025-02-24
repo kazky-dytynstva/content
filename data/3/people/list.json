@@ -1,5 +1,16 @@
 [
   {
+    "id": 95,
+    "name": "Марія",
+    "surname": "Возняк",
+    "gender": "female",
+    "info": "Пишу твори, навчаюсь у ШУЖ, дарую дітям магію казок.",
+    "url": "https://www.instagram.com/mariaavozniak",
+    "roles": [
+      "author"
+    ]
+  },
+  {
     "id": 94,
     "name": "Сергій",
     "surname": "Бондаренко",
