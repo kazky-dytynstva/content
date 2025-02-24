@@ -59,7 +59,11 @@ void main() {
   for (final item in jsonContent) {
     item as Map<String, dynamic>;
 
-    final text = item['text'] as Map<String, dynamic>;
+    final text = item['text'] as Map<String, dynamic>?;
+
+    if (text == null) {
+      continue;
+    }
 
     if (text['text'] == null) {
       continue;
