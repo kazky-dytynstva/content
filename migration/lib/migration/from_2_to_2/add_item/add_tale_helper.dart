@@ -177,7 +177,7 @@ abstract class _AddTaleHelper extends BaseAddHelper {
     if (text == null) return null;
 
     return TextContentDto(
-      text: text,
+      paragraphs: text,
       minReadingTime: 1,
       maxReadingTime: 2,
     );

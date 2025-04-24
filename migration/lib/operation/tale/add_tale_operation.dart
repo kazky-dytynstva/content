@@ -94,7 +94,7 @@ abstract class _AddTaleOperation extends TaleOperation {
     if (text == null) return null;
 
     return TextContentDto(
-      text: text,
+      paragraphs: text,
       minReadingTime: 1,
       maxReadingTime: 2,
     );
