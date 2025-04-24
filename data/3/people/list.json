@@ -1,0 +1,1039 @@
+[
+  {
+    "id": 95,
+    "name": "Марія",
+    "surname": "Возняк",
+    "gender": "female",
+    "info": "Пишу твори, навчаюсь у ШУЖ, дарую дітям магію казок.",
+    "url": "https://www.instagram.com/mariaavozniak",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Сергій",
+    "surname": "Бондаренко",
+    "gender": "male",
+    "url": "https://www.linkedin.com/in/sergii-bondarenko-i/",
+    "info": "Fullstack magic developer",
+    "roles": [
+      "crew"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Богдан",
+    "surname": "Дмитрів",
+    "gender": "male",
+    "url": "https://www.linkedin.com/in/bohdan-dmytriv/",
+    "info": "Back-end magic dev",
+    "roles": [
+      "crew"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Анна",
+    "surname": "Антонова",
+    "gender": "female",
+    "url": "https://t.me/suprun_anne",
+    "info": "Дизайнерка застосунку \"Казки дитинства\"",
+    "roles": [
+      "crew"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Юрій",
+    "surname": "Качур",
+    "gender": "male",
+    "info": "Захоплюсь футболом та обожнюю море. Через тренування та сумлінне навчання досягну усього бажаного у житті!",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Ангеліна",
+    "surname": "Ратушенко",
+    "gender": "female",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Світлана",
+    "surname": "Соколова",
+    "gender": "female",
+    "url": "https://t.me/svitsokolova",
+    "info": "Дикторка й мама. Озвучую книги й рекламу. Знайти мене можна в Telegram: @svitsokolova",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Ольга",
+    "surname": "Токар",
+    "gender": "female",
+    "url": "https://www.facebook.com/notyolgatokar/",
+    "info": "Вокальний аранжувальник та композитор.",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Оскар",
+    "surname": "Сандлер",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Сандлер_Оскар_Аронович",
+    "info": "Український композитор, автор опер, музичних комедій, балету, музики до фільмів, вистав, пісень.",
+    "roles": [
+      "musician"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Микола",
+    "surname": "Сом",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Сом_Микола_Данилович",
+    "info": "Український поет, лауреат літературних премій ім. Володимира Сосюри й Остапа Вишні.",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Тіна",
+    "surname": "Кароль",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Тіна_Кароль",
+    "info": "Українська співачка та акторка, телеведуча, громадська діячка",
+    "roles": [
+      "author",
+      "reader"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Ірина",
+    "surname": "Гармаш",
+    "gender": "female",
+    "url": "https://www.facebook.com/profile.php?id=100013905045104",
+    "info": "Практичний психолог-методист, фахівець з пісочної психотерапії, з НЛП та МАК",
+    "roles": [
+      "author",
+      "reader"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Руслан",
+    "surname": "Грех",
+    "gender": "male",
+    "url": "https://www.facebook.com/oruslan0303/",
+    "info": "Священник церкви Різдва Пресвятої Богородиці УГКЦ",
+    "roles": [
+      "author",
+      "reader",
+      "musician"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Леся",
+    "surname": "Горова",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Горова_Леся_Володимирівна",
+    "info": "Співачка, композиторка, народна артистка України",
+    "roles": [
+      "author",
+      "reader",
+      "musician"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Діна",
+    "surname": "Кравцова",
+    "gender": "female",
+    "url": "https://www.instagram.com/dina_kravtsova",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Анна",
+    "surname": "Чернявська",
+    "gender": "female",
+    "url": "https://www.instagram.com/anna_cherniavska9",
+    "info": "Письменниця-початківець, громадська діячка, учителька",
+    "roles": [
+      "author",
+      "reader"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Ніка",
+    "surname": "Балаж",
+    "gender": "female",
+    "url": "https://instagram.com/nika_balazh",
+    "info": "Ілюстратор дитячого періодичного видання «Перший інтерактивний журнал для дітей Чарівний ліхтарик»",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Шарль",
+    "surname": "Перро",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Шарль_Перро",
+    "info": "Французький письменник, основоположник жанру літературної казки",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Уля",
+    "surname": "",
+    "gender": "female",
+    "info": "Власниця кішки Пушки",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Алла",
+    "surname": "Мігай",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Mігай_Алла_Вілоріївна",
+    "info": "Телеведуча, казкарка, композиторка",
+    "roles": [
+      "author",
+      "reader",
+      "musician"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Емілія",
+    "surname": "Саталкіна",
+    "gender": "female",
+    "info": "Дитяча поетеса",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Кость",
+    "surname": "Дяченко",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Дяченко_Кость_Іванович",
+    "info": "Український письменник",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Сашко",
+    "surname": "Лірник",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Власюк_Олександр_Іванович",
+    "info": "Казкар-лірник, сценарист, актор, телеведучий",
+    "roles": [
+      "author",
+      "reader"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Михайло",
+    "surname": "Слабошпицький",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Слабошпицький_Михайло_Федотович",
+    "info": "Український прозаїк, критик, дитячий письменник",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Анатолій",
+    "surname": "Давидов",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Давидов_Анатолій_Іванович",
+    "info": "Український письменник, лауреат літературних премій",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Василь",
+    "surname": "Вакуленко",
+    "gender": "male",
+    "info": "Художник",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Євгенія",
+    "surname": "Бурчак",
+    "gender": "female",
+    "info": "Художниця-графік",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Вікторія",
+    "surname": "Кузьміна",
+    "gender": "female",
+    "url": "https://www.facebook.com/happylifebyvikuz/",
+    "info": "Психолог, письменниця",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Тарас",
+    "surname": "Сліпець",
+    "gender": "male",
+    "url": "https://www.linkedin.com/in/tarasslipets/",
+    "info": "Казковий ІТшник",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Оксана",
+    "surname": "Смільська",
+    "gender": "female",
+    "url": "https://soundcloud.com/user-555561348-904005142/",
+    "info": "Акторка",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Владислава",
+    "surname": "Сойма",
+    "gender": "female",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Анатолій",
+    "surname": "Михайленко",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Михайленко_Анатолій_Григорович",
+    "info": "Український письменник, заслужений журналіст України",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Віра",
+    "surname": "Карасьова",
+    "gender": "female",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Микола",
+    "surname": "Стеценко",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Стеценко_Микола_Митрофанович",
+    "info": "Український дитячий письменник, журналіст",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Олег",
+    "surname": "Буцень",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Буцень_Олег_Васильович",
+    "info": "Український дитячий письменник, поет",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Мирослав",
+    "surname": "Вересюк",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Вересюк_Мирослав_Петрович",
+    "info": "Сучасний український поет",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Євген",
+    "surname": "Башенко",
+    "gender": "male",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Костянтин",
+    "surname": "Ротов",
+    "gender": "male",
+    "info": "Радянський художник-графік, карикатурист, ілюстратор книг",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Максим",
+    "surname": "Незгода",
+    "gender": "male",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Олександр",
+    "surname": "Єрох",
+    "gender": "male",
+    "url": "https://www.facebook.com/profile.php?id=100009929326762",
+    "info": "Зранку - поет, а надвечір - казкар",
+    "roles": [
+      "author",
+      "reader"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Олена",
+    "surname": "Чичик",
+    "gender": "female",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Леся",
+    "surname": "Борсук",
+    "gender": "female",
+    "roles": [
+      "translator"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Анастасія",
+    "surname": "Ножка",
+    "gender": "female",
+    "url": "https://www.youtube.com/channel/UCtQzBz3CugrAEffIlSDWr8w",
+    "info": "Журналістка, мандрівниця, мрійниця",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Юлія",
+    "surname": "Антонова",
+    "gender": "female",
+    "url": "https://www.facebook.com/vitainlumine",
+    "info": "Муза, арт-терапевт",
+    "roles": [
+      "author",
+      "graphic"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Андрій",
+    "surname": "Антонов",
+    "gender": "male",
+    "url": "https://www.facebook.com/antonov.andrii",
+    "info": "Мобільний розробник, автор застосунків «Казки дитинства»",
+    "roles": [
+      "crew"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Джоель",
+    "surname": "Гарріс",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Джоель_Чандлер_Гарріс",
+    "info": "Американський письменник, журналіст і фольклорист, автор «Казок дядечки Римуса»",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Денис",
+    "surname": "Проуторов",
+    "gender": "male",
+    "url": "https://instagram.com/dennyprout",
+    "info": "Організатор свят з міста Дніпро, озвучка казок",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Світлана",
+    "surname": "Харчук",
+    "gender": "female",
+    "url": "https://instagram.com/svetlana__kharchuk",
+    "info": "Ілюстратор",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Анастасія",
+    "surname": "Білянська",
+    "gender": "female",
+    "url": "https://instagram.com/tusja_nastusja",
+    "info": "Створює і розвиває українське, найстарша сестра і любляча мама",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Таріна",
+    "surname": "Карасівна",
+    "gender": "female",
+    "url": "https://www.instagram.com/karasivna/",
+    "info": "Юрист, блогер, 5 дипломів",
+    "roles": [
+      "author",
+      "reader"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Дмитро",
+    "surname": "Соколов",
+    "gender": "male",
+    "info": "Дитячий психотерапевт, казкар",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Керстін",
+    "surname": "Шьоне",
+    "gender": "male",
+    "url": "http://www.kerstinschoene.de/",
+    "info": "Німецька дитяча письменниця та ілюстратор",
+    "roles": [
+      "graphic"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Світлана",
+    "surname": "Колесник",
+    "gender": "female",
+    "roles": [
+      "translator"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Забіне",
+    "surname": "Больман",
+    "gender": "female",
+    "url": "https://en.wikipedia.org/wiki/Sabine_Bohlmann",
+    "info": "Німецька дитяча письменниця",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Костянтин",
+    "surname": "Ушинський",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Ушинський_Костянтин_Дмитрович",
+    "info": "Український педагог, кандидат юриспруденції і правознавець",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Ніна",
+    "surname": "Матвієнко",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Матвієнко_Ніна_Митрофанівна",
+    "info": "Українська співачка, народна артистка України",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Іван",
+    "surname": "Франко",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Франко_Іван_Якович",
+    "info": "Поет, прозаїк, драматург, перекладач, громадський і політичний діяч",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Степан",
+    "surname": "Руданський",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Руданський_Степан_Васильович",
+    "info": "Український поет, перекладач античної літератури",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Леонід",
+    "surname": "Глібов",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Глібов_Леонід_Іванович",
+    "info": "Український письменник, поет, байкар, видавець, громадський діяч",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Вільгельм",
+    "surname": "Грімм",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Брати_Грімм",
+    "info": "Німецький науковець, казкар та мовознавць",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Якоб",
+    "surname": "Грімм",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Брати_Грімм",
+    "info": "Німецький науковець, казкар та мовознавць",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Марійка",
+    "surname": "Підгірянка",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Марійка_Підгірянка",
+    "info": "Відома галичанка, українська поетеса та освітянка",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Михайло",
+    "surname": "Стельмах",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Стельмах_Михайло_Панасович",
+    "info": "Український письменник, драматург, педагог, фольклорист",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Валентина",
+    "surname": "Юрченко",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Юрченко_Валентина_Тимофіївна",
+    "info": "Українська поетеса, письменниця, громадська діячка",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Сергій",
+    "surname": "Татієнко",
+    "gender": "male",
+    "roles": [
+      "musician"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Микола",
+    "surname": "Сигнаївський",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Сингаївський_Микола_Федорович",
+    "info": "український поет",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Ірина",
+    "surname": "Кириліна",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Кириліна_Ірина_Яківна",
+    "info": "український композитор, музикознавець",
+    "roles": [
+      "musician"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Дмитро",
+    "surname": "Павличко",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Павличко_Дмитро_Васильович",
+    "info": "Український поет, перекладач, літературний критик, громадсько-політичний діяч",
+    "roles": [
+      "translator",
+      "author"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Андрій",
+    "surname": "Малишко",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Малишко_Андрій_Самійлович",
+    "info": "Український поет, перекладач, літературний критик",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Платон",
+    "surname": "Майборода",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Майборода_Платон_Іларіонович",
+    "info": "Український композитор, народний артист УРСР",
+    "roles": [
+      "musician"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Наталя",
+    "surname": "Забіла",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Забіла_Наталя_Львівна",
+    "info": "Українська письменниця, поетеса",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Анна",
+    "surname": "Середа",
+    "gender": "female",
+    "url": "https://www.facebook.com/profile.php?id=100005482067145",
+    "info": "Мама з поетичною душею",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Григорій",
+    "surname": "Бойко",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Бойко_Григорій_Пилипович",
+    "info": "Український письменник, поет і перекладач",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Марія",
+    "surname": "Хоросницька",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Хоросницька_Марія_Василівна",
+    "info": "Українська поетеса, член Національної спілки письменників України",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Анатолій",
+    "surname": "Костецький",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Костецький_Анатолій_Георгійович",
+    "info": "Український дитячий письменник, перекладач, мовознавець",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Самуїл",
+    "surname": "Маршак",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Маршак_Самуїл_Якович",
+    "info": "Радянський дитячий письменник, поет, перекладач, драматург, критик",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Іван",
+    "surname": "Малкович",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Малкович_Іван_Антонович",
+    "info": "Український поет і видавець, власник і директор видавництва А-ба-ба-га-ла-ма-га",
+    "roles": [
+      "translator"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Павло",
+    "surname": "Глазовий",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Глазовий_Павло_Прокопович",
+    "info": "Український поет-гуморист і сатирик",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Валентина",
+    "surname": "Байкова",
+    "gender": "female",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Анатолій",
+    "surname": "Григорук",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Григорук_Анатолій_Іванович",
+    "info": "Поет, прозаїк, перекладач",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Юліан",
+    "surname": "Тувім",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Юліан_Тувім",
+    "info": "Польський поет, перекладач і мовозванець",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Василь",
+    "surname": "Чухліб",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Чухліб_Василь_Васильович",
+    "info": "Український письменник, журналіст, громадський діяч, літературознавець",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Яніка",
+    "surname": "Терещенко",
+    "gender": "female",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Віктор",
+    "surname": "Павлік",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Павлик_Віктор_Франкович",
+    "info": "Співак, гітарист, народний артист України",
+    "roles": [
+      "author",
+      "reader",
+      "musician"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Жанна",
+    "surname": "Хома",
+    "gender": "female",
+    "url": "https://instagram.com/dariimikey",
+    "info": "Дитяча письменниця, авторка циклу казок «Маленькі історії Дарчика та Міккі»",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Лілія",
+    "surname": "Гудзь",
+    "gender": "female",
+    "url": "https://www.facebook.com/profile.php?id=100002231488558",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Тетяна",
+    "surname": "Леонт'єва",
+    "gender": "female",
+    "url": "https://www.facebook.com/tetianaleontieva.avtorskatvorchist",
+    "info": "Мама, педагог, вихователь",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Юлія",
+    "surname": "Задорожна",
+    "gender": "female",
+    "url": "https://www.youtube.com/channel/UCniv-ty1Yrmf7S29eNHFQvg",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Катерина",
+    "surname": "Гаврилова",
+    "gender": "female",
+    "info": "Дитяча казкарка",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Марія",
+    "surname": "Солтис-Смирнова",
+    "gender": "female",
+    "info": "Дитяча письменниця, громадська діячка, художниця-ілюстраторка",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Галина",
+    "surname": "Мирослава",
+    "gender": "female",
+    "url": "https://kazky.org.ua/zbirky/bohdanija",
+    "info": "Автор численних дитячих віршів та творів",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Інна",
+    "surname": "Яворська",
+    "gender": "female",
+    "roles": [
+      "reader"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Василь",
+    "surname": "Сухомлинський",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Сухомлинський_Василь_Олександрович",
+    "info": "Український радянський педагог, публіцист, письменник, поет",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Оксана",
+    "surname": "Кротюк",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Кротюк_Оксана_Петрівна",
+    "info": "Українська дитяча письменниця",
+    "roles": [
+      "author",
+      "reader"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Ганс",
+    "surname": "Крістіан",
+    "gender": "male",
+    "url": "https://uk.wikipedia.org/wiki/Ганс_Крістіан_Андерсен",
+    "info": "Данський письменник, казкар",
+    "roles": [
+      "author"
+    ]
+  },
+  {
+    "id": 0,
+    "name": "Леся",
+    "surname": "Українка",
+    "gender": "female",
+    "url": "https://uk.wikipedia.org/wiki/Леся_Українка",
+    "info": "Українська письменниця, перекладачка, культурна діячка",
+    "roles": [
+      "author"
+    ]
+  }
+]

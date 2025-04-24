@@ -9,14 +9,24 @@ class AddPersonHelper extends _AddPersonHelper {
   AddPersonHelper(From2to2 migration) : super(migration);
 
   @override
-  String get name => 'Ангеліна Ратушенко';
+  String get name => 'Сергій';
 
   @override
-  String? get info =>
-      'Мені 13 років, живу в Хмельницькій області. Дуже рада писати казки, складала навіть вірші.';
+  String get surname => 'Бондаренко';
 
   @override
-  String? get url => null;
+  String? get info => 'Fullstack magic developer';
+
+  @override
+  String? get url => 'https://www.linkedin.com/in/sergii-bondarenko-i/';
+
+  @override
+  List<PersonRoleDto> get roles => [
+        PersonRoleDto.crew,
+      ];
+
+  @override
+  PersonGenderDto get gender => PersonGenderDto.male;
 }
 
 abstract class _AddPersonHelper extends BaseAddHelper {
@@ -32,7 +42,7 @@ abstract class _AddPersonHelper extends BaseAddHelper {
     bool post = false,
   }) async {
     try {
-      final all = await _getAll();
+      final all = await getAll();
 
       final idList = all.map((e) => e.id).toSet();
       final nameList = all.map((e) => e.name).toSet();
@@ -63,6 +73,10 @@ abstract class _AddPersonHelper extends BaseAddHelper {
 
   String get name;
 
+  String get surname;
+
+  PersonGenderDto get gender;
+
   String? get info;
 
   String? get url;
@@ -76,16 +90,18 @@ abstract class _AddPersonHelper extends BaseAddHelper {
     final person = PersonDto(
       id: nextId,
       name: name,
+      surname: surname,
+      gender: gender,
       info: info,
       url: url,
       roles: roles,
     );
-    final allPeople = await _getAll();
+    final allPeople = await getAll();
     allPeople.add(person);
     await saveJson(allPeople);
   }
 
-  Future<List<PersonDto>> _getAll() async {
+  Future<List<PersonDto>> getAll() async {
     final json = await migration.readJsonList(jsonPath);
     final people = json.map((e) => PersonDto.fromJson(e)).toList();
     if (originalList.isEmpty) {
@@ -95,7 +111,7 @@ abstract class _AddPersonHelper extends BaseAddHelper {
   }
 
   Future<int> _getLastId() async {
-    final people = (await _getAll()).map((e) => e.id);
+    final people = (await getAll()).map((e) => e.id);
     return people.reduce(max);
   }
 }

@@ -1,5 +1,34 @@
 [
   {
+    "id": 93,
+    "name": "Сергій Бондаренко",
+    "url": "https://www.linkedin.com/in/sergii-bondarenko-i/",
+    "info": "Fullstack magic developer",
+    "roles": [
+      "crew"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Богдан Дмитрів",
+    "url": "https://www.linkedin.com/in/bohdan-dmytriv/",
+    "info": "Back-end magic dev",
+    "roles": [
+      "crew"
+    ]
+  },
+  {
+      "id": 92,
+      "name": "Анна",
+      "surname": "Антонова",
+      "gender": "female",
+      "url": "https://t.me/suprun_anne",
+      "info": "Дизайнерка застосунку \"Казки дитинства\"",
+      "roles": [
+          "crew"
+      ]
+  },
+  {
     "id": 91,
     "name": "Марія Возняк",
     "info" : "Пишу твори, навчаюсь у ШУЖ, дарую дітям магію казок.",

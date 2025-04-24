@@ -1,6 +1,6 @@
 import 'package:migration/migration/from_2_to_2/add_item/add_person_herlper.dart';
 import 'package:migration/migration/from_2_to_2/add_item/add_tale_helper.dart';
-import 'package:migration/migration/from_2_to_2/add_item/prepare_tales_for_prod_helper.dart';
+import 'package:migration/migration/from_2_to_2/update_people_roles.dart';
 
 import '../base_migration.dart';
 
@@ -14,20 +14,28 @@ class From2to2 extends BaseDataMigration {
   String get appVersionOld => '5.0.0';
 
   @override
-  int get dataVersionOld => 2;
+  int get dataVersionOld => 3;
 
   @override
-  int get dataVersionNew => 2;
+  int get dataVersionNew => 3;
 
   @override
   bool get canCleanNewDirectory => false;
 
   @override
   Future<bool> migrate() async {
-    final addPersonOk = true;
-    // final addPersonOk = await AddPersonHelper(this).run();
-    // final addTaleOk = true;
-    final addTaleOk = await AddTaleHelper(this).run();
+    final addPersonHelper = AddPersonHelper(this);
+    final addTaleHelper = AddTaleHelper(this);
+
+    final addPersonOk = await addPersonHelper.run(fastReturn: true);
+
+    final addTaleOk = await addTaleHelper.run(fastReturn: true);
+
+    await UpdatePeopleRoles(
+      addTaleHelper: addTaleHelper,
+      addPersonHelper: addPersonHelper,
+    ).update();
+
     final prepareTalesForProdOk = true;
     // final prepareTalesForProdOk = await PrepareTalesForProdHelper(this).run();
     return addPersonOk && addTaleOk && prepareTalesForProdOk;
