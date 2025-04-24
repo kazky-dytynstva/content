@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'add_tale_reading_time.dart';
+// import 'add_tale_reading_time.dart';
 
 // void copyContents(Directory taleDir) {
 //   final zeroDir = Directory(taleDir.path + '/0');
@@ -49,53 +49,48 @@ void main() {
   //   copyContents(entity);
   // }
 
-  final file =
-      File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/list.json');
+  final file = File(
+    '/Users/andrii.antonov/dev/kazky/content/data/3/tales/summary.csv',
+  );
   final content = file.readAsStringSync();
-  final jsonContent = jsonDecode(content) as List<dynamic>;
 
-  final addTaleReadingTime = AddTaleReadingTime();
+  final lines = content.split('\n');
 
-  for (final item in jsonContent) {
-    item as Map<String, dynamic>;
+  final summaryContetn = <int, String>{};
 
-    final text = item['text'] as Map<String, dynamic>?;
+  for (final line in lines) {
+    final taleId = line.split(',')[0];
+    final value = line.substring(taleId.length + 2, line.length - 1);
 
-    if (text == null) {
-      continue;
-    }
-
-    if (text['text'] == null) {
-      continue;
-    }
-
-    final paragraphs = (text['text'] as List).map((e) => e as String).toList();
-
-    text.remove('text');
-    text['paragraphs'] = paragraphs;
-
-    final readingTime =
-        addTaleReadingTime.getReadingTime(paragraphs: paragraphs);
-
-    text['min_reading_time'] = readingTime.minimum;
-    text['max_reading_time'] = readingTime.maximum;
+    summaryContetn[int.parse(taleId)] = value;
   }
 
-  file.writeAsStringSync(jsonEncode(jsonContent));
+  final jsonFile = File(
+    '/Users/andrii.antonov/dev/kazky/content/data/3/tales/list.json',
+  );
 
-  // final newFile =
-  //     File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/action.json');
-  // newFile.writeAsStringSync(jsonEncode(result));
+  final jsonContentString = jsonFile.readAsStringSync();
+  final jsonContent = jsonDecode(jsonContentString);
 
-  // // Convert JSON to CSV
-  // String csvData = jsonToCsv(result);
+  for (final tale in jsonContent) {
+    final taleId = tale['id'];
+    var summary = summaryContetn[taleId]!;
 
-  // // // Print or save the CSV data
-  // // print(csvData);
+    if (summary.contains('""')) {
+      summary = summary.replaceAll('""', '"');
+    }
 
-  // // Example: Save to a file
-  // File('/Users/andrii.antonov/dev/kazky/content/data/3/tales/output.csv')
-  //     .writeAsString(csvData);
+    if (summary.length < 140 || summary.length > 200) {
+      print('Tale $taleId has wrong summary length: ${summary.length}');
+    }
+
+    tale['summary'] = summary;
+
+    tale.toString();
+  }
+
+  final updatedJsonContentString = jsonEncode(jsonContent);
+  jsonFile.writeAsStringSync(updatedJsonContentString);
 }
 
 String jsonToCsv(Map<String, dynamic> jsonData) {
