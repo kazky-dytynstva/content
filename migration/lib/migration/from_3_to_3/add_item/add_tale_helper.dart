@@ -17,13 +17,16 @@ class AddTaleHelper extends _AddTaleHelper {
   Set<TaleTag> get extraTags => {};
 
   @override
-  CrewDto? _getCrew() => CrewDto(
-        authors: null,
-        readers: null,
-        musicians: null,
-        translators: null,
-        graphics: null,
-      );
+  CrewDto? _getCrew() {
+    return null;
+    return CrewDto(
+      authors: null,
+      readers: null,
+      musicians: null,
+      translators: null,
+      graphics: null,
+    );
+  }
 
   @override
   AudioContentDto? _getAudioContent() {
