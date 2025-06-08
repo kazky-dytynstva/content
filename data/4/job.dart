@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 void main() {
-  final file = File('/Users/andrii.antonov/dev/kazky/content/data/4/job.json');
+  final file = File('/Users/andrii.antonov/dev/kazky/content/data/4/tales/list.json');
 
   final jsonList = jsonDecode(file.readAsStringSync()) as List<dynamic>;
 
