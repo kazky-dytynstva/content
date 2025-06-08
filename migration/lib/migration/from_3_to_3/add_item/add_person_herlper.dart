@@ -18,12 +18,10 @@ class AddPersonHelper extends _AddPersonHelper {
   String? get info => 'Fullstack magic developer';
 
   @override
-  String? get url => 'https://www.linkedin.com/in/sergii-bondarenko-i/';
+  Uri? get url => Uri.parse('https://www.linkedin.com/in/sergii-bondarenko-i/');
 
   @override
-  List<PersonRoleDto> get roles => [
-        PersonRoleDto.crew,
-      ];
+  List<PersonRoleDto> get roles => [PersonRoleDto.crew];
 
   @override
   PersonGenderDto get gender => PersonGenderDto.male;
@@ -31,38 +29,23 @@ class AddPersonHelper extends _AddPersonHelper {
 
 abstract class _AddPersonHelper extends BaseAddHelper {
   _AddPersonHelper(From3to3 migration)
-      : super(
-          migration,
-          addItemName: 'Person',
-          folderName: 'people',
-        );
+    : super(migration, addItemName: 'Person', folderName: 'people');
 
   @override
-  Future<bool> validate({
-    bool post = false,
-  }) async {
+  Future<bool> validate({bool post = false}) async {
     try {
       final all = await getAll();
 
       final idList = all.map((e) => e.id).toSet();
       final nameList = all.map((e) => e.name).toSet();
 
-      assert(
-        idList.length == nameList.length,
-        'Looks like we have duplicate',
-      );
-      assert(
-        idList.length == all.length,
-        'Looks like we have duplicate',
-      );
+      assert(idList.length == nameList.length, 'Looks like we have duplicate');
+      assert(idList.length == all.length, 'Looks like we have duplicate');
 
       if (post) {
         final path = '$dataPath/img/$nextId.jpg';
         final file = File(path);
-        assert(
-          file.existsSync(),
-          'Image for the person was not found',
-        );
+        assert(file.existsSync(), 'Image for the person was not found');
       }
       return true;
     } catch (e) {
@@ -79,7 +62,7 @@ abstract class _AddPersonHelper extends BaseAddHelper {
 
   String? get info;
 
-  String? get url;
+  Uri? get url;
 
   List<PersonRoleDto> get roles => [];
 

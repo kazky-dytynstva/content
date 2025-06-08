@@ -78,14 +78,14 @@ abstract class _AddTaleOperation extends TaleOperation {
     return TaleDto(
       id: newTaleId,
       name: name,
-      createDate: DateTime.now().millisecondsSinceEpoch,
+      createDate: DateTime.now(),
       updateDate: null,
       summary: summary,
       tags: tags,
       text: text,
       audio: audio,
       crew: crew,
-      ignore: true,
+      isHidden: true,
     );
   }
 

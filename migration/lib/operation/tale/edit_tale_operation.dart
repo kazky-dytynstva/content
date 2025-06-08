@@ -15,12 +15,12 @@ class _EditTaleOperation extends TaleOperation {
   @override
   TaleDto? getEdited(TaleDto original) {
     if (original.id != 666) return null;
-    return original.copyWith(name: '777');
+    return original.copyWithL(name: '777');
   }
 }
 
 extension on TaleDto {
-  TaleDto copyWith({
+  TaleDto copyWithL({
     String? name,
     DateTime? createDate,
     DateTime? updateDate,
@@ -29,19 +29,19 @@ extension on TaleDto {
     TextContentDto? text,
     AudioContentDto? audio,
     CrewDto? crew,
-    bool? ignore,
+    bool? isHidden,
   }) {
     return TaleDto(
       id: id,
       name: name ?? this.name,
-      createDate: createDate?.millisecondsSinceEpoch ?? this.createDate,
-      updateDate: updateDate?.millisecondsSinceEpoch ?? this.updateDate,
+      createDate: createDate ?? this.createDate,
+      updateDate: updateDate ?? this.updateDate,
       summary: summary ?? this.summary,
       tags: tags ?? this.tags,
       text: text ?? this.text,
       audio: audio ?? this.audio,
       crew: crew ?? this.crew,
-      ignore: ignore ?? this.ignore,
+      isHidden: isHidden ?? this.isHidden,
     );
   }
 }
