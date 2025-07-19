@@ -1,24 +1,32 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 void main() {
-  final file = File('/Users/andrii.antonov/dev/kazky/content/data/4/tales/list.json');
+  final file = File(
+    '/Users/andrii.antonov/dev/kazky/content/data/4/tales/list.json',
+  );
 
   final jsonList = jsonDecode(file.readAsStringSync()) as List<dynamic>;
 
-  for (final item in jsonList) {
-    final createDate = item['create_date'] as int;
-    final updateDate = item['update_date'] as int?;
+  var summaryMin = 10000;
+  var summaryMax = 0;
+  var minName = '';
 
-    item['create_date'] =
-        DateTime.fromMillisecondsSinceEpoch(createDate).toIso8601String();
-    if (updateDate != null) {
-      item['update_date'] =
-          DateTime.fromMillisecondsSinceEpoch(updateDate).toIso8601String();
+  for (final item in jsonList) {
+    final name = item['name'] as String;
+
+    final summaryLength = name.length;
+
+    if (summaryLength < summaryMin) {
+      summaryMin = summaryLength;
+      minName = name;
+    }
+    if (summaryLength > summaryMax) {
+      summaryMax = summaryLength;
     }
   }
 
-  final updatedJson = jsonEncode(jsonList);
-  file.writeAsStringSync(updatedJson, flush: true);
-  print('Updated job.json with formatted dates.');
+  print('name min: $summaryMin, name: $minName');
+  print('name max: $summaryMax');
 }

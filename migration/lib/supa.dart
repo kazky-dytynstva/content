@@ -5,8 +5,8 @@ import 'package:supabase/supabase.dart';
 
 void main() async {
   final supabase = SupabaseClient(
-    'https://wzsrzjlhogdmojqelvf.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cC6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind6c3J6amxob2dkbW9qcWVsdmZrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzM4OTQ1MCwiZXhwIjoyMDYyOTY1NDUwfQ.gUzGgt5R9Yg-QX2HjUy_3aOhOBveG99U7ReDzzvB-uQ',
+    'https://wzsrzjlhogdmojqelvfk.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind6c3J6amxob2dkbW9qcWVsdmZrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzM4OTQ1MCwiZXhwIjoyMDYyOTY1NDUwfQ.gUzGgt5R9Yg-QX2HjUy_3aOhOBveG99U7ReDzzvB-uQ',
   );
 
   await _exportPeople(supabase);
