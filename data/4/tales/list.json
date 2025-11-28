@@ -1023,7 +1023,7 @@
     },
     "audio": {
       "file_size": 7431647,
-      "duration": 464000
+      "duration": 464000000
     },
     "crew": {
       "authors": [
@@ -1067,7 +1067,7 @@
     },
     "audio": {
       "file_size": 7223922,
-      "duration": 451000
+      "duration": 451000000
     },
     "crew": {
       "authors": [
@@ -1121,7 +1121,7 @@
     },
     "audio": {
       "file_size": 8710394,
-      "duration": 725000
+      "duration": 725000000
     },
     "crew": {
       "authors": [
@@ -1171,7 +1171,7 @@
     },
     "audio": {
       "file_size": 2006028,
-      "duration": 167000
+      "duration": 167000000
     },
     "crew": {
       "authors": [
@@ -1237,7 +1237,7 @@
     },
     "audio": {
       "file_size": 2198695,
-      "duration": 182000
+      "duration": 182000000
     },
     "crew": {
       "authors": [
@@ -1284,7 +1284,7 @@
     },
     "audio": {
       "file_size": 3828736,
-      "duration": 318000
+      "duration": 318000000
     },
     "crew": {
       "authors": [
@@ -1335,7 +1335,7 @@
     },
     "audio": {
       "file_size": 4792027,
-      "duration": 398000
+      "duration": 398000000
     },
     "crew": {
       "authors": [
@@ -1398,7 +1398,7 @@
     },
     "audio": {
       "file_size": 5260664,
-      "duration": 438000
+      "duration": 438000000
     },
     "crew": {
       "authors": [
@@ -1450,7 +1450,7 @@
     },
     "audio": {
       "file_size": 5962522,
-      "duration": 496000
+      "duration": 496000000
     },
     "crew": {
       "authors": [
@@ -1510,7 +1510,7 @@
     },
     "audio": {
       "file_size": 2744421,
-      "duration": 171000
+      "duration": 171000000
     },
     "crew": {
       "authors": [
@@ -1576,7 +1576,7 @@
     },
     "audio": {
       "file_size": 3573968,
-      "duration": 220000
+      "duration": 220000000
     },
     "crew": {
       "authors": [
@@ -1629,7 +1629,7 @@
     },
     "audio": {
       "file_size": 3343170,
-      "duration": 208000
+      "duration": 208000000
     },
     "crew": {
       "readers": [
@@ -1686,7 +1686,7 @@
     },
     "audio": {
       "file_size": 2672013,
-      "duration": 222000
+      "duration": 222000000
     },
     "crew": {
       "authors": [
@@ -1739,7 +1739,7 @@
     },
     "audio": {
       "file_size": 2955069,
-      "duration": 211000
+      "duration": 211000000
     },
     "crew": {
       "authors": [
@@ -1793,7 +1793,7 @@
     },
     "audio": {
       "file_size": 2903895,
-      "duration": 181000
+      "duration": 181000000
     },
     "crew": {
       "authors": [
@@ -1849,7 +1849,7 @@
     },
     "audio": {
       "file_size": 3516624,
-      "duration": 219000
+      "duration": 219000000
     },
     "crew": {
       "authors": [
@@ -1894,7 +1894,7 @@
     },
     "audio": {
       "file_size": 2532330,
-      "duration": 158000
+      "duration": 158000000
     },
     "crew": {
       "authors": [
@@ -1939,7 +1939,7 @@
     },
     "audio": {
       "file_size": 3913685,
-      "duration": 244000
+      "duration": 244000000
     },
     "crew": {
       "authors": [
@@ -2011,7 +2011,7 @@
     },
     "audio": {
       "file_size": 5934517,
-      "duration": 370000
+      "duration": 370000000
     },
     "crew": {
       "authors": [
@@ -2084,7 +2084,7 @@
     },
     "audio": {
       "file_size": 6085401,
-      "duration": 380000
+      "duration": 380000000
     },
     "crew": {
       "authors": [
@@ -2106,7 +2106,7 @@
     ],
     "audio": {
       "file_size": 11261536,
-      "duration": 703000
+      "duration": 703000000
     },
     "crew": {
       "authors": [
@@ -2128,7 +2128,7 @@
     ],
     "audio": {
       "file_size": 9858029,
-      "duration": 616000
+      "duration": 616000000
     },
     "crew": {
       "authors": [
@@ -2323,7 +2323,7 @@
     ],
     "audio": {
       "file_size": 11963579,
-      "duration": 747000
+      "duration": 747000000
     },
     "crew": {
       "authors": [
@@ -2420,7 +2420,7 @@
     },
     "audio": {
       "file_size": 5663262,
-      "duration": 353000
+      "duration": 353000000
     },
     "crew": {
       "authors": [
@@ -2943,7 +2943,7 @@
     ],
     "audio": {
       "file_size": 6292629,
-      "duration": 524000
+      "duration": 524000000
     },
     "crew": {
       "readers": [
@@ -2962,7 +2962,7 @@
     ],
     "audio": {
       "file_size": 6954990,
-      "duration": 579000
+      "duration": 579000000
     },
     "crew": {
       "authors": [
@@ -2984,7 +2984,7 @@
     ],
     "audio": {
       "file_size": 4565099,
-      "duration": 380000
+      "duration": 380000000
     },
     "crew": {
       "authors": [
@@ -3058,7 +3058,7 @@
     },
     "audio": {
       "file_size": 3586102,
-      "duration": 298000
+      "duration": 298000000
     },
     "crew": {
       "authors": [
@@ -3117,7 +3117,7 @@
     },
     "audio": {
       "file_size": 4388584,
-      "duration": 365000
+      "duration": 365000000
     },
     "crew": {
       "authors": [
@@ -3161,7 +3161,7 @@
     },
     "audio": {
       "file_size": 1001088,
-      "duration": 83000
+      "duration": 83000000
     },
     "crew": {
       "authors": [
@@ -3198,7 +3198,7 @@
     },
     "audio": {
       "file_size": 876096,
-      "duration": 73000
+      "duration": 73000000
     },
     "crew": {
       "authors": [
@@ -3234,7 +3234,7 @@
     },
     "audio": {
       "file_size": 811008,
-      "duration": 67000
+      "duration": 67000000
     },
     "crew": {
       "authors": [
@@ -3276,7 +3276,7 @@
     },
     "audio": {
       "file_size": 1158336,
-      "duration": 96000
+      "duration": 96000000
     },
     "crew": {
       "authors": [
@@ -3361,7 +3361,7 @@
     },
     "audio": {
       "file_size": 922176,
-      "duration": 76000
+      "duration": 76000000
     },
     "crew": {
       "authors": [
@@ -3559,7 +3559,7 @@
     },
     "audio": {
       "file_size": 2882371,
-      "duration": 239000
+      "duration": 239000000
     },
     "crew": {
       "authors": [
@@ -3608,7 +3608,7 @@
     },
     "audio": {
       "file_size": 597597,
-      "duration": 37000
+      "duration": 37000000
     },
     "crew": {
       "authors": [
@@ -3875,7 +3875,7 @@
     },
     "audio": {
       "file_size": 10031472,
-      "duration": 1253000
+      "duration": 1253000000
     },
     "crew": {
       "authors": [
@@ -3927,7 +3927,7 @@
     },
     "audio": {
       "file_size": 4371948,
-      "duration": 546000
+      "duration": 546000000
     },
     "crew": {
       "authors": [
@@ -4051,7 +4051,7 @@
     },
     "audio": {
       "file_size": 1823277,
-      "duration": 227000
+      "duration": 227000000
     },
     "crew": {
       "authors": [
@@ -4123,7 +4123,7 @@
     },
     "audio": {
       "file_size": 2581293,
-      "duration": 322000
+      "duration": 322000000
     },
     "crew": {
       "authors": [
@@ -4333,7 +4333,7 @@
     },
     "audio": {
       "file_size": 3547561,
-      "duration": 221000
+      "duration": 221000000
     },
     "crew": {
       "authors": [
@@ -4404,7 +4404,7 @@
     },
     "audio": {
       "file_size": 3623212,
-      "duration": 226000
+      "duration": 226000000
     },
     "crew": {
       "authors": [
@@ -4445,7 +4445,7 @@
     },
     "audio": {
       "file_size": 3147880,
-      "duration": 261000
+      "duration": 261000000
     },
     "crew": {
       "authors": [
@@ -4467,7 +4467,7 @@
     ],
     "audio": {
       "file_size": 5838701,
-      "duration": 486000
+      "duration": 486000000
     },
     "crew": {
       "authors": [
@@ -4495,7 +4495,7 @@
     ],
     "audio": {
       "file_size": 6718296,
-      "duration": 559000
+      "duration": 559000000
     },
     "crew": {
       "authors": [
@@ -4538,7 +4538,7 @@
     },
     "audio": {
       "file_size": 4056312,
-      "duration": 202000
+      "duration": 202000000
     },
     "crew": {
       "authors": [
@@ -4575,7 +4575,7 @@
     },
     "audio": {
       "file_size": 2396280,
-      "duration": 119000
+      "duration": 119000000
     },
     "crew": {
       "readers": [
@@ -4723,7 +4723,7 @@
     },
     "audio": {
       "file_size": 2423660,
-      "duration": 151000
+      "duration": 151000000
     },
     "crew": {
       "authors": [
@@ -5445,7 +5445,7 @@
     },
     "audio": {
       "file_size": 18878401,
-      "duration": 1572000
+      "duration": 1572000000
     }
   },
   {
@@ -5459,7 +5459,7 @@
     ],
     "audio": {
       "file_size": 3397271,
-      "duration": 212000
+      "duration": 212000000
     },
     "crew": {
       "authors": [
@@ -5645,7 +5645,7 @@
     },
     "audio": {
       "file_size": 4763839,
-      "duration": 396000
+      "duration": 396000000
     },
     "crew": {
       "readers": [
@@ -5701,7 +5701,7 @@
     },
     "audio": {
       "file_size": 5348121,
-      "duration": 334000
+      "duration": 334000000
     },
     "crew": {
       "authors": [
@@ -5880,7 +5880,7 @@
     },
     "audio": {
       "file_size": 5186295,
-      "duration": 370000
+      "duration": 370000000
     },
     "crew": {
       "authors": [
@@ -6076,7 +6076,7 @@
     },
     "audio": {
       "file_size": 3557585,
-      "duration": 296000
+      "duration": 296000000
     },
     "crew": {
       "authors": [
@@ -6127,7 +6127,7 @@
     },
     "audio": {
       "file_size": 1757330,
-      "duration": 146000
+      "duration": 146000000
     },
     "crew": {
       "authors": [
@@ -6230,7 +6230,7 @@
     },
     "audio": {
       "file_size": 1957574,
-      "duration": 159000
+      "duration": 159000000
     },
     "crew": {
       "authors": [
@@ -6283,7 +6283,7 @@
     },
     "audio": {
       "file_size": 2293362,
-      "duration": 190000
+      "duration": 190000000
     },
     "crew": {
       "authors": [
@@ -6389,7 +6389,7 @@
     },
     "audio": {
       "file_size": 2142374,
-      "duration": 133000
+      "duration": 133000000
     },
     "crew": {
       "authors": [
@@ -6456,7 +6456,7 @@
     },
     "audio": {
       "file_size": 3245786,
-      "duration": 202000
+      "duration": 202000000
     },
     "crew": {
       "authors": [
@@ -6520,7 +6520,7 @@
     },
     "audio": {
       "file_size": 2315619,
-      "duration": 192000
+      "duration": 192000000
     },
     "crew": {
       "authors": [
@@ -6597,7 +6597,7 @@
     },
     "audio": {
       "file_size": 2642567,
-      "duration": 219000
+      "duration": 219000000
     },
     "crew": {
       "authors": [
@@ -6810,7 +6810,7 @@
     },
     "audio": {
       "file_size": 19196572,
-      "duration": 1599000
+      "duration": 1599000000
     }
   },
   {
@@ -6888,7 +6888,7 @@
     },
     "audio": {
       "file_size": 1611787,
-      "duration": 100000
+      "duration": 100000000
     },
     "crew": {
       "authors": [
@@ -7021,7 +7021,7 @@
     ],
     "audio": {
       "file_size": 6588858,
-      "duration": 549000
+      "duration": 549000000
     },
     "crew": {
       "authors": [
@@ -7959,7 +7959,7 @@
     },
     "audio": {
       "file_size": 2733497,
-      "duration": 170000
+      "duration": 170000000
     },
     "crew": {
       "authors": [
@@ -8164,7 +8164,7 @@
     },
     "audio": {
       "file_size": 603762,
-      "duration": 49000
+      "duration": 49000000
     },
     "crew": {
       "authors": [
@@ -8309,7 +8309,7 @@
     ],
     "audio": {
       "file_size": 3388335,
-      "duration": 282000
+      "duration": 282000000
     },
     "crew": {
       "readers": [
@@ -8438,7 +8438,7 @@
     },
     "audio": {
       "file_size": 6952394,
-      "duration": 434000
+      "duration": 434000000
     }
   },
   {
@@ -8490,7 +8490,7 @@
     },
     "audio": {
       "file_size": 13162902,
-      "duration": 548000
+      "duration": 548000000
     }
   },
   {
@@ -8515,7 +8515,7 @@
     },
     "audio": {
       "file_size": 2463946,
-      "duration": 153000
+      "duration": 153000000
     }
   },
   {
@@ -8555,7 +8555,7 @@
     },
     "audio": {
       "file_size": 2896792,
-      "duration": 180000
+      "duration": 180000000
     },
     "crew": {
       "authors": [
@@ -8596,7 +8596,7 @@
     },
     "audio": {
       "file_size": 4058971,
-      "duration": 253000
+      "duration": 253000000
     }
   },
   {
@@ -8631,7 +8631,7 @@
     },
     "audio": {
       "file_size": 3787921,
-      "duration": 236000
+      "duration": 236000000
     }
   },
   {
@@ -8805,7 +8805,7 @@
     },
     "audio": {
       "file_size": 3551315,
-      "duration": 295000
+      "duration": 295000000
     },
     "crew": {
       "authors": [
@@ -8932,7 +8932,7 @@
     },
     "audio": {
       "file_size": 1505300,
-      "duration": 125000
+      "duration": 125000000
     },
     "crew": {
       "authors": [
@@ -9030,7 +9030,7 @@
     },
     "audio": {
       "file_size": 1721908,
-      "duration": 143000
+      "duration": 143000000
     },
     "crew": {
       "authors": [
@@ -9100,7 +9100,7 @@
     },
     "audio": {
       "file_size": 896856,
-      "duration": 74000
+      "duration": 74000000
     },
     "crew": {
       "authors": [
@@ -9214,7 +9214,7 @@
     },
     "audio": {
       "file_size": 2151674,
-      "duration": 178000
+      "duration": 178000000
     },
     "crew": {
       "authors": [
@@ -9296,7 +9296,7 @@
     },
     "audio": {
       "file_size": 1556082,
-      "duration": 129000
+      "duration": 129000000
     },
     "crew": {
       "authors": [
@@ -9344,7 +9344,7 @@
     },
     "audio": {
       "file_size": 3473865,
-      "duration": 216000
+      "duration": 216000000
     }
   },
   {
@@ -9397,7 +9397,7 @@
     },
     "audio": {
       "file_size": 3412607,
-      "duration": 568000
+      "duration": 568000000
     },
     "crew": {
       "authors": [
@@ -9450,7 +9450,7 @@
     },
     "audio": {
       "file_size": 3918044,
-      "duration": 195000
+      "duration": 195000000
     }
   },
   {
@@ -9507,7 +9507,7 @@
     },
     "audio": {
       "file_size": 2439125,
-      "duration": 152000
+      "duration": 152000000
     },
     "crew": {
       "authors": [
@@ -9569,7 +9569,7 @@
     },
     "audio": {
       "file_size": 2072000,
-      "duration": 172000
+      "duration": 172000000
     }
   },
   {
@@ -9603,7 +9603,7 @@
     },
     "audio": {
       "file_size": 2660480,
-      "duration": 66000
+      "duration": 66000000
     }
   },
   {
@@ -9650,7 +9650,7 @@
     },
     "audio": {
       "file_size": 3206301,
-      "duration": 200000
+      "duration": 200000000
     },
     "crew": {
       "authors": [
@@ -9692,7 +9692,7 @@
     },
     "audio": {
       "file_size": 2639181,
-      "duration": 164000
+      "duration": 164000000
     }
   },
   {
@@ -9743,7 +9743,7 @@
     },
     "audio": {
       "file_size": 2922741,
-      "duration": 182000
+      "duration": 182000000
     }
   },
   {
@@ -10769,7 +10769,7 @@
     },
     "audio": {
       "file_size": 1671881,
-      "duration": 138000
+      "duration": 138000000
     }
   },
   {
@@ -10803,7 +10803,7 @@
     },
     "audio": {
       "file_size": 1033310,
-      "duration": 85000
+      "duration": 85000000
     },
     "crew": {
       "readers": [
@@ -10856,7 +10856,7 @@
     },
     "audio": {
       "file_size": 2469803,
-      "duration": 205000
+      "duration": 205000000
     },
     "crew": {
       "authors": [
@@ -10926,7 +10926,7 @@
     },
     "audio": {
       "file_size": 3421688,
-      "duration": 284000
+      "duration": 284000000
     },
     "crew": {
       "authors": [
@@ -10974,7 +10974,7 @@
     },
     "audio": {
       "file_size": 2284995,
-      "duration": 190000
+      "duration": 190000000
     }
   },
   {
@@ -11179,7 +11179,7 @@
     },
     "audio": {
       "file_size": 2956269,
-      "duration": 184000
+      "duration": 184000000
     },
     "crew": {
       "authors": [
@@ -12150,7 +12150,7 @@
     },
     "audio": {
       "file_size": 8434855,
-      "duration": 702000
+      "duration": 702000000
     },
     "crew": {
       "authors": [
@@ -12244,7 +12244,7 @@
     },
     "audio": {
       "file_size": 5021854,
-      "duration": 627000
+      "duration": 627000000
     },
     "crew": {
       "authors": [
@@ -12311,7 +12311,7 @@
     },
     "audio": {
       "file_size": 4119062,
-      "duration": 514000
+      "duration": 514000000
     },
     "crew": {
       "authors": [
@@ -12380,7 +12380,7 @@
     },
     "audio": {
       "file_size": 1340228,
-      "duration": 167000
+      "duration": 167000000
     },
     "crew": {
       "authors": [
@@ -12459,7 +12459,7 @@
     },
     "audio": {
       "file_size": 1116360,
-      "duration": 139000
+      "duration": 139000000
     },
     "crew": {
       "authors": [
@@ -12522,7 +12522,7 @@
     },
     "audio": {
       "file_size": 5428236,
-      "duration": 678000
+      "duration": 678000000
     },
     "crew": {
       "authors": [
@@ -12593,7 +12593,7 @@
     },
     "audio": {
       "file_size": 11492406,
-      "duration": 1436000
+      "duration": 1436000000
     },
     "crew": {
       "authors": [
@@ -12721,7 +12721,7 @@
     },
     "audio": {
       "file_size": 6676014,
-      "duration": 555000
+      "duration": 555000000
     },
     "crew": {
       "readers": [
@@ -12789,7 +12789,7 @@
     },
     "audio": {
       "file_size": 2267002,
-      "duration": 282000
+      "duration": 282000000
     }
   },
   {
@@ -12843,7 +12843,7 @@
     },
     "audio": {
       "file_size": 1546339,
-      "duration": 192000
+      "duration": 192000000
     }
   },
   {
@@ -12889,7 +12889,7 @@
     },
     "audio": {
       "file_size": 2538092,
-      "duration": 316000
+      "duration": 316000000
     }
   },
   {
@@ -12944,7 +12944,7 @@
     },
     "audio": {
       "file_size": 1984717,
-      "duration": 247000
+      "duration": 247000000
     }
   },
   {
@@ -13031,7 +13031,7 @@
     },
     "audio": {
       "file_size": 4651090,
-      "duration": 580000
+      "duration": 580000000
     }
   },
   {
@@ -13105,7 +13105,7 @@
     },
     "audio": {
       "file_size": 4214532,
-      "duration": 526000
+      "duration": 526000000
     }
   },
   {
@@ -13187,7 +13187,7 @@
     },
     "audio": {
       "file_size": 3025493,
-      "duration": 377000
+      "duration": 377000000
     }
   },
   {
@@ -13239,7 +13239,7 @@
     },
     "audio": {
       "file_size": 6128034,
-      "duration": 510000
+      "duration": 510000000
     }
   },
   {
@@ -13312,7 +13312,7 @@
     },
     "audio": {
       "file_size": 1599103,
-      "duration": 199000
+      "duration": 199000000
     }
   },
   {
@@ -13403,7 +13403,7 @@
     },
     "audio": {
       "file_size": 2548214,
-      "duration": 318000
+      "duration": 318000000
     }
   },
   {
@@ -13447,7 +13447,7 @@
     },
     "audio": {
       "file_size": 1510034,
-      "duration": 188000
+      "duration": 188000000
     }
   },
   {
@@ -13515,7 +13515,7 @@
     },
     "audio": {
       "file_size": 2338511,
-      "duration": 291000
+      "duration": 291000000
     }
   },
   {
@@ -14032,7 +14032,7 @@
     },
     "audio": {
       "file_size": 1194206,
-      "duration": 148000
+      "duration": 148000000
     },
     "crew": {
       "authors": [
@@ -14142,7 +14142,7 @@
     },
     "audio": {
       "file_size": 1104702,
-      "duration": 137000
+      "duration": 137000000
     },
     "crew": {
       "authors": [
@@ -14182,7 +14182,7 @@
     },
     "audio": {
       "file_size": 1582333,
-      "duration": 197000
+      "duration": 197000000
     },
     "crew": {
       "authors": [
@@ -14274,7 +14274,7 @@
     },
     "audio": {
       "file_size": 1447853,
-      "duration": 180000
+      "duration": 180000000
     },
     "crew": {
       "authors": [
@@ -14406,7 +14406,7 @@
     },
     "audio": {
       "file_size": 6461251,
-      "duration": 538000
+      "duration": 538000000
     },
     "crew": {
       "authors": [
@@ -14448,7 +14448,7 @@
     },
     "audio": {
       "file_size": 2765998,
-      "duration": 197000
+      "duration": 197000000
     },
     "crew": {
       "authors": [
@@ -15389,7 +15389,7 @@
     },
     "audio": {
       "file_size": 7535363,
-      "duration": 1506000
+      "duration": 1506000000
     }
   },
   {
@@ -15470,7 +15470,7 @@
     },
     "audio": {
       "file_size": 7384396,
-      "duration": 1476000
+      "duration": 1476000000
     }
   },
   {
@@ -15615,7 +15615,7 @@
     },
     "audio": {
       "file_size": 3451991,
-      "duration": 689000
+      "duration": 689000000
     }
   },
   {
@@ -15664,7 +15664,7 @@
     },
     "audio": {
       "file_size": 1653046,
-      "duration": 329000
+      "duration": 329000000
     }
   },
   {
@@ -15769,7 +15769,7 @@
     },
     "audio": {
       "file_size": 3011622,
-      "duration": 601000
+      "duration": 601000000
     }
   },
   {
@@ -15803,7 +15803,7 @@
     },
     "audio": {
       "file_size": 1999724,
-      "duration": 399000
+      "duration": 399000000
     }
   },
   {
@@ -15865,7 +15865,7 @@
     },
     "audio": {
       "file_size": 1796922,
-      "duration": 358000
+      "duration": 358000000
     }
   },
   {
@@ -15918,7 +15918,7 @@
     },
     "audio": {
       "file_size": 2065412,
-      "duration": 412000
+      "duration": 412000000
     }
   },
   {
@@ -15994,7 +15994,7 @@
     },
     "audio": {
       "file_size": 3193202,
-      "duration": 637000
+      "duration": 637000000
     }
   },
   {
@@ -16148,7 +16148,7 @@
     },
     "audio": {
       "file_size": 3973906,
-      "duration": 794000
+      "duration": 794000000
     }
   },
   {
@@ -16212,7 +16212,7 @@
     },
     "audio": {
       "file_size": 1048921,
-      "duration": 209000
+      "duration": 209000000
     }
   },
   {
@@ -16281,7 +16281,7 @@
     },
     "audio": {
       "file_size": 2520767,
-      "duration": 503000
+      "duration": 503000000
     }
   },
   {
@@ -16390,7 +16390,7 @@
     },
     "audio": {
       "file_size": 14142580,
-      "duration": 1767000
+      "duration": 1767000000
     },
     "crew": {
       "authors": [
@@ -16457,7 +16457,7 @@
     },
     "audio": {
       "file_size": 2428468,
-      "duration": 202000
+      "duration": 202000000
     }
   },
   {
@@ -16602,7 +16602,7 @@
     },
     "audio": {
       "file_size": 4930443,
-      "duration": 985000
+      "duration": 985000000
     },
     "crew": {
       "authors": [
@@ -16639,7 +16639,7 @@
     },
     "audio": {
       "file_size": 1689862,
-      "duration": 337000
+      "duration": 337000000
     },
     "crew": {
       "authors": [
@@ -16721,7 +16721,7 @@
     },
     "audio": {
       "file_size": 2973770,
-      "duration": 594000
+      "duration": 594000000
     }
   },
   {
@@ -16756,7 +16756,7 @@
     },
     "audio": {
       "file_size": 895487,
-      "duration": 178000
+      "duration": 178000000
     }
   },
   {
@@ -16847,7 +16847,7 @@
     },
     "audio": {
       "file_size": 2957386,
-      "duration": 590000
+      "duration": 590000000
     }
   },
   {
@@ -16898,7 +16898,7 @@
     },
     "audio": {
       "file_size": 2225968,
-      "duration": 277000
+      "duration": 277000000
     }
   },
   {
@@ -16952,7 +16952,7 @@
     },
     "audio": {
       "file_size": 1644169,
-      "duration": 205000
+      "duration": 205000000
     }
   },
   {
@@ -16986,7 +16986,7 @@
     },
     "audio": {
       "file_size": 1297263,
-      "duration": 161000
+      "duration": 161000000
     }
   },
   {
@@ -17101,7 +17101,7 @@
     },
     "audio": {
       "file_size": 4934971,
-      "duration": 616000
+      "duration": 616000000
     }
   },
   {
@@ -17140,7 +17140,7 @@
     },
     "audio": {
       "file_size": 1322341,
-      "duration": 164000
+      "duration": 164000000
     }
   },
   {
@@ -17173,7 +17173,7 @@
     },
     "audio": {
       "file_size": 2277795,
-      "duration": 284000
+      "duration": 284000000
     }
   }
 ]
