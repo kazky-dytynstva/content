@@ -12,7 +12,7 @@ dependencies:
   dto:
     git:
       url: https://github.com/kazky-dytynstva/dto
-      ref: 1.4.12
+      ref: 1.4.14
   supabase: ^2.7.0
 
 dev_dependencies:
