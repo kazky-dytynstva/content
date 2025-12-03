@@ -36,4 +36,4 @@
 1. Once data is production ready - merge `PR` to the `main` branch
    * once it is done, _migration_ should not be run again
    * in case of need - create another _migration_
-1. Replace links to the new data into the application
+1. Replace links to the new data into the application s
