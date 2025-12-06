@@ -260,7 +260,7 @@ class Data4Validator {
 
   /// Validate individual tale folder structure
   void _validateTaleFolderStructure(TaleDto tale, Directory taleDir) {
-    final hasAudioTag = tale.tags.contains('audio');
+    final hasAudioTag = tale.tags.contains(TaleTag.audio);
     final entries = taleDir.listSync();
 
     // Check for required img folder
