@@ -275,7 +275,9 @@ class Data4Validator {
     if (hasAudioTag) {
       audioDir = Directory('${taleDir.path}/audio');
       if (!audioDir.existsSync()) {
-        errors.add('❌ Tale ${tale.id} has "audio" tag but audio/ folder is missing');
+        errors.add(
+          '❌ Tale ${tale.id} has "audio" tag but audio/ folder is missing',
+        );
       }
     }
 
@@ -301,7 +303,9 @@ class Data4Validator {
       // Check if there's an audio folder when there shouldn't be
       final audioFolder = Directory('${taleDir.path}/audio');
       if (audioFolder.existsSync()) {
-        warnings.add('⚠️ Tale ${tale.id} has audio/ folder but no "audio" tag in tags');
+        warnings.add(
+          '⚠️ Tale ${tale.id} has audio/ folder but no "audio" tag in tags',
+        );
       }
     }
   }
@@ -319,7 +323,9 @@ class Data4Validator {
       if (fileName == '.DS_Store') continue;
 
       // Check for thumbnail pattern: {index}.thumbnail.jpg
-      final thumbnailMatch = RegExp(r'^(\d+)\.thumbnail\.jpg$').firstMatch(fileName);
+      final thumbnailMatch = RegExp(
+        r'^(\d+)\.thumbnail\.jpg$',
+      ).firstMatch(fileName);
       if (thumbnailMatch != null) {
         final index = int.parse(thumbnailMatch.group(1)!);
         thumbnailImages.add(index);
@@ -327,7 +333,9 @@ class Data4Validator {
       }
 
       // Check for original pattern: {index}.original.{ext}
-      final originalMatch = RegExp(r'^(\d+)\.original\.(.+)$').firstMatch(fileName);
+      final originalMatch = RegExp(
+        r'^(\d+)\.original\.(.+)$',
+      ).firstMatch(fileName);
       if (originalMatch != null) {
         final index = int.parse(originalMatch.group(1)!);
         final ext = originalMatch.group(2)!;
@@ -348,14 +356,19 @@ class Data4Validator {
     }
 
     // Check that all originals have corresponding thumbnails and vice versa
-    final allIndices = {...originalImages.keys, ...thumbnailImages}.toList()..sort();
-    
+    final allIndices = {...originalImages.keys, ...thumbnailImages}.toList()
+      ..sort();
+
     for (final index in allIndices) {
       if (!originalImages.containsKey(index)) {
-        errors.add('❌ Tale $taleId img/ has $index.thumbnail.jpg but missing $index.original.*');
+        errors.add(
+          '❌ Tale $taleId img/ has $index.thumbnail.jpg but missing $index.original.*',
+        );
       }
       if (!thumbnailImages.contains(index)) {
-        errors.add('❌ Tale $taleId img/ has $index.original.${originalImages[index]} but missing $index.thumbnail.jpg');
+        errors.add(
+          '❌ Tale $taleId img/ has $index.original.${originalImages[index]} but missing $index.thumbnail.jpg',
+        );
       }
     }
 
@@ -363,7 +376,9 @@ class Data4Validator {
     if (allIndices.isNotEmpty) {
       for (var i = 0; i < allIndices.length; i++) {
         if (allIndices[i] != i) {
-          errors.add('❌ Tale $taleId img/ has non-sequential image indices. Expected $i, found ${allIndices[i]}');
+          errors.add(
+            '❌ Tale $taleId img/ has non-sequential image indices. Expected $i, found ${allIndices[i]}',
+          );
           break;
         }
       }
