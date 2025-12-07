@@ -52,7 +52,7 @@ jobs:
             gh pr list --base main --state open
             exit 1
           fi
-          echo "✅ Only one PR to main is open"
+          echo "✅ Only one PR to main is open "
       
       - name: Setup Dart
         uses: dart-lang/setup-dart@v1
