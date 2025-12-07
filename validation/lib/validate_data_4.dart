@@ -6,7 +6,6 @@ import 'package:dto/dto.dart';
 class Data4Validator {
   final String rootPath;
   final List<String> errors = [];
-  final List<String> warnings = [];
 
   Data4Validator(this.rootPath);
 
@@ -18,11 +17,7 @@ class Data4Validator {
     _checkFolderExistence();
 
     if (errors.isNotEmpty) {
-      return ValidationResult(
-        success: false,
-        errors: errors,
-        warnings: warnings,
-      );
+      return ValidationResult(success: false, errors: errors);
     }
 
     // 2. Check folder structure
@@ -42,13 +37,8 @@ class Data4Validator {
       '\n${success ? '✅' : '❌'} Validation ${success ? 'passed' : 'failed'}!',
     );
     print('Errors: ${errors.length}');
-    print('Warnings: ${warnings.length}');
 
-    return ValidationResult(
-      success: success,
-      errors: errors,
-      warnings: warnings,
-    );
+    return ValidationResult(success: success, errors: errors);
   }
 
   /// Check if data/4 folder exists
@@ -148,8 +138,8 @@ class Data4Validator {
       final personDir = Directory('$rootPath/data/4/people/${person.id}');
 
       if (!personDir.existsSync()) {
-        warnings.add(
-          '⚠️ Person ${person.id} (${person.name} ${person.surname ?? ''}) has no folder',
+        errors.add(
+          '❌ Person ${person.id} (${person.name} ${person.surname ?? ''}) has no folder',
         );
         continue;
       }
@@ -163,18 +153,18 @@ class Data4Validator {
       );
 
       if (!thumbnailFile.existsSync()) {
-        warnings.add('⚠️ Person ${person.id} missing photo.thumbnail.jpg');
+        errors.add('❌ Person ${person.id} missing photo.thumbnail.jpg');
       }
 
       if (!hasOriginal) {
-        warnings.add('⚠️ Person ${person.id} missing photo.original.* file');
+        errors.add('❌ Person ${person.id} missing photo.original.* file');
       }
     }
 
     // Check for orphaned folders (folders without corresponding person in list)
     for (final folderId in folderIds) {
       if (!people.any((p) => p.id == folderId)) {
-        warnings.add('⚠️ Orphaned person folder: $folderId (not in list.json)');
+        errors.add('❌ Orphaned person folder: $folderId (not in list.json)');
       }
     }
 
@@ -240,7 +230,7 @@ class Data4Validator {
       final taleDir = Directory('$rootPath/data/4/tales/${tale.id}');
 
       if (!taleDir.existsSync()) {
-        warnings.add('⚠️ Tale ${tale.id} (${tale.name}) has no folder');
+        errors.add('❌ Tale ${tale.id} (${tale.name}) has no folder');
         continue;
       }
 
@@ -251,7 +241,7 @@ class Data4Validator {
     // Check for orphaned folders (folders without corresponding tale in list)
     for (final folderId in folderIds) {
       if (!tales.any((t) => t.id == folderId)) {
-        warnings.add('⚠️ Orphaned tale folder: $folderId (not in list.json)');
+        errors.add('❌ Orphaned tale folder: $folderId (not in list.json)');
       }
     }
 
@@ -303,8 +293,8 @@ class Data4Validator {
       // Check if there's an audio folder when there shouldn't be
       final audioFolder = Directory('${taleDir.path}/audio');
       if (audioFolder.existsSync()) {
-        warnings.add(
-          '⚠️ Tale ${tale.id} has audio/ folder but no "audio" tag in tags',
+        errors.add(
+          '❌ Tale ${tale.id} has audio/ folder but no "audio" tag in tags',
         );
       }
     }
@@ -528,26 +518,14 @@ class Data4Validator {
 class ValidationResult {
   final bool success;
   final List<String> errors;
-  final List<String> warnings;
 
-  ValidationResult({
-    required this.success,
-    required this.errors,
-    required this.warnings,
-  });
+  ValidationResult({required this.success, required this.errors});
 
   void printReport() {
     if (errors.isNotEmpty) {
       print('\n❌ ERRORS:');
       for (final error in errors) {
         print('  $error');
-      }
-    }
-
-    if (warnings.isNotEmpty) {
-      print('\n⚠️  WARNINGS:');
-      for (final warning in warnings) {
-        print('  $warning');
       }
     }
   }

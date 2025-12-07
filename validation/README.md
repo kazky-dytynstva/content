@@ -45,10 +45,11 @@ The `validate_data_4.dart` script performs the following checks:
 ### 4. People Folder Structure
 For each person in the list:
 - ✅ Checks that a folder exists with the person's ID
-- ⚠️ Warns if `photo.thumbnail.jpg` is missing
-- ⚠️ Warns if `photo.original.jpg` is missing
-- ⚠️ Warns about unexpected files
-- ⚠️ Warns about orphaned folders (folders without corresponding entry in list.json)
+- ❌ Error if `photo.thumbnail.jpg` is missing
+- ❌ Error if `photo.original.*` is missing (any format accepted)
+- ❌ Error if folder contains more than 2 files
+- ❌ Error if folder contains unexpected files
+- ❌ Error for orphaned folders (folders without corresponding entry in list.json)
 
 Expected structure:
 ```
@@ -56,65 +57,63 @@ data/4/people/
   list.json
   {id}/
     photo.thumbnail.jpg
-    photo.original.jpg
+    photo.original.{ext}  # Any format: jpg, png, jpeg, webp, etc.
 ```
 
 ### 5. Tales Folder Structure
 For each tale in the list:
 - ✅ Checks that a folder exists with the tale's ID
-- ⚠️ Warns if `audio.mp3` is missing
-- ⚠️ Warns if `img/` folder is missing or empty
-- ⚠️ Warns about unexpected files
-- ⚠️ Warns about orphaned folders (folders without corresponding entry in list.json)
+- ❌ Error if `img/` folder is missing
+- ❌ Error if `img/` folder doesn't have valid image pairs
+- ❌ Error if tale has "audio" tag but `audio/` folder is missing
+- ❌ Error if tale has `audio/` folder but no "audio" tag
+- ❌ Error for unexpected files or folders
+- ❌ Error for orphaned folders (folders without corresponding entry in list.json)
 
 Expected structure:
 ```
 data/4/tales/
   list.json
   {id}/
-    audio.mp3
     img/
-      0.jpg
-      1.jpg
+      0.thumbnail.jpg
+      0.original.{ext}  # Any format
+      1.thumbnail.jpg   # Optional, if tale has multiple images
+      1.original.{ext}  # Optional
       ...
-```
-
-## Exit Codes
-
-- `0` - Validation passed (warnings are allowed)
-- `1` - Validation failed (errors detected)
-
-## Current Validation Results
-
-The validation script identifies structural issues that need to be fixed in the data/4 folder:
+    audio/              # Only if tale has "audio" tag
+      audio.mp3         # Required
+      original.{ext}    # Optional, any format
+## Detailed Validation Rules
 
 ### Tale Images
 Tales must have image pairs in the `img/` folder:
-- `{index}.thumbnail.jpg` - Thumbnail version
-- `{index}.original.{ext}` - Original version (any format)
-- Must start with index 0
-- Indices must be sequential (0, 1, 2, 3, ...)
-
-Many tales currently only have thumbnails without corresponding originals, which causes validation errors.
+- `{index}.thumbnail.jpg` - Thumbnail version (must be JPG format)
+- `{index}.original.{ext}` - Original version (any format: png, jpg, jpeg, webp, etc.)
+- Must have at least one image pair with index 0
+- All image pairs must have matching indices
+- Indices must be sequential starting from 0 (0, 1, 2, 3, ...)
 
 ### Tale Audio
-Tales with the "audio" tag must have an `audio/` folder containing:
+Tales with the "audio" tag **must** have an `audio/` folder containing:
 - `audio.mp3` - Required processed audio file
 - `original.{ext}` - Optional original audio file (any format)
 
+Tales **without** the "audio" tag must **not** have an `audio/` folder.
+
 ### Person Photos  
 Each person folder must have exactly 2 files:
-- `photo.thumbnail.jpg` - Required thumbnail
-- `photo.original.{ext}` - Required original (any format, but only one file)
+- `photo.thumbnail.jpg` - Required thumbnail (must be JPG format)
+- `photo.original.{ext}` - Required original (any format, but only ONE file)
+
+No other files are allowed in person folders.
 
 ## Output
 
 The script outputs:
 - ✅ Success messages for passed validations
-- ⚠️ Warnings for non-critical issues
-- ❌ Errors for critical issues
+- ❌ Errors for validation failures
 
 At the end, it provides a summary:
 - Total number of errors
-- Total number of warnings
-- Detailed list of all errors and warnings
+- Detailed list of all errors (if any)
