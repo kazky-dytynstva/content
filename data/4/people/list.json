@@ -1,1 +1,1133 @@
-[{"id":95,"name":"Марія","surname":"Возняк","gender":"female","url":"https://www.instagram.com/mariaavozniak","info":"Пишу твори, навчаюсь у ШУЖ, дарую дітям магію казок.","roles":["author"],"create_date":"2025-11-28T21:46:15.147095"},{"id":94,"name":"Сергій","surname":"Бондаренко","gender":"male","url":"https://www.linkedin.com/in/sergii-bondarenko-i/","info":"Fullstack magic developer","roles":["crew"],"create_date":"2025-11-28T21:46:14.147095"},{"id":93,"name":"Богдан","surname":"Дмитрів","gender":"male","url":"https://www.linkedin.com/in/bohdan-dmytriv/","info":"Back-end magic dev","roles":["crew"],"create_date":"2025-11-28T21:46:13.147095"},{"id":92,"name":"Анна","surname":"Антонова","gender":"female","url":"https://t.me/suprun_anne","info":"Дизайнерка застосунку \"Казки дитинства\"","roles":["crew"],"create_date":"2025-11-28T21:46:12.147095"},{"id":91,"name":"Юрій","surname":"Качур","gender":"male","info":"Захоплюсь футболом та обожнюю море. Через тренування та сумлінне навчання досягну усього бажаного у житті!","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":90,"name":"Ангеліна","surname":"Ратушенко","gender":"female","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":89,"name":"Світлана","surname":"Соколова","gender":"female","url":"https://t.me/svitsokolova","info":"Дикторка й мама. Озвучую книги й рекламу. Знайти мене можна в Telegram: @svitsokolova","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":88,"name":"Ольга","surname":"Токар","gender":"female","url":"https://www.facebook.com/notyolgatokar/","info":"Вокальний аранжувальник та композитор.","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":87,"name":"Оскар","surname":"Сандлер","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BD%D0%B4%D0%BB%D0%B5%D1%80_%D0%9E%D1%81%D0%BA%D0%B0%D1%80_%D0%90%D1%80%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Український композитор, автор опер, музичних комедій, балету, музики до фільмів, вистав, пісень.","roles":["musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":86,"name":"Микола","surname":"Сом","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%94%D0%B0%D0%BD%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87","info":"Український поет, лауреат літературних премій ім. Володимира Сосюри й Остапа Вишні.","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":85,"name":"Тіна","surname":"Кароль","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%A2%D1%96%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%BE%D0%BB%D1%8C","info":"Українська співачка та акторка, телеведуча, громадська діячка","roles":["author","reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":84,"name":"Ірина","surname":"Гармаш","gender":"female","url":"https://www.facebook.com/profile.php?id=100013905045104","info":"Практичний психолог-методист, фахівець з пісочної психотерапії, з НЛП та МАК","roles":["author","reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":83,"name":"Руслан","surname":"Грех","gender":"male","url":"https://www.facebook.com/oruslan0303/","info":"Священник церкви Різдва Пресвятої Богородиці УГКЦ","roles":["author","reader","musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":82,"name":"Леся","surname":"Горова","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BE%D0%B2%D0%B0_%D0%9B%D0%B5%D1%81%D1%8F_%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D1%96%D0%B2%D0%BD%D0%B0","info":"Співачка, композиторка, народна артистка України","roles":["author","reader","musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":81,"name":"Діна","surname":"Кравцова","gender":"female","url":"https://www.instagram.com/dina_kravtsova","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":80,"name":"Анна","surname":"Чернявська","gender":"female","url":"https://www.instagram.com/anna_cherniavska9","info":"Письменниця-початківець, громадська діячка, учителька","roles":["author","reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":79,"name":"Ніка","surname":"Балаж","gender":"female","url":"https://instagram.com/nika_balazh","info":"Ілюстратор дитячого періодичного видання «Перший інтерактивний журнал для дітей Чарівний ліхтарик»","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":78,"name":"Шарль","surname":"Перро","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A8%D0%B0%D1%80%D0%BB%D1%8C_%D0%9F%D0%B5%D1%80%D1%80%D0%BE","info":"Французький письменник, основоположник жанру літературної казки","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":77,"name":"Уля","surname":"","gender":"female","info":"Власниця кішки Пушки","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":76,"name":"Алла","surname":"Мігай","gender":"female","url":"https://uk.wikipedia.org/wiki/M%D1%96%D0%B3%D0%B0%D0%B9_%D0%90%D0%BB%D0%BB%D0%B0_%D0%92%D1%96%D0%BB%D0%BE%D1%80%D1%96%D1%97%D0%B2%D0%BD%D0%B0","info":"Телеведуча, казкарка, композиторка","roles":["author","reader","musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":75,"name":"Емілія","surname":"Саталкіна","gender":"female","info":"Дитяча поетеса","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":74,"name":"Кость","surname":"Дяченко","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%94%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%9A%D0%BE%D1%81%D1%82%D1%8C_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Український письменник","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":73,"name":"Сашко","surname":"Лірник","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%92%D0%BB%D0%B0%D1%81%D1%8E%D0%BA_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Казкар-лірник, сценарист, актор, телеведучий","roles":["author","reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":72,"name":"Михайло","surname":"Слабошпицький","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A1%D0%BB%D0%B0%D0%B1%D0%BE%D1%88%D0%BF%D0%B8%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%A4%D0%B5%D0%B4%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%87","info":"Український прозаїк, критик, дитячий письменник","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":71,"name":"Анатолій","surname":"Давидов","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Український письменник, лауреат літературних премій","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":70,"name":"Василь","surname":"Вакуленко","gender":"male","info":"Художник","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":69,"name":"Євгенія","surname":"Бурчак","gender":"female","info":"Художниця-графік","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":68,"name":"Вікторія","surname":"Кузьміна","gender":"female","url":"https://www.facebook.com/happylifebyvikuz/","info":"Психолог, письменниця","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":67,"name":"Тарас","surname":"Сліпець","gender":"male","url":"https://www.linkedin.com/in/tarasslipets/","info":"Казковий ІТшник","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":66,"name":"Оксана","surname":"Смільська","gender":"female","url":"https://soundcloud.com/user-555561348-904005142/","info":"Акторка","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":65,"name":"Владислава","surname":"Сойма","gender":"female","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":64,"name":"Анатолій","surname":"Михайленко","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87","info":"Український письменник, заслужений журналіст України","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":63,"name":"Віра","surname":"Карасьова","gender":"female","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":62,"name":"Микола","surname":"Стеценко","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D1%86%D0%B5%D0%BD%D0%BA%D0%BE_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%9C%D0%B8%D1%82%D1%80%D0%BE%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Український дитячий письменник, журналіст","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":61,"name":"Олег","surname":"Буцень","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%91%D1%83%D1%86%D0%B5%D0%BD%D1%8C_%D0%9E%D0%BB%D0%B5%D0%B3_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87","info":"Український дитячий письменник, поет","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":60,"name":"Мирослав","surname":"Вересюк","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D0%B5%D1%81%D1%8E%D0%BA_%D0%9C%D0%B8%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87","info":"Сучасний український поет","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":59,"name":"Євген","surname":"Башенко","gender":"male","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":58,"name":"Костянтин","surname":"Ротов","gender":"male","info":"Радянський художник-графік, карикатурист, ілюстратор книг","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":57,"name":"Максим","surname":"Незгода","gender":"male","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":56,"name":"Олександр","surname":"Єрох","gender":"male","url":"https://www.facebook.com/profile.php?id=100009929326762","info":"Зранку - поет, а надвечір - казкар","roles":["author","reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":55,"name":"Олена","surname":"Чичик","gender":"female","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":54,"name":"Леся","surname":"Борсук","gender":"female","roles":["translator"],"create_date":"2025-11-28T21:46:11.147095"},{"id":53,"name":"Анастасія","surname":"Ножка","gender":"female","url":"https://www.youtube.com/channel/UCtQzBz3CugrAEffIlSDWr8w","info":"Журналістка, мандрівниця, мрійниця","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":52,"name":"Юлія","surname":"Антонова","gender":"female","url":"https://www.facebook.com/vitainlumine","info":"Муза, арт-терапевт","roles":["author","graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":51,"name":"Андрій 1","surname":"Антонов","gender":"male","url":"https://www.linkedin.com/in/andriiantonov/","info":"Автор сервісу \"Казки дитинства\"","create_date":"2025-12-12T10:20:04.563894","update_date":"2025-12-12T10:20:04.564047"},{"id":50,"name":"Джоель","surname":"Гарріс","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D0%B5%D0%BB%D1%8C_%D0%A7%D0%B0%D0%BD%D0%B4%D0%BB%D0%B5%D1%80_%D0%93%D0%B0%D1%80%D1%80%D1%96%D1%81","info":"Американський письменник, журналіст і фольклорист, автор «Казок дядечки Римуса»","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":49,"name":"Денис","surname":"Проуторов","gender":"male","url":"https://instagram.com/dennyprout","info":"Організатор свят з міста Дніпро, озвучка казок","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":48,"name":"Світлана","surname":"Харчук","gender":"female","url":"https://instagram.com/svetlana__kharchuk","info":"Ілюстратор","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":47,"name":"Анастасія","surname":"Білянська","gender":"female","url":"https://instagram.com/tusja_nastusja","info":"Створює і розвиває українське, найстарша сестра і любляча мама","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":46,"name":"Таріна","surname":"Карасівна","gender":"female","url":"https://www.instagram.com/karasivna/","info":"Юрист, блогер, 5 дипломів","roles":["author","reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":45,"name":"Дмитро","surname":"Соколов","gender":"male","info":"Дитячий психотерапевт, казкар","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":44,"name":"Керстін","surname":"Шьоне","gender":"male","url":"http://www.kerstinschoene.de/","info":"Німецька дитяча письменниця та ілюстратор","roles":["graphic"],"create_date":"2025-11-28T21:46:11.147095"},{"id":43,"name":"Світлана","surname":"Колесник","gender":"female","roles":["translator"],"create_date":"2025-11-28T21:46:11.147095"},{"id":42,"name":"Забіне","surname":"Больман","gender":"female","url":"https://en.wikipedia.org/wiki/Sabine_Bohlmann","info":"Німецька дитяча письменниця","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":41,"name":"Костянтин","surname":"Ушинський","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A3%D1%88%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9A%D0%BE%D1%81%D1%82%D1%8F%D0%BD%D1%82%D0%B8%D0%BD_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87","info":"Український педагог, кандидат юриспруденції і правознавець","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":40,"name":"Ніна","surname":"Матвієнко","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%82%D0%B2%D1%96%D1%94%D0%BD%D0%BA%D0%BE_%D0%9D%D1%96%D0%BD%D0%B0_%D0%9C%D0%B8%D1%82%D1%80%D0%BE%D1%84%D0%B0%D0%BD%D1%96%D0%B2%D0%BD%D0%B0","info":"Українська співачка, народна артистка України","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":39,"name":"Іван","surname":"Франко","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE_%D0%86%D0%B2%D0%B0%D0%BD_%D0%AF%D0%BA%D0%BE%D0%B2%D0%B8%D1%87","info":"Поет, прозаїк, драматург, перекладач, громадський і політичний діяч","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":38,"name":"Степан","surname":"Руданський","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A0%D1%83%D0%B4%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87","info":"Український поет, перекладач античної літератури","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":37,"name":"Леонід","surname":"Глібов","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%93%D0%BB%D1%96%D0%B1%D0%BE%D0%B2_%D0%9B%D0%B5%D0%BE%D0%BD%D1%96%D0%B4_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Український письменник, поет, байкар, видавець, громадський діяч","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":36,"name":"Вільгельм","surname":"Грімм","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%91%D1%80%D0%B0%D1%82%D0%B8_%D0%93%D1%80%D1%96%D0%BC%D0%BC","info":"Німецький науковець, казкар та мовознавць","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":35,"name":"Якоб","surname":"Грімм","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%91%D1%80%D0%B0%D1%82%D0%B8_%D0%93%D1%80%D1%96%D0%BC%D0%BC","info":"Німецький науковець, казкар та мовознавць","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":34,"name":"Марійка","surname":"Підгірянка","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%96%D0%B9%D0%BA%D0%B0_%D0%9F%D1%96%D0%B4%D0%B3%D1%96%D1%80%D1%8F%D0%BD%D0%BA%D0%B0","info":"Відома галичанка, українська поетеса та освітянка","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":33,"name":"Михайло","surname":"Стельмах","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BB%D1%8C%D0%BC%D0%B0%D1%85_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%9F%D0%B0%D0%BD%D0%B0%D1%81%D0%BE%D0%B2%D0%B8%D1%87","info":"Український письменник, драматург, педагог, фольклорист","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":32,"name":"Валентина","surname":"Юрченко","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%AE%D1%80%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%B0_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D1%96%D1%97%D0%B2%D0%BD%D0%B0","info":"Українська поетеса, письменниця, громадська діячка","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":31,"name":"Сергій","surname":"Татієнко","gender":"male","roles":["musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":30,"name":"Микола","surname":"Сигнаївський","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B3%D0%B0%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%A4%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87","info":"український поет","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":29,"name":"Ірина","surname":"Кириліна","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D1%96%D0%BD%D0%B0_%D0%86%D1%80%D0%B8%D0%BD%D0%B0_%D0%AF%D0%BA%D1%96%D0%B2%D0%BD%D0%B0","info":"український композитор, музикознавець","roles":["musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":28,"name":"Дмитро","surname":"Павличко","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%BB%D0%B8%D1%87%D0%BA%D0%BE_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%BE_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87","info":"Український поет, перекладач, літературний критик, громадсько-політичний діяч","roles":["translator","author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":27,"name":"Андрій","surname":"Малишко","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D1%88%D0%BA%D0%BE_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9_%D0%A1%D0%B0%D0%BC%D1%96%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87","info":"Український поет, перекладач, літературний критик","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":26,"name":"Платон","surname":"Майборода","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B9%D0%B1%D0%BE%D1%80%D0%BE%D0%B4%D0%B0_%D0%9F%D0%BB%D0%B0%D1%82%D0%BE%D0%BD_%D0%86%D0%BB%D0%B0%D1%80%D1%96%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Український композитор, народний артист УРСР","roles":["musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":25,"name":"Наталя","surname":"Забіла","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D0%B1%D1%96%D0%BB%D0%B0_%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D1%8F_%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D0%BD%D0%B0","info":"Українська письменниця, поетеса","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":24,"name":"Анна","surname":"Середа","gender":"female","url":"https://www.facebook.com/profile.php?id=100005482067145","info":"Мама з поетичною душею","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":23,"name":"Григорій","surname":"Бойко","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%91%D0%BE%D0%B9%D0%BA%D0%BE_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%96%D0%B9_%D0%9F%D0%B8%D0%BB%D0%B8%D0%BF%D0%BE%D0%B2%D0%B8%D1%87","info":"Український письменник, поет і перекладач","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":22,"name":"Марія","surname":"Хоросницька","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D1%80%D0%BE%D1%81%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B0_%D0%9C%D0%B0%D1%80%D1%96%D1%8F_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%96%D0%B2%D0%BD%D0%B0","info":"Українська поетеса, член Національної спілки письменників України","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":21,"name":"Анатолій","surname":"Костецький","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%82%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87","info":"Український дитячий письменник, перекладач, мовознавець","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":20,"name":"Самуїл","surname":"Маршак","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%88%D0%B0%D0%BA_%D0%A1%D0%B0%D0%BC%D1%83%D1%97%D0%BB_%D0%AF%D0%BA%D0%BE%D0%B2%D0%B8%D1%87","info":"Радянський дитячий письменник, поет, перекладач, драматург, критик","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":19,"name":"Іван","surname":"Малкович","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%BA%D0%BE%D0%B2%D0%B8%D1%87_%D0%86%D0%B2%D0%B0%D0%BD_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Український поет і видавець, власник і директор видавництва А-ба-ба-га-ла-ма-га","roles":["translator"],"create_date":"2025-11-28T21:46:11.147095"},{"id":18,"name":"Павло","surname":"Глазовий","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE_%D0%9F%D1%80%D0%BE%D0%BA%D0%BE%D0%BF%D0%BE%D0%B2%D0%B8%D1%87","info":"Український поет-гуморист і сатирик","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":17,"name":"Валентина","surname":"Байкова","gender":"female","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":16,"name":"Анатолій","surname":"Григорук","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%83%D0%BA_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87","info":"Поет, прозаїк, перекладач","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":15,"name":"Юліан","surname":"Тувім","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%AE%D0%BB%D1%96%D0%B0%D0%BD_%D0%A2%D1%83%D0%B2%D1%96%D0%BC","info":"Польський поет, перекладач і мовозванець","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":14,"name":"Василь","surname":"Чухліб","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A7%D1%83%D1%85%D0%BB%D1%96%D0%B1_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87","info":"Український письменник, журналіст, громадський діяч, літературознавець","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":13,"name":"Яніка","surname":"Терещенко","gender":"female","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":12,"name":"Віктор","surname":"Павлік","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%BB%D0%B8%D0%BA_%D0%92%D1%96%D0%BA%D1%82%D0%BE%D1%80_%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B8%D1%87","info":"Співак, гітарист, народний артист України","roles":["author","reader","musician"],"create_date":"2025-11-28T21:46:11.147095"},{"id":11,"name":"Жанна","surname":"Хома","gender":"female","url":"https://instagram.com/dariimikey","info":"Дитяча письменниця, авторка циклу казок «Маленькі історії Дарчика та Міккі»","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":10,"name":"Лілія","surname":"Гудзь","gender":"female","url":"https://www.facebook.com/profile.php?id=100002231488558","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":9,"name":"Тетяна","surname":"Леонт'єва","gender":"female","url":"https://www.facebook.com/tetianaleontieva.avtorskatvorchist","info":"Мама, педагог, вихователь","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":8,"name":"Юлія","surname":"Задорожна","gender":"female","url":"https://www.youtube.com/channel/UCniv-ty1Yrmf7S29eNHFQvg","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":7,"name":"Катерина","surname":"Гаврилова","gender":"female","info":"Дитяча казкарка","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":6,"name":"Марія","surname":"Солтис-Смирнова","gender":"female","info":"Дитяча письменниця, громадська діячка, художниця-ілюстраторка","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":5,"name":"Галина","surname":"Мирослава","gender":"female","url":"https://kazky.org.ua/zbirky/bohdanija","info":"Автор численних дитячих віршів та творів","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":4,"name":"Інна","surname":"Яворська","gender":"female","roles":["reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":3,"name":"Василь","surname":"Сухомлинський","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BC%D0%BB%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87","info":"Український радянський педагог, публіцист, письменник, поет","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":2,"name":"Оксана","surname":"Кротюк","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%BE%D1%82%D1%8E%D0%BA_%D0%9E%D0%BA%D1%81%D0%B0%D0%BD%D0%B0_%D0%9F%D0%B5%D1%82%D1%80%D1%96%D0%B2%D0%BD%D0%B0","info":"Українська дитяча письменниця","roles":["author","reader"],"create_date":"2025-11-28T21:46:11.147095"},{"id":1,"name":"Ганс","surname":"Крістіан","gender":"male","url":"https://uk.wikipedia.org/wiki/%D0%93%D0%B0%D0%BD%D1%81_%D0%9A%D1%80%D1%96%D1%81%D1%82%D1%96%D0%B0%D0%BD_%D0%90%D0%BD%D0%B4%D0%B5%D1%80%D1%81%D0%B5%D0%BD","info":"Данський письменник, казкар","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"},{"id":0,"name":"Леся","surname":"Українка","gender":"female","url":"https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D1%81%D1%8F_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%BA%D0%B0","info":"Українська письменниця, перекладачка, культурна діячка","roles":["author"],"create_date":"2025-11-28T21:46:11.147095"}]
+[
+    {
+        "id": 95,
+        "name": "Марія",
+        "surname": "Возняк",
+        "gender": "female",
+        "url": "https://www.instagram.com/mariaavozniak",
+        "info": "Пишу твори, навчаюсь у ШУЖ, дарую дітям магію казок.",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:15.147095"
+    },
+    {
+        "id": 94,
+        "name": "Сергій",
+        "surname": "Бондаренко",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/sergii-bondarenko-i/",
+        "info": "Fullstack magic developer",
+        "roles": [
+            "crew"
+        ],
+        "create_date": "2025-11-28T21:46:14.147095"
+    },
+    {
+        "id": 93,
+        "name": "Богдан",
+        "surname": "Дмитрів",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/bohdan-dmytriv/",
+        "info": "Back-end magic dev",
+        "roles": [
+            "crew"
+        ],
+        "create_date": "2025-11-28T21:46:13.147095"
+    },
+    {
+        "id": 92,
+        "name": "Анна",
+        "surname": "Антонова",
+        "gender": "female",
+        "url": "https://t.me/suprun_anne",
+        "info": "Дизайнерка застосунку \"Казки дитинства\"",
+        "roles": [
+            "crew"
+        ],
+        "create_date": "2025-11-28T21:46:12.147095"
+    },
+    {
+        "id": 91,
+        "name": "Юрій",
+        "surname": "Качур",
+        "gender": "male",
+        "info": "Захоплюсь футболом та обожнюю море. Через тренування та сумлінне навчання досягну усього бажаного у житті!",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 90,
+        "name": "Ангеліна",
+        "surname": "Ратушенко",
+        "gender": "female",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 89,
+        "name": "Світлана",
+        "surname": "Соколова",
+        "gender": "female",
+        "url": "https://t.me/svitsokolova",
+        "info": "Дикторка й мама. Озвучую книги й рекламу. Знайти мене можна в Telegram: @svitsokolova",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 88,
+        "name": "Ольга",
+        "surname": "Токар",
+        "gender": "female",
+        "url": "https://www.facebook.com/notyolgatokar/",
+        "info": "Вокальний аранжувальник та композитор.",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 87,
+        "name": "Оскар",
+        "surname": "Сандлер",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BD%D0%B4%D0%BB%D0%B5%D1%80_%D0%9E%D1%81%D0%BA%D0%B0%D1%80_%D0%90%D1%80%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український композитор, автор опер, музичних комедій, балету, музики до фільмів, вистав, пісень.",
+        "roles": [
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 86,
+        "name": "Микола",
+        "surname": "Сом",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%94%D0%B0%D0%BD%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український поет, лауреат літературних премій ім. Володимира Сосюри й Остапа Вишні.",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 85,
+        "name": "Тіна",
+        "surname": "Кароль",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A2%D1%96%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%BE%D0%BB%D1%8C",
+        "info": "Українська співачка та акторка, телеведуча, громадська діячка",
+        "roles": [
+            "author",
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 84,
+        "name": "Ірина",
+        "surname": "Гармаш",
+        "gender": "female",
+        "url": "https://www.facebook.com/profile.php?id=100013905045104",
+        "info": "Практичний психолог-методист, фахівець з пісочної психотерапії, з НЛП та МАК",
+        "roles": [
+            "author",
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 83,
+        "name": "Руслан",
+        "surname": "Грех",
+        "gender": "male",
+        "url": "https://www.facebook.com/oruslan0303/",
+        "info": "Священник церкви Різдва Пресвятої Богородиці УГКЦ",
+        "roles": [
+            "author",
+            "reader",
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 82,
+        "name": "Леся",
+        "surname": "Горова",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BE%D0%B2%D0%B0_%D0%9B%D0%B5%D1%81%D1%8F_%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D1%96%D0%B2%D0%BD%D0%B0",
+        "info": "Співачка, композиторка, народна артистка України",
+        "roles": [
+            "author",
+            "reader",
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 81,
+        "name": "Діна",
+        "surname": "Кравцова",
+        "gender": "female",
+        "url": "https://www.instagram.com/dina_kravtsova",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 80,
+        "name": "Анна",
+        "surname": "Чернявська",
+        "gender": "female",
+        "url": "https://www.instagram.com/anna_cherniavska9",
+        "info": "Письменниця-початківець, громадська діячка, учителька",
+        "roles": [
+            "author",
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 79,
+        "name": "Ніка",
+        "surname": "Балаж",
+        "gender": "female",
+        "url": "https://instagram.com/nika_balazh",
+        "info": "Ілюстратор дитячого періодичного видання «Перший інтерактивний журнал для дітей Чарівний ліхтарик»",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 78,
+        "name": "Шарль",
+        "surname": "Перро",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A8%D0%B0%D1%80%D0%BB%D1%8C_%D0%9F%D0%B5%D1%80%D1%80%D0%BE",
+        "info": "Французький письменник, основоположник жанру літературної казки",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 77,
+        "name": "Уля",
+        "surname": "",
+        "gender": "female",
+        "info": "Власниця кішки Пушки",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 76,
+        "name": "Алла",
+        "surname": "Мігай",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/M%D1%96%D0%B3%D0%B0%D0%B9_%D0%90%D0%BB%D0%BB%D0%B0_%D0%92%D1%96%D0%BB%D0%BE%D1%80%D1%96%D1%97%D0%B2%D0%BD%D0%B0",
+        "info": "Телеведуча, казкарка, композиторка",
+        "roles": [
+            "author",
+            "reader",
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 75,
+        "name": "Емілія",
+        "surname": "Саталкіна",
+        "gender": "female",
+        "info": "Дитяча поетеса",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 74,
+        "name": "Кость",
+        "surname": "Дяченко",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%94%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%9A%D0%BE%D1%81%D1%82%D1%8C_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український письменник",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 73,
+        "name": "Сашко",
+        "surname": "Лірник",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%92%D0%BB%D0%B0%D1%81%D1%8E%D0%BA_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Казкар-лірник, сценарист, актор, телеведучий",
+        "roles": [
+            "author",
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 72,
+        "name": "Михайло",
+        "surname": "Слабошпицький",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BB%D0%B0%D0%B1%D0%BE%D1%88%D0%BF%D0%B8%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%A4%D0%B5%D0%B4%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український прозаїк, критик, дитячий письменник",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 71,
+        "name": "Анатолій",
+        "surname": "Давидов",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український письменник, лауреат літературних премій",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 70,
+        "name": "Василь",
+        "surname": "Вакуленко",
+        "gender": "male",
+        "info": "Художник",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 69,
+        "name": "Євгенія",
+        "surname": "Бурчак",
+        "gender": "female",
+        "info": "Художниця-графік",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 68,
+        "name": "Вікторія",
+        "surname": "Кузьміна",
+        "gender": "female",
+        "url": "https://www.facebook.com/happylifebyvikuz/",
+        "info": "Психолог, письменниця",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 67,
+        "name": "Тарас",
+        "surname": "Сліпець",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/tarasslipets/",
+        "info": "Казковий ІТшник",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 66,
+        "name": "Оксана",
+        "surname": "Смільська",
+        "gender": "female",
+        "url": "https://soundcloud.com/user-555561348-904005142/",
+        "info": "Акторка",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 65,
+        "name": "Владислава",
+        "surname": "Сойма",
+        "gender": "female",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 64,
+        "name": "Анатолій",
+        "surname": "Михайленко",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український письменник, заслужений журналіст України",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 63,
+        "name": "Віра",
+        "surname": "Карасьова",
+        "gender": "female",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 62,
+        "name": "Микола",
+        "surname": "Стеценко",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D1%86%D0%B5%D0%BD%D0%BA%D0%BE_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%9C%D0%B8%D1%82%D1%80%D0%BE%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український дитячий письменник, журналіст",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 61,
+        "name": "Олег",
+        "surname": "Буцень",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%91%D1%83%D1%86%D0%B5%D0%BD%D1%8C_%D0%9E%D0%BB%D0%B5%D0%B3_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український дитячий письменник, поет",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 60,
+        "name": "Мирослав",
+        "surname": "Вересюк",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D0%B5%D1%81%D1%8E%D0%BA_%D0%9C%D0%B8%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Сучасний український поет",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 59,
+        "name": "Євген",
+        "surname": "Башенко",
+        "gender": "male",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 58,
+        "name": "Костянтин",
+        "surname": "Ротов",
+        "gender": "male",
+        "info": "Радянський художник-графік, карикатурист, ілюстратор книг",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 57,
+        "name": "Максим",
+        "surname": "Незгода",
+        "gender": "male",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 56,
+        "name": "Олександр",
+        "surname": "Єрох",
+        "gender": "male",
+        "url": "https://www.facebook.com/profile.php?id=100009929326762",
+        "info": "Зранку - поет, а надвечір - казкар",
+        "roles": [
+            "author",
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 55,
+        "name": "Олена",
+        "surname": "Чичик",
+        "gender": "female",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 54,
+        "name": "Леся",
+        "surname": "Борсук",
+        "gender": "female",
+        "roles": [
+            "translator"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 53,
+        "name": "Анастасія",
+        "surname": "Ножка",
+        "gender": "female",
+        "url": "https://www.youtube.com/channel/UCtQzBz3CugrAEffIlSDWr8w",
+        "info": "Журналістка, мандрівниця, мрійниця",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 52,
+        "name": "Юлія",
+        "surname": "Антонова",
+        "gender": "female",
+        "url": "https://www.facebook.com/vitainlumine",
+        "info": "Муза, арт-терапевт",
+        "roles": [
+            "author",
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 51,
+        "name": "Андрій 1",
+        "surname": "Антонов",
+        "gender": "male",
+        "url": "https://www.linkedin.com/in/andriiantonov/",
+        "info": "Автор сервісу \"Казки дитинства\"",
+        "create_date": "2025-12-12T10:20:04.563894",
+        "update_date": "2025-12-12T10:20:04.564047"
+    },
+    {
+        "id": 50,
+        "name": "Джоель",
+        "surname": "Гарріс",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D0%B5%D0%BB%D1%8C_%D0%A7%D0%B0%D0%BD%D0%B4%D0%BB%D0%B5%D1%80_%D0%93%D0%B0%D1%80%D1%80%D1%96%D1%81",
+        "info": "Американський письменник, журналіст і фольклорист, автор «Казок дядечки Римуса»",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 49,
+        "name": "Денис",
+        "surname": "Проуторов",
+        "gender": "male",
+        "url": "https://instagram.com/dennyprout",
+        "info": "Організатор свят з міста Дніпро, озвучка казок",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 48,
+        "name": "Світлана",
+        "surname": "Харчук",
+        "gender": "female",
+        "url": "https://instagram.com/svetlana__kharchuk",
+        "info": "Ілюстратор",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 47,
+        "name": "Анастасія",
+        "surname": "Білянська",
+        "gender": "female",
+        "url": "https://instagram.com/tusja_nastusja",
+        "info": "Створює і розвиває українське, найстарша сестра і любляча мама",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 46,
+        "name": "Таріна",
+        "surname": "Карасівна",
+        "gender": "female",
+        "url": "https://www.instagram.com/karasivna/",
+        "info": "Юрист, блогер, 5 дипломів",
+        "roles": [
+            "author",
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 45,
+        "name": "Дмитро",
+        "surname": "Соколов",
+        "gender": "male",
+        "info": "Дитячий психотерапевт, казкар",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 44,
+        "name": "Керстін",
+        "surname": "Шьоне",
+        "gender": "male",
+        "url": "http://www.kerstinschoene.de/",
+        "info": "Німецька дитяча письменниця та ілюстратор",
+        "roles": [
+            "graphic"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 43,
+        "name": "Світлана",
+        "surname": "Колесник",
+        "gender": "female",
+        "roles": [
+            "translator"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 42,
+        "name": "Забіне",
+        "surname": "Больман",
+        "gender": "female",
+        "url": "https://en.wikipedia.org/wiki/Sabine_Bohlmann",
+        "info": "Німецька дитяча письменниця",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 41,
+        "name": "Костянтин",
+        "surname": "Ушинський",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A3%D1%88%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9A%D0%BE%D1%81%D1%82%D1%8F%D0%BD%D1%82%D0%B8%D0%BD_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український педагог, кандидат юриспруденції і правознавець",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 40,
+        "name": "Ніна",
+        "surname": "Матвієнко",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%82%D0%B2%D1%96%D1%94%D0%BD%D0%BA%D0%BE_%D0%9D%D1%96%D0%BD%D0%B0_%D0%9C%D0%B8%D1%82%D1%80%D0%BE%D1%84%D0%B0%D0%BD%D1%96%D0%B2%D0%BD%D0%B0",
+        "info": "Українська співачка, народна артистка України",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 39,
+        "name": "Іван",
+        "surname": "Франко",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE_%D0%86%D0%B2%D0%B0%D0%BD_%D0%AF%D0%BA%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Поет, прозаїк, драматург, перекладач, громадський і політичний діяч",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 38,
+        "name": "Степан",
+        "surname": "Руданський",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A0%D1%83%D0%B4%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український поет, перекладач античної літератури",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 37,
+        "name": "Леонід",
+        "surname": "Глібов",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%93%D0%BB%D1%96%D0%B1%D0%BE%D0%B2_%D0%9B%D0%B5%D0%BE%D0%BD%D1%96%D0%B4_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український письменник, поет, байкар, видавець, громадський діяч",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 36,
+        "name": "Вільгельм",
+        "surname": "Грімм",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%91%D1%80%D0%B0%D1%82%D0%B8_%D0%93%D1%80%D1%96%D0%BC%D0%BC",
+        "info": "Німецький науковець, казкар та мовознавць",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 35,
+        "name": "Якоб",
+        "surname": "Грімм",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%91%D1%80%D0%B0%D1%82%D0%B8_%D0%93%D1%80%D1%96%D0%BC%D0%BC",
+        "info": "Німецький науковець, казкар та мовознавць",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 34,
+        "name": "Марійка",
+        "surname": "Підгірянка",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%96%D0%B9%D0%BA%D0%B0_%D0%9F%D1%96%D0%B4%D0%B3%D1%96%D1%80%D1%8F%D0%BD%D0%BA%D0%B0",
+        "info": "Відома галичанка, українська поетеса та освітянка",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 33,
+        "name": "Михайло",
+        "surname": "Стельмах",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BB%D1%8C%D0%BC%D0%B0%D1%85_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%9F%D0%B0%D0%BD%D0%B0%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український письменник, драматург, педагог, фольклорист",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 32,
+        "name": "Валентина",
+        "surname": "Юрченко",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%AE%D1%80%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%B0_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D1%96%D1%97%D0%B2%D0%BD%D0%B0",
+        "info": "Українська поетеса, письменниця, громадська діячка",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 31,
+        "name": "Сергій",
+        "surname": "Татієнко",
+        "gender": "male",
+        "roles": [
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 30,
+        "name": "Микола",
+        "surname": "Сигнаївський",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B3%D0%B0%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%A4%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "український поет",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 29,
+        "name": "Ірина",
+        "surname": "Кириліна",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D1%96%D0%BD%D0%B0_%D0%86%D1%80%D0%B8%D0%BD%D0%B0_%D0%AF%D0%BA%D1%96%D0%B2%D0%BD%D0%B0",
+        "info": "український композитор, музикознавець",
+        "roles": [
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 28,
+        "name": "Дмитро",
+        "surname": "Павличко",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%BB%D0%B8%D1%87%D0%BA%D0%BE_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%BE_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український поет, перекладач, літературний критик, громадсько-політичний діяч",
+        "roles": [
+            "translator",
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 27,
+        "name": "Андрій",
+        "surname": "Малишко",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D1%88%D0%BA%D0%BE_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9_%D0%A1%D0%B0%D0%BC%D1%96%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український поет, перекладач, літературний критик",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 26,
+        "name": "Платон",
+        "surname": "Майборода",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B9%D0%B1%D0%BE%D1%80%D0%BE%D0%B4%D0%B0_%D0%9F%D0%BB%D0%B0%D1%82%D0%BE%D0%BD_%D0%86%D0%BB%D0%B0%D1%80%D1%96%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український композитор, народний артист УРСР",
+        "roles": [
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 25,
+        "name": "Наталя",
+        "surname": "Забіла",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D0%B1%D1%96%D0%BB%D0%B0_%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D1%8F_%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D0%BD%D0%B0",
+        "info": "Українська письменниця, поетеса",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 24,
+        "name": "Анна",
+        "surname": "Середа",
+        "gender": "female",
+        "url": "https://www.facebook.com/profile.php?id=100005482067145",
+        "info": "Мама з поетичною душею",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 23,
+        "name": "Григорій",
+        "surname": "Бойко",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%91%D0%BE%D0%B9%D0%BA%D0%BE_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%96%D0%B9_%D0%9F%D0%B8%D0%BB%D0%B8%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український письменник, поет і перекладач",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 22,
+        "name": "Марія",
+        "surname": "Хоросницька",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D1%80%D0%BE%D1%81%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B0_%D0%9C%D0%B0%D1%80%D1%96%D1%8F_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%96%D0%B2%D0%BD%D0%B0",
+        "info": "Українська поетеса, член Національної спілки письменників України",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 21,
+        "name": "Анатолій",
+        "surname": "Костецький",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%82%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український дитячий письменник, перекладач, мовознавець",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 20,
+        "name": "Самуїл",
+        "surname": "Маршак",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%88%D0%B0%D0%BA_%D0%A1%D0%B0%D0%BC%D1%83%D1%97%D0%BB_%D0%AF%D0%BA%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Радянський дитячий письменник, поет, перекладач, драматург, критик",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 19,
+        "name": "Іван",
+        "surname": "Малкович",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%BA%D0%BE%D0%B2%D0%B8%D1%87_%D0%86%D0%B2%D0%B0%D0%BD_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український поет і видавець, власник і директор видавництва А-ба-ба-га-ла-ма-га",
+        "roles": [
+            "translator"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 18,
+        "name": "Павло",
+        "surname": "Глазовий",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE_%D0%9F%D1%80%D0%BE%D0%BA%D0%BE%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український поет-гуморист і сатирик",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 17,
+        "name": "Валентина",
+        "surname": "Байкова",
+        "gender": "female",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 16,
+        "name": "Анатолій",
+        "surname": "Григорук",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%83%D0%BA_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9_%D0%86%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Поет, прозаїк, перекладач",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 15,
+        "name": "Юліан",
+        "surname": "Тувім",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%AE%D0%BB%D1%96%D0%B0%D0%BD_%D0%A2%D1%83%D0%B2%D1%96%D0%BC",
+        "info": "Польський поет, перекладач і мовозванець",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 14,
+        "name": "Василь",
+        "surname": "Чухліб",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A7%D1%83%D1%85%D0%BB%D1%96%D0%B1_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український письменник, журналіст, громадський діяч, літературознавець",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 13,
+        "name": "Яніка",
+        "surname": "Терещенко",
+        "gender": "female",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 12,
+        "name": "Віктор",
+        "surname": "Павлік",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%BB%D0%B8%D0%BA_%D0%92%D1%96%D0%BA%D1%82%D0%BE%D1%80_%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Співак, гітарист, народний артист України",
+        "roles": [
+            "author",
+            "reader",
+            "musician"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 11,
+        "name": "Жанна",
+        "surname": "Хома",
+        "gender": "female",
+        "url": "https://instagram.com/dariimikey",
+        "info": "Дитяча письменниця, авторка циклу казок «Маленькі історії Дарчика та Міккі»",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 10,
+        "name": "Лілія",
+        "surname": "Гудзь",
+        "gender": "female",
+        "url": "https://www.facebook.com/profile.php?id=100002231488558",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 9,
+        "name": "Тетяна",
+        "surname": "Леонт'єва",
+        "gender": "female",
+        "url": "https://www.facebook.com/tetianaleontieva.avtorskatvorchist",
+        "info": "Мама, педагог, вихователь",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 8,
+        "name": "Юлія",
+        "surname": "Задорожна",
+        "gender": "female",
+        "url": "https://www.youtube.com/channel/UCniv-ty1Yrmf7S29eNHFQvg",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 7,
+        "name": "Катерина",
+        "surname": "Гаврилова",
+        "gender": "female",
+        "info": "Дитяча казкарка",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 6,
+        "name": "Марія",
+        "surname": "Солтис-Смирнова",
+        "gender": "female",
+        "info": "Дитяча письменниця, громадська діячка, художниця-ілюстраторка",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 5,
+        "name": "Галина",
+        "surname": "Мирослава",
+        "gender": "female",
+        "url": "https://kazky.org.ua/zbirky/bohdanija",
+        "info": "Автор численних дитячих віршів та творів",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 4,
+        "name": "Інна",
+        "surname": "Яворська",
+        "gender": "female",
+        "roles": [
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 3,
+        "name": "Василь",
+        "surname": "Сухомлинський",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BC%D0%BB%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+        "info": "Український радянський педагог, публіцист, письменник, поет",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 2,
+        "name": "Оксана",
+        "surname": "Кротюк",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%BE%D1%82%D1%8E%D0%BA_%D0%9E%D0%BA%D1%81%D0%B0%D0%BD%D0%B0_%D0%9F%D0%B5%D1%82%D1%80%D1%96%D0%B2%D0%BD%D0%B0",
+        "info": "Українська дитяча письменниця",
+        "roles": [
+            "author",
+            "reader"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 1,
+        "name": "Ганс",
+        "surname": "Крістіан",
+        "gender": "male",
+        "url": "https://uk.wikipedia.org/wiki/%D0%93%D0%B0%D0%BD%D1%81_%D0%9A%D1%80%D1%96%D1%81%D1%82%D1%96%D0%B0%D0%BD_%D0%90%D0%BD%D0%B4%D0%B5%D1%80%D1%81%D0%B5%D0%BD",
+        "info": "Данський письменник, казкар",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    },
+    {
+        "id": 0,
+        "name": "Леся",
+        "surname": "Українка",
+        "gender": "female",
+        "url": "https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D1%81%D1%8F_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%BA%D0%B0",
+        "info": "Українська письменниця, перекладачка, культурна діячка",
+        "roles": [
+            "author"
+        ],
+        "create_date": "2025-11-28T21:46:11.147095"
+    }
+]
