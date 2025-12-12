@@ -18,25 +18,25 @@ void main() {
 
     final files = audioDir.listSync().whereType<File>().toList();
 
-    final original = files.where((file) {
+    final audio = files.where((file) {
       final name = file.path.split('/').last;
-      return !name.contains('audio.mp3');
-    }).firstOrNull;
-
-    final thumbnail = files.where((file) {
-      final name = file.path.split('/').last;
-      return name.contains('audio.mp3');
+      return !name.contains('original.');
     }).first;
 
-    if (original == null) {
-      final bytes = thumbnail.readAsBytesSync();
+    final bytes = audio.readAsBytesSync();
 
-      final thumbnailName = thumbnail.path.split('/').last;
-      final newName = thumbnailName.replaceFirst('audio.mp3', 'original.mp3');
-
-      final newFile = File('${audioDir.path}/$newName');
-      newFile.createSync();
-      newFile.writeAsBytesSync(bytes);
+    final audioName = audio.path.split('/').last;
+    final format = audioName.split('.').last;
+    if (format != 'mp3') {
+      throw Exception('Unexpected format: $format');
     }
+    final newName = audioName.replaceFirst(audioName, 'thumbnail.mp3');
+
+    final newFile = File('${audioDir.path}/$newName');
+
+    newFile.createSync();
+    newFile.writeAsBytesSync(bytes);
+
+    audio.deleteSync();
   }
 }
