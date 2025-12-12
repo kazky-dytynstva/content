@@ -74,6 +74,7 @@ Expected structure:
 ```
 data/4/tales/
   list.json
+  list.json.gz        # Compressed version (gzip)
   {id}/
     img/
       0.thumbnail.jpg
@@ -84,6 +85,17 @@ data/4/tales/
     audio/              # Only if tale has "audio" tag
       audio.mp3         # Required
       original.{ext}    # Optional, any format
+```
+
+### 6. Compressed Files
+- ✅ Checks that `list.json.gz` exists for tales
+- ✅ Checks that `list.json.gz` exists for people
+- ✅ Validates compressed files can be decompressed
+- ✅ Compares decompressed content matches original `list.json`
+- ❌ Error if compressed file is missing
+- ❌ Error if decompressed content doesn't match original
+- ❌ Error if item counts differ between compressed and uncompressed
+
 ## Detailed Validation Rules
 
 ### Tale Images

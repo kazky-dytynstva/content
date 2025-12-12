@@ -32,6 +32,9 @@ class Data4Validator {
     // 5. Check file structure consistency
     await _validateFileStructure();
 
+    // 6. Validate compressed files
+    await _validateCompressedFiles();
+
     final success = errors.isEmpty;
     print(
       '\n${success ? '✅' : '❌'} Validation ${success ? 'passed' : 'failed'}!',
@@ -511,6 +514,116 @@ class Data4Validator {
     }
 
     print('✅ Tales folder structure validated ($validFolders valid folders)');
+  }
+
+  /// Validate compressed files exist and match uncompressed versions
+  Future<void> _validateCompressedFiles() async {
+    print('\n🗜️  Validating compressed files...');
+
+    await _validateCompressedTales();
+    await _validateCompressedPeople();
+  }
+
+  /// Validate compressed tales file
+  Future<void> _validateCompressedTales() async {
+    final listFile = File('$rootPath/data/4/tales/list.json');
+    final compressedFile = File('$rootPath/data/4/tales/list.json.gz');
+
+    if (!compressedFile.existsSync()) {
+      errors.add('❌ Compressed tales file missing: list.json.gz');
+      return;
+    }
+
+    try {
+      // Read and parse original JSON
+      final originalContent = await listFile.readAsString();
+      final originalJson = jsonDecode(originalContent) as List<dynamic>;
+      final originalTales = originalJson
+          .map((json) => TaleDto.fromJson(json as Map<String, dynamic>))
+          .toList();
+
+      // Decompress and parse compressed file
+      final compressedBytes = await compressedFile.readAsBytes();
+      final decompressedTales = DTOCompression.decompressTales(compressedBytes);
+
+      // Compare counts
+      if (originalTales.length != decompressedTales.length) {
+        errors.add(
+          '❌ Tales count mismatch: original has ${originalTales.length}, compressed has ${decompressedTales.length}',
+        );
+        return;
+      }
+
+      // Compare each tale using Equatable
+      for (var i = 0; i < originalTales.length; i++) {
+        final original = originalTales[i];
+        final decompressed = decompressedTales[i];
+
+        if (original != decompressed) {
+          errors.add(
+            '❌ Tale mismatch at index $i (id=${original.id}): objects are not equal',
+          );
+        }
+      }
+
+      print(
+        '✅ Compressed tales file validated (${decompressedTales.length} tales)',
+      );
+    } catch (e) {
+      errors.add('❌ Failed to validate compressed tales file: $e');
+    }
+  }
+
+  /// Validate compressed people file
+  Future<void> _validateCompressedPeople() async {
+    final listFile = File('$rootPath/data/4/people/list.json');
+    final compressedFile = File('$rootPath/data/4/people/list.json.gz');
+
+    if (!compressedFile.existsSync()) {
+      errors.add('❌ Compressed people file missing: list.json.gz');
+      return;
+    }
+
+    try {
+      // Read and parse original JSON
+      final originalContent = await listFile.readAsString();
+      final originalJson = jsonDecode(originalContent) as List<dynamic>;
+      final originalPeople = originalJson
+          .map((json) => PersonDto.fromJson(json as Map<String, dynamic>))
+          .toList();
+
+      // Decompress and parse compressed file
+      final compressedBytes = await compressedFile.readAsBytes();
+      final decompressedPeople = DTOCompression.decompressPeople(
+        compressedBytes,
+      );
+
+      // Compare counts
+      if (originalPeople.length != decompressedPeople.length) {
+        errors.add(
+          '❌ People count mismatch: original has ${originalPeople.length}, compressed has ${decompressedPeople.length}',
+        );
+        return;
+      }
+
+      // Compare each person using Equatable
+      for (var i = 0; i < originalPeople.length; i++) {
+        final original = originalPeople[i];
+        final decompressed = decompressedPeople[i];
+
+        if (original != decompressed) {
+          errors.add(
+            '❌ Person mismatch at index $i (id=${original.id}): objects are not equal',
+          );
+        }
+      }
+
+      print(
+        '✅ Compressed people file validated (${decompressedPeople.length} people)',
+      );
+    } catch (e) {
+      errors.add('❌ Failed to validate compressed people file: $e');
+    }
   }
 }
 
