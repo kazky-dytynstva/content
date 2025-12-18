@@ -38,7 +38,14 @@ void main() async {
     }
 
     if (id == '142' || id == '91' || id == '224') {
-      print('  Skipping $id due to known issue\n');
+      final newThumbnailFile = File(
+        originalAudio.parent.path + '/thumbnail.m4a',
+      );
+      newThumbnailFile.createSync();
+
+      newThumbnailFile.writeAsBytesSync(thumbnailFile.readAsBytesSync());
+      thumbnailFile.deleteSync();
+      print('  Reverted to original thumbnail for $id as new size is larger\n');
       continue;
     }
 
