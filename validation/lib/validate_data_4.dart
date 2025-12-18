@@ -142,7 +142,7 @@ class Data4Validator {
 
       if (!personDir.existsSync()) {
         errors.add(
-          '❌ Person ${person.id} (${person.name} ${person.surname ?? ''}) has no folder',
+          '❌ Person ${person.id} (${person.name} ${person.surname}) has no folder',
         );
         continue;
       }
@@ -281,8 +281,12 @@ class Data4Validator {
         if (name != 'img' && name != 'audio') {
           errors.add('❌ Unexpected folder in tales/${tale.id}: $name');
         }
-      } else if (entry is File && name != '.DS_Store') {
-        errors.add('❌ Unexpected file in tales/${tale.id}: $name');
+      } else if (entry is File) {
+        if (name == '.DS_Store') {
+          entry.deleteSync();
+        } else {
+          errors.add('❌ Unexpected file in tales/${tale.id}: $name');
+        }
       }
     }
 
@@ -313,7 +317,10 @@ class Data4Validator {
     final thumbnailImages = <int>{};
 
     for (final fileName in fileNames) {
-      if (fileName == '.DS_Store') continue;
+      if (fileName == '.DS_Store') {
+        File('${imgDir.path}/$fileName').deleteSync();
+        continue;
+      }
 
       // Check for thumbnail pattern: {index}.thumbnail.jpg
       final thumbnailMatch = RegExp(
@@ -383,14 +390,17 @@ class Data4Validator {
     final files = audioDir.listSync().where((e) => e is File).toList();
     final fileNames = files.map((f) => f.path.split('/').last).toList();
 
-    var hasAudioMp3 = false;
+    var hasThumbnailM4a = false;
     var hasOriginal = false;
 
     for (final fileName in fileNames) {
-      if (fileName == '.DS_Store') continue;
+      if (fileName == '.DS_Store') {
+        File('${audioDir.path}/$fileName').deleteSync();
+        continue;
+      }
 
-      if (fileName == 'audio.mp3') {
-        hasAudioMp3 = true;
+      if (fileName == 'thumbnail.m4a') {
+        hasThumbnailM4a = true;
       } else if (fileName.startsWith('original.')) {
         hasOriginal = true;
       } else {
@@ -398,8 +408,11 @@ class Data4Validator {
       }
     }
 
-    if (!hasAudioMp3) {
-      errors.add('❌ Tale $taleId audio/ folder missing audio.mp3');
+    if (!hasOriginal) {
+      errors.add('❌ Tale $taleId audio/ folder missing original audio file');
+    }
+    if (!hasThumbnailM4a) {
+      errors.add('❌ Tale $taleId audio/ folder missing thumbnail.m4a');
     }
   }
 

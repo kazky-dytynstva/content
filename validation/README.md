@@ -83,8 +83,8 @@ data/4/tales/
       1.original.{ext}  # Optional
       ...
     audio/              # Only if tale has "audio" tag
-      audio.mp3         # Required
-      original.{ext}    # Optional, any format
+      thumbnail.m4a     # Required audio thumbnail
+      original.{ext}    # Required original audio file (any format)
 ```
 
 ### 6. Compressed Files
@@ -108,8 +108,8 @@ Tales must have image pairs in the `img/` folder:
 
 ### Tale Audio
 Tales with the "audio" tag **must** have an `audio/` folder containing:
-- `audio.mp3` - Required processed audio file
-- `original.{ext}` - Optional original audio file (any format)
+- `thumbnail.m4a` - Required audio thumbnail file
+- `original.{ext}` - Required original audio file (any format)
 
 Tales **without** the "audio" tag must **not** have an `audio/` folder.
 
