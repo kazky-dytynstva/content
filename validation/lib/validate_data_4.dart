@@ -281,7 +281,7 @@ class Data4Validator {
         if (name != 'img' && name != 'audio') {
           errors.add('❌ Unexpected folder in tales/${tale.id}: $name');
         }
-      } else if (entry is File && name != '.DS_Store') {
+      } else if (entry is File) {
         errors.add('❌ Unexpected file in tales/${tale.id}: $name');
       }
     }
@@ -313,8 +313,6 @@ class Data4Validator {
     final thumbnailImages = <int>{};
 
     for (final fileName in fileNames) {
-      if (fileName == '.DS_Store') continue;
-
       // Check for thumbnail pattern: {index}.thumbnail.jpg
       final thumbnailMatch = RegExp(
         r'^(\d+)\.thumbnail\.jpg$',
@@ -387,8 +385,6 @@ class Data4Validator {
     var hasOriginal = false;
 
     for (final fileName in fileNames) {
-      if (fileName == '.DS_Store') continue;
-
       if (fileName == 'thumbnail.m4a') {
         hasThumbnailM4a = true;
       } else if (fileName.startsWith('original.')) {
