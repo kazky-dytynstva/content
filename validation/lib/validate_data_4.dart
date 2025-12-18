@@ -142,7 +142,7 @@ class Data4Validator {
 
       if (!personDir.existsSync()) {
         errors.add(
-          '❌ Person ${person.id} (${person.name} ${person.surname ?? ''}) has no folder',
+          '❌ Person ${person.id} (${person.name} ${person.surname}) has no folder',
         );
         continue;
       }
@@ -383,14 +383,14 @@ class Data4Validator {
     final files = audioDir.listSync().where((e) => e is File).toList();
     final fileNames = files.map((f) => f.path.split('/').last).toList();
 
-    var hasAudioMp3 = false;
+    var hasThumbnailM4a = false;
     var hasOriginal = false;
 
     for (final fileName in fileNames) {
       if (fileName == '.DS_Store') continue;
 
-      if (fileName == 'audio.mp3') {
-        hasAudioMp3 = true;
+      if (fileName == 'thumbnail.m4a') {
+        hasThumbnailM4a = true;
       } else if (fileName.startsWith('original.')) {
         hasOriginal = true;
       } else {
@@ -398,8 +398,11 @@ class Data4Validator {
       }
     }
 
-    if (!hasAudioMp3) {
-      errors.add('❌ Tale $taleId audio/ folder missing audio.mp3');
+    if (!hasOriginal) {
+      errors.add('❌ Tale $taleId audio/ folder missing original audio file');
+    }
+    if (!hasThumbnailM4a) {
+      errors.add('❌ Tale $taleId audio/ folder missing thumbnail.m4a');
     }
   }
 
