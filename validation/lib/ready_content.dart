@@ -99,10 +99,13 @@ class ReadyContent {
         final original = await _original('$prefix/audio', 'original.');
         final thumbnail = '$prefix/audio/thumbnail.m4a';
         accepted.addAll([original, thumbnail]);
-        final duration = await _audio(original);
-        await _audio(thumbnail);
+        await _audio(original);
+        final duration = await _audio(thumbnail);
         if (duration != tale.audio!.duration)
-          throw const FormatException('Audio duration mismatch');
+          throw FormatException(
+            'Audio duration mismatch: $thumbnail; stored '
+            '${tale.audio!.duration.inMicroseconds} us, measured ${duration.inMicroseconds} us',
+          );
         audio = MediaPairEvidence(
           original: await _evidence(original),
           thumbnail: await _evidence(thumbnail),

@@ -72,8 +72,14 @@ isolated Git history, assertions-disabled CLI rejection, authoring corruption,
 receipts/history, byte-identical draft-only delivery and DTO production readers.
 Person 58's WebP original has now been renamed to `.webp` with unchanged bytes.
 The subsequent real-content audit fails closed on tale 234's audio duration:
-464.124 seconds stored versus 464.149333 seconds measured by FFprobe. Audio and
-metadata remain unchanged pending investigation of measurement semantics.
+464.124 seconds stored versus 464.149002 seconds measured by FFprobe for the
+playback file. The established console contract stores playback duration from
+`just_audio`, not original duration. Validation now checks the correct file;
+the real-audio fixture verifies a 1-second original with a 0.5-second playback
+file. Both files still must decode, and incorrect playback metadata fails.
+macOS `afinfo` reports approximately 464.148980 seconds for tale 234. Audio and
+metadata remain unchanged. No tolerance was added: exact cross-decoder equality
+still requires a compatibility decision before rollout.
 
 Scoped analysis matching CI is clean. Full-package analysis still reports the
 pre-existing missing `lints` include, removed `avoid_returning_null_for_future`

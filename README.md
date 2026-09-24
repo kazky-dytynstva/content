@@ -26,9 +26,13 @@ The D10 pipeline implementation is locally tested, but rollout is **blocked**.
 Person 58's WebP original was renamed from `photo.original.jpg` to
 `photo.original.webp` with user approval; its bytes and JPEG thumbnail are
 unchanged. The subsequent read-only audit stops at tale 234's audio duration:
-metadata records 464.124 seconds, while FFprobe measures the original at
-464.149333 seconds. Audio and metadata remain unchanged. Investigate measurement
-semantics before changing either the record or validation policy; this first
+metadata records 464.124 seconds, while FFprobe measures the playback file at
+464.149002 seconds (macOS `afinfo`: approximately 464.148980). The validator now
+correctly checks playback duration, matching the console's established save
+contract, instead of checking the original. The console measures via
+`just_audio`; CI measures via FFprobe. Exact cross-decoder equality is not a
+verified compatibility contract. Audio and metadata remain unchanged; no
+tolerance has been introduced. Settle that policy before rollout. This first
 failure is not an exhaustive inventory of legacy defects.
 
 Versioned drafts live only under `authoring/v1`. Incomplete payloads are valid;

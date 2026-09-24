@@ -166,6 +166,8 @@ void main() {
         'error',
         '-i',
         original.path,
+        '-t',
+        '0.5',
         '-c:a',
         'aac',
         thumbnail.path,
@@ -177,11 +179,21 @@ void main() {
               as Map<String, dynamic>;
       data['tags'] = ['text', 'audio'];
       data['audio'] = {
-        'duration': 1000000,
+        'duration': 500000,
         'file_size': await thumbnail.length(),
       };
       await writeCollection(root, 'tales', [TaleDto.fromJson(data)]);
       expect((await Data4Validator(root.path).validate()).errors, isEmpty);
+      (data['audio'] as Map)['duration'] = 1000000;
+      await writeCollection(root, 'tales', [TaleDto.fromJson(data)]);
+      final wrongSource = await Data4Validator(root.path).validate();
+      expect(wrongSource.success, isFalse);
+      expect(
+        wrongSource.errors.single,
+        contains('tales/7/audio/thumbnail.m4a'),
+      );
+      (data['audio'] as Map)['duration'] = 500000;
+      await writeCollection(root, 'tales', [TaleDto.fromJson(data)]);
       final bytes = await thumbnail.readAsBytes();
       await thumbnail.writeAsBytes(List.filled(bytes.length, 0));
       expect((await Data4Validator(root.path).validate()).success, isFalse);
