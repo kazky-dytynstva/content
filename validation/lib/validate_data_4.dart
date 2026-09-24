@@ -1,6 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:dto/dto.dart';
+
+import 'ready_content.dart';
+import 'authoring.dart';
 
 /// Validates the data/4 folder structure and content integrity
 class Data4Validator {
@@ -11,6 +15,14 @@ class Data4Validator {
 
   /// Run all validation checks
   Future<ValidationResult> validate() async {
+    errors.clear();
+    try {
+      await ReadyContent(Directory(rootPath)).validate();
+      await AuthoringValidator(Directory(rootPath)).validate();
+    } catch (error) {
+      errors.add('Ready-content validation failed: $error');
+      return ValidationResult(success: false, errors: List.of(errors));
+    }
     print('🔍 Starting validation of data/4 folder...\n');
 
     // 1. Check folder existence
@@ -283,7 +295,7 @@ class Data4Validator {
         }
       } else if (entry is File) {
         if (name == '.DS_Store') {
-          entry.deleteSync();
+          errors.add('Unexpected file in tales/${tale.id}: $name');
         } else {
           errors.add('❌ Unexpected file in tales/${tale.id}: $name');
         }
@@ -318,14 +330,13 @@ class Data4Validator {
 
     for (final fileName in fileNames) {
       if (fileName == '.DS_Store') {
-        File('${imgDir.path}/$fileName').deleteSync();
+        errors.add('Unexpected file in tales/$taleId/img: $fileName');
         continue;
       }
 
       // Check for thumbnail pattern: {index}.thumbnail.jpg
-      final thumbnailMatch = RegExp(
-        r'^(\d+)\.thumbnail\.jpg$',
-      ).firstMatch(fileName);
+      final thumbnailMatch = RegExp(r'^(\d+)\.thumbnail\.jpg$')
+          .firstMatch(fileName);
       if (thumbnailMatch != null) {
         final index = int.parse(thumbnailMatch.group(1)!);
         thumbnailImages.add(index);
@@ -333,9 +344,8 @@ class Data4Validator {
       }
 
       // Check for original pattern: {index}.original.{ext}
-      final originalMatch = RegExp(
-        r'^(\d+)\.original\.(.+)$',
-      ).firstMatch(fileName);
+      final originalMatch = RegExp(r'^(\d+)\.original\.(.+)$')
+          .firstMatch(fileName);
       if (originalMatch != null) {
         final index = int.parse(originalMatch.group(1)!);
         final ext = originalMatch.group(2)!;
@@ -395,7 +405,7 @@ class Data4Validator {
 
     for (final fileName in fileNames) {
       if (fileName == '.DS_Store') {
-        File('${audioDir.path}/$fileName').deleteSync();
+        errors.add('Unexpected file in tales/$taleId/audio: $fileName');
         continue;
       }
 
@@ -569,7 +579,7 @@ class Data4Validator {
 
       // Compare each tale using Equatable
       for (var i = 0; i < originalTales.length; i++) {
-        final original = originalTales[i];
+        final original = TaleDto.fromJson(originalTales[i].toProdJson());
         final decompressed = decompressedTales[i];
 
         if (original != decompressed) {

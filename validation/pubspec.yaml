@@ -7,7 +7,12 @@ environment:
   sdk: ">=3.8.0 <4.0.0"
 
 dependencies:
+  crypto: ^3.0.7
   dto:
     git:
       url: https://github.com/kazky-dytynstva/dto
       ref: 1.6.5
+  image: 4.8.0
+  path: ^1.9.1
+dev_dependencies:
+  test: ^1.32.0

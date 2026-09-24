@@ -1,10 +1,16 @@
 import 'dart:io';
+
 import 'package:validation/validate_data_4.dart';
 
-Future<void> main() async {
-  // Get the project root path (3 levels up from bin directory)
-  final scriptDir = Directory.current.path;
-  final rootPath = Directory(scriptDir).parent.path;
+Future<void> main(List<String> arguments) async {
+  if (arguments.length > 1) {
+    stderr.writeln('Usage: dart run bin/validate_data_4.dart [content-root]');
+    exitCode = 64;
+    return;
+  }
+  final rootPath = arguments.isEmpty
+      ? Directory.current.parent.path
+      : Directory(arguments.single).absolute.path;
 
   print('Root path: $rootPath\n');
 

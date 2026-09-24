@@ -4,14 +4,15 @@ This package contains validation scripts for the `data/4` folder structure.
 
 ## Requirements
 
-- Flutter Version Manager (fvm) with Flutter 3.32.7+ (Dart 3.8.1+)
-- The `dto` package from the kazky-dytynstva repository
+- Flutter Version Manager (fvm), pinned Flutter 3.47.5 in the repository `.fvmrc`
+- DTO 1.6.5 and dependency versions pinned by `pubspec.lock`
+- `ffprobe` and `ffmpeg` on PATH for probing and decoding audio
 
 ## Installation
 
 ```bash
 cd validation
-fvm dart pub get
+fvm dart pub get --enforce-lockfile
 ```
 
 ## Usage
@@ -22,8 +23,66 @@ Run the validation script to check the data/4 folder structure and content:
 
 ```bash
 cd validation
-fvm dart run bin/validate_data_4.dart
+fvm dart run bin/validate_data_4.dart ..
 ```
+
+Validation is read-only, including failures and unexpected `.DS_Store` files.
+The optional root argument permits disposable fixtures without touching real
+content. Existing maintenance scripts such as `fix_images.dart` and `run.dart`
+are separate mutation tools and are never invoked by the validation pipeline.
+
+## D10 Contract
+
+- `ReadyContent` calls DTO 1.6.5 runtime readiness, without depending on Dart
+  assertions. It rejects invalid/duplicate IDs, fractional integer metadata,
+  dangling or duplicate crew members, missing/invalid images, audio metadata
+  mismatches and unexpected filesystem entries. Image extensions must match
+  decoded formats. Audio is probed and fully decoded with FFmpeg, with a
+  two-minute per-command timeout. Symlinks are rejected before media reads.
+- Gzip must match `toProdJson()`, not the editorial DTO: hidden records remain,
+  while review flags and comments are excluded. Validators never regenerate it.
+- `AuthoringValidator` checks the console's version-1 JSON contract, not ready
+  field completeness. It verifies IDs, typed references, contiguous revision
+  history, applied receipts, immutable media names/sizes/SHA-256, duplicate
+  active targets and retained media. Unknown keys/schema versions, pending
+  staging, promotion markers and unrecognized files fail closed. This is a
+  read-only schema adapter, not a second draft writer or serializer; changes to
+  the console contract require coordinated version/fixture updates here.
+- `validate_branch_ids.dart` compares immutable ancestor/base/head collections
+  and base applied-receipt reservations. Independently introduced IDs collide
+  even if their JSON is identical. This cannot reconstruct identity lost by an
+  earlier manual merge that already overwrote a record; validate before merging.
+- `build_mobile_delivery.dart` validates first, then creates a new directory
+  outside the checkout with only gzip lists, person thumbnails, tale image
+  thumbnails and audio thumbnails under `data/4`. No originals, editorial JSON,
+  authoring metadata/media, old versions or repository files enter the artifact.
+  Existing destinations are never replaced; interrupted output must not be
+  published. Use a fresh destination and upload only after successful exit.
+
+Run isolated tests from this directory:
+
+```bash
+fvm dart test --reporter expanded
+fvm dart run bin/build_mobile_delivery.dart .. /absolute/new-output-directory
+fvm dart run bin/validate_branch_ids.dart .. ANCESTOR_SHA BASE_SHA HEAD_SHA
+```
+
+Local verification: **32 tests**, including real JPEG/WAV/AAC decoding, real
+isolated Git history, assertions-disabled CLI rejection, authoring corruption,
+receipts/history, byte-identical draft-only delivery and DTO production readers.
+The packaging command above audits real content and currently fails closed on
+person 58's WebP bytes stored as `.jpg`; that content remains unchanged.
+
+Scoped analysis matching CI is clean. Full-package analysis still reports the
+pre-existing missing `lints` include, removed `avoid_returning_null_for_future`
+rule and unused import in the unrelated mutation script `lib/run.dart`.
+
+The artifact is verification output, not a replacement for current raw-GitHub
+delivery. Hosted CI, branch protection, supported-release mobile tests, legacy
+console retirement and Windows validation remain rollout gates. Local tests use
+the current DTO reader, not every shipped mobile binary. Reads assume an
+immutable CI checkout; this is not protection against a concurrent external
+writer or image/decompression resource exhaustion. No automatic content repair.
 
 ## What it validates
 

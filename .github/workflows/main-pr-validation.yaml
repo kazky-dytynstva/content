@@ -5,20 +5,29 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - main
+      - dev
+
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
       
       - name: Check source branch is dev
+        if: github.base_ref == 'main'
+        env:
+          SOURCE_BRANCH: ${{ github.head_ref }}
         run: |
-          SOURCE_BRANCH="${{ github.head_ref }}"
           if [ "$SOURCE_BRANCH" != "dev" ]; then
             echo "❌ Error: Only the 'dev' branch can be merged to main"
             echo "Current source branch: $SOURCE_BRANCH"
@@ -27,10 +36,13 @@ jobs:
           echo "✅ Source branch is dev"
       
       - name: Check branch is not outdated
+        if: github.base_ref == 'main'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          git fetch origin main
-          MERGE_BASE=$(git merge-base HEAD origin/main)
-          MAIN_HEAD=$(git rev-parse origin/main)
+          MERGE_BASE=$(git merge-base "$HEAD_SHA" "$BASE_SHA")
+          MAIN_HEAD="$BASE_SHA"
           
           if [ "$MERGE_BASE" != "$MAIN_HEAD" ]; then
             echo "❌ Error: Branch is outdated. Please merge main into dev first"
@@ -41,6 +53,7 @@ jobs:
           echo "✅ Branch is up to date with main"
       
       - name: Check only one PR to main exists
+        if: github.base_ref == 'main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -54,15 +67,62 @@ jobs:
           fi
           echo "✅ Only one PR to main is open "
       
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Read pinned Flutter version
+        id: sdk
+        run: |
+          VERSION=$(jq -er '.flutter | select(test("^[0-9]+\\.[0-9]+\\.[0-9]+$"))' .fvmrc)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Bootstrap pinned Flutter
+        uses: subosito/flutter-action@v2
         with:
-          sdk: stable
+          flutter-version: ${{ steps.sdk.outputs.version }}
+          channel: stable
+          cache: true
+
+      - name: Configure FVM
+        env:
+          FLUTTER_VERSION: ${{ steps.sdk.outputs.version }}
+        run: |
+          dart pub global activate fvm 3.2.1
+          dart pub global run fvm:main use "$FLUTTER_VERSION" --force --skip-pub-get
+
+      - name: Install audio validation tools
+        run: sudo -n apt-get update && sudo -n apt-get install -y ffmpeg
       
       - name: Get Dart dependencies
         working-directory: ./validation
-        run: dart pub get
+        run: dart pub global run fvm:main dart pub get --enforce-lockfile
+
+      - name: Analyze pipeline
+        working-directory: ./validation
+        run: dart pub global run fvm:main dart analyze lib/ready_content.dart lib/authoring.dart lib/mobile_delivery.dart lib/branch_ids.dart lib/validate_data_4.dart bin/validate_data_4.dart bin/build_mobile_delivery.dart bin/validate_branch_ids.dart test
+
+      - name: Run isolated pipeline fixtures
+        working-directory: ./validation
+        run: dart pub global run fvm:main dart test --reporter expanded
+
+      - name: Check independent ID allocations
+        working-directory: ./validation
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          ANCESTOR=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
+          dart pub global run fvm:main dart run bin/validate_branch_ids.dart .. "$ANCESTOR" "$BASE_SHA" "$HEAD_SHA"
       
       - name: Run Dart validation script
         working-directory: ./validation
-        run: dart run bin/validate_data_4.dart
+        run: dart pub global run fvm:main dart run bin/validate_data_4.dart ..
+
+      - name: Build isolated mobile payload
+        working-directory: ./validation
+        run: dart pub global run fvm:main dart run bin/build_mobile_delivery.dart .. "$RUNNER_TEMP/mobile-delivery"
+
+      - name: Retain validated mobile payload
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-content-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/mobile-delivery/
+          if-no-files-found: error
+          retention-days: 7
