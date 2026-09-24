@@ -70,8 +70,10 @@ fvm dart run bin/validate_branch_ids.dart .. ANCESTOR_SHA BASE_SHA HEAD_SHA
 Local verification: **32 tests**, including real JPEG/WAV/AAC decoding, real
 isolated Git history, assertions-disabled CLI rejection, authoring corruption,
 receipts/history, byte-identical draft-only delivery and DTO production readers.
-The packaging command above audits real content and currently fails closed on
-person 58's WebP bytes stored as `.jpg`; that content remains unchanged.
+Person 58's WebP original has now been renamed to `.webp` with unchanged bytes.
+The subsequent real-content audit fails closed on tale 234's audio duration:
+464.124 seconds stored versus 464.149333 seconds measured by FFprobe. Audio and
+metadata remain unchanged pending investigation of measurement semantics.
 
 Scoped analysis matching CI is clean. Full-package analysis still reports the
 pre-existing missing `lints` include, removed `avoid_returning_null_for_future`

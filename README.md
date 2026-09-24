@@ -23,10 +23,13 @@ Before committing changes to version 4:
 ## Draft Pipeline Rollout
 
 The D10 pipeline implementation is locally tested, but rollout is **blocked**.
-The read-only legacy audit stops at `data/4/people/58/photo.original.jpg`: its
-bytes are WebP, not JPEG. No content files were repaired or rewritten. Correct
-that record through a separately approved content edit, then rerun the full
-audit; this first failure is not an exhaustive inventory of legacy defects.
+Person 58's WebP original was renamed from `photo.original.jpg` to
+`photo.original.webp` with user approval; its bytes and JPEG thumbnail are
+unchanged. The subsequent read-only audit stops at tale 234's audio duration:
+metadata records 464.124 seconds, while FFprobe measures the original at
+464.149333 seconds. Audio and metadata remain unchanged. Investigate measurement
+semantics before changing either the record or validation policy; this first
+failure is not an exhaustive inventory of legacy defects.
 
 Versioned drafts live only under `authoring/v1`. Incomplete payloads are valid;
 unknown schemas, interrupted writes, invalid history/receipts and damaged media
