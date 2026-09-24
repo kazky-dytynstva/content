@@ -71,15 +71,16 @@ Local verification: **32 tests**, including real JPEG/WAV/AAC decoding, real
 isolated Git history, assertions-disabled CLI rejection, authoring corruption,
 receipts/history, byte-identical draft-only delivery and DTO production readers.
 Person 58's WebP original has now been renamed to `.webp` with unchanged bytes.
-The subsequent real-content audit fails closed on tale 234's audio duration:
-464.124 seconds stored versus 464.149002 seconds measured by FFprobe for the
-playback file. The established console contract stores playback duration from
-`just_audio`, not original duration. Validation now checks the correct file;
-the real-audio fixture verifies a 1-second original with a 0.5-second playback
-file. Both files still must decode, and incorrect playback metadata fails.
-macOS `afinfo` reports approximately 464.148980 seconds for tale 234. Audio and
-metadata remain unchanged. No tolerance was added: exact cross-decoder equality
-still requires a compatibility decision before rollout.
+The established console contract stores playback duration from `just_audio`,
+not original duration. CI compares FFprobe playback duration with an inclusive
+absolute tolerance of **50 ms**. Tests accept both +/-50000 microseconds and
+reject +/-50001; the real fixture uses a 1-second original and 0.5-second
+playback file. Both files still must decode, and file sizes must match exactly.
+With approval, the remaining 142 duration fields in JSON and production gzip
+were corrected; all 145 audio tales now match fresh FFprobe measurements exactly.
+All playback files decode, and their bytes are unchanged. Tale 232's original
+was separately converted to a valid PNG. The latest full validation now rejects
+`tales/229/img/0.original.svg`; that unrelated image remains unchanged.
 
 Scoped analysis matching CI is clean. Full-package analysis still reports the
 pre-existing missing `lints` include, removed `avoid_returning_null_for_future`

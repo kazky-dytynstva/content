@@ -25,15 +25,16 @@ Before committing changes to version 4:
 The D10 pipeline implementation is locally tested, but rollout is **blocked**.
 Person 58's WebP original was renamed from `photo.original.jpg` to
 `photo.original.webp` with user approval; its bytes and JPEG thumbnail are
-unchanged. The subsequent read-only audit stops at tale 234's audio duration:
-metadata records 464.124 seconds, while FFprobe measures the playback file at
-464.149002 seconds (macOS `afinfo`: approximately 464.148980). The validator now
-correctly checks playback duration, matching the console's established save
-contract, instead of checking the original. The console measures via
-`just_audio`; CI measures via FFprobe. Exact cross-decoder equality is not a
-verified compatibility contract. Audio and metadata remain unchanged; no
-tolerance has been introduced. Settle that policy before rollout. This first
-failure is not an exhaustive inventory of legacy defects.
+unchanged. Tale 232's mislabeled SVG original was rendered to a genuine PNG.
+With approval, all 145 audio tales now store the measured playback duration
+in JSON and paired gzip; audio bytes are unchanged. A complete playback audit
+confirms all files decode, their sizes agree and no duration mismatches remain.
+Duration validity allows an inclusive absolute difference of **50 ms** in both
+the console and CI; larger differences fail. Newly measured metadata is not
+rounded to this tolerance. The console uses `just_audio`, while CI uses FFprobe.
+The full content audit now stops at `tales/229/img/0.original.svg`, which the
+image decoder rejects. That image is unchanged. This first failure is not an
+exhaustive inventory of remaining legacy defects, and rollout remains blocked.
 
 Versioned drafts live only under `authoring/v1`. Incomplete payloads are valid;
 unknown schemas, interrupted writes, invalid history/receipts and damaged media
