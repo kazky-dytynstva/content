@@ -4,6 +4,38 @@
 
 All data modifications must target `/data/4/` and pass validation before merging.
 
+## Setup: Cloning Without data/3
+
+**Version 3 is now archived in a separate repository** for reduced clone size and faster initial setup.
+
+### Option 1: Clone Main Repository Only (Recommended)
+
+```bash
+git clone --sparse <repo-url> kazky-content
+cd kazky-content
+git sparse-checkout add data/4 validation
+```
+
+This clones only the active version 4 and validation tools (~1.3 GB).
+
+### Option 2: Include data/3 with Sparse Checkout
+
+If you need version 3 locally, add it after cloning:
+
+```bash
+git sparse-checkout add data/3
+```
+
+### Option 3: Clone Version 3 Archive Separately
+
+For historical reference or comparison, clone the separate archive repository:
+
+```bash
+git clone git@github.com:kazky-dytynstva/content-archived-v3.git kazky-content-v3-archive
+```
+
+See [content-archived-v3](https://github.com/kazky-dytynstva/content-archived-v3) for details.
+
 ## Modifying Data (Version 4)
 
 1. Create branch `data_update`
