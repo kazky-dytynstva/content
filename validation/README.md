@@ -79,8 +79,22 @@ playback file. Both files still must decode, and file sizes must match exactly.
 With approval, the remaining 142 duration fields in JSON and production gzip
 were corrected; all 145 audio tales now match fresh FFprobe measurements exactly.
 All playback files decode, and their bytes are unchanged. Tale 232's original
-was separately converted to a valid PNG. The latest full validation now rejects
-`tales/229/img/0.original.svg`; that unrelated image remains unchanged.
+was separately converted to a valid PNG.
+
+The subsequent approved image repair converted SVG originals for tales 206,
+226-229 using macOS `sips`, and EPS originals for tales 33, 127 and 131 using
+Ghostscript 10.08.0 with EPS cropping, alpha and 150 DPI. Converted artwork was
+visually checked against existing thumbnail selections. Mislabeled originals
+31, 42 and 187 were renamed to WebP, PNG and GIF respectively without changing
+bytes; tale 221's two uppercase JPEG extensions were lowercased. Tale 47 keeps
+`0.original.png`; the duplicate `0.original.jpg` was removed as requested.
+Original vector sources remain in Git history.
+
+The image audit now accepts all **724 images / 362 pairs**, with zero decoder
+or structure errors. SHA-256 comparisons confirm unchanged thumbnails,
+collection JSON/gzip, unaffected originals and byte-preserving renames.
+No audio files changed. Full local validation passes for **99 people and
+254 tales**, with zero errors. Hosted and client rollout gates below remain open.
 
 Scoped analysis matching CI is clean. Full-package analysis still reports the
 pre-existing missing `lints` include, removed `avoid_returning_null_for_future`

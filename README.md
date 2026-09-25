@@ -32,9 +32,11 @@ confirms all files decode, their sizes agree and no duration mismatches remain.
 Duration validity allows an inclusive absolute difference of **50 ms** in both
 the console and CI; larger differences fail. Newly measured metadata is not
 rounded to this tolerance. The console uses `just_audio`, while CI uses FFprobe.
-The full content audit now stops at `tales/229/img/0.original.svg`, which the
-image decoder rejects. That image is unchanged. This first failure is not an
-exhaustive inventory of remaining legacy defects, and rollout remains blocked.
+The approved image repairs converted eight SVG/EPS originals to PNG, corrected
+five filename extensions and retained only the PNG original for tale 47.
+All 724 remaining images decode and all 362 original/thumbnail pairs are valid.
+Thumbnails, audio and collection metadata are unchanged by these repairs.
+The full local content validator now passes for all 99 people and 254 tales.
 
 Versioned drafts live only under `authoring/v1`. Incomplete payloads are valid;
 unknown schemas, interrupted writes, invalid history/receipts and damaged media
@@ -47,7 +49,7 @@ that artifact. Current mobile code still reads `data/4` directly from GitHub;
 authoring files in the repository are not private merely because they are
 excluded from the artifact. Required branch checks must protect both branches.
 
-Before draft UI activation: obtain hosted CI evidence, remediate legacy content,
+Before draft UI activation: obtain hosted CI evidence for the repaired content,
 verify all supported mobile releases and both console platforms, and establish
 a minimum compatible console version. Old consoles must not write authoring
 stores. No branch-protection setting, release, push or workflow dispatch is
