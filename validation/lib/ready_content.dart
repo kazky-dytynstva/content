@@ -101,8 +101,10 @@ class ReadyContent {
         accepted.addAll([original, thumbnail]);
         await _audio(original);
         final duration = await _audio(thumbnail);
+        // Allow AAC frame quantization (~23 ms) plus encoder priming padding
+        // (~48 ms); only flag gross mismatches well beyond a single frame.
         if ((duration - tale.audio!.duration).abs() >
-            const Duration(milliseconds: 50))
+            const Duration(milliseconds: 100))
           throw FormatException(
             'Audio duration mismatch: $thumbnail; stored '
             '${tale.audio!.duration.inMicroseconds} us, measured ${duration.inMicroseconds} us',
