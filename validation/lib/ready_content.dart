@@ -39,14 +39,21 @@ class ReadyContent {
       if ((entry is! File && entry is! Directory) || ++count > 100000)
         throw const FormatException('Unsafe content tree');
     }
-    final people = await _collection('people', PersonDto.fromJson);
-    final tales = await _collection('tales', TaleDto.fromJson);
     final accepted = <String>{
-      'people/list.json',
       'people/list.json.gz',
       'tales/list.json',
       'tales/list.json.gz',
     };
+    final people = await _collection(
+      'people',
+      PersonDto.fromJson,
+      await _peopleRecords(accepted),
+    );
+    final tales = await _collection(
+      'tales',
+      TaleDto.fromJson,
+      jsonDecode(await _file('tales/list.json').readAsString()) as List,
+    );
     final directories = <String>{'people', 'tales'};
     final ids = <int>{};
     for (final person in people) {
@@ -68,13 +75,14 @@ class ReadyContent {
     for (final tale in tales) {
       final prefix = 'tales/${tale.id}';
       directories.addAll([prefix, '$prefix/img']);
-      final files = await Directory(_file('$prefix/img').path)
-          .list(followLinks: false)
-          .toList();
+      final files = await Directory(
+        _file('$prefix/img').path,
+      ).list(followLinks: false).toList();
       final indices = <int>{};
       for (final file in files) {
-        final match = RegExp(r'^(0|[1-9][0-9]*)\.original\.[a-z0-9]{1,10}$')
-            .firstMatch(path.basename(file.path));
+        final match = RegExp(
+          r'^(0|[1-9][0-9]*)\.original\.[a-z0-9]{1,10}$',
+        ).firstMatch(path.basename(file.path));
         if (match != null && !indices.add(int.parse(match[1]!))) {
           throw const FormatException('Duplicate image original');
         }
@@ -143,12 +151,54 @@ class ReadyContent {
     }
   }
 
+  /// People records from either the legacy `people/list.json` or the split
+  /// layout (`people/{id}/person.json` + derived `people/index.json`).
+  Future<List> _peopleRecords(Set<String> accepted) async {
+    Future<bool> isFile(String relative) async =>
+        await FileSystemEntity.type(_file(relative).path, followLinks: false) ==
+        FileSystemEntityType.file;
+
+    final legacy = await isFile('people/list.json');
+    if (legacy == await isFile('people/index.json'))
+      throw const FormatException(
+        'Expected exactly one of people/list.json or people/index.json',
+      );
+    if (legacy) {
+      accepted.add('people/list.json');
+      return jsonDecode(await _file('people/list.json').readAsString()) as List;
+    }
+    accepted.add('people/index.json');
+    final records = <Map>[];
+    await for (final entry in Directory(
+      _file('people').path,
+    ).list(followLinks: false)) {
+      final name = path.basename(entry.path);
+      // Anything else is reported by the unexpected-entry scan.
+      if (entry is! Directory || !RegExp(r'^(0|[1-9][0-9]*)$').hasMatch(name))
+        continue;
+      final relative = 'people/$name/person.json';
+      if (!await isFile(relative))
+        throw FormatException('Missing ready person: $relative');
+      final record = jsonDecode(await _file(relative).readAsString());
+      if (record is! Map || record['id'] != int.parse(name))
+        throw FormatException('Person ID does not match folder: $relative');
+      accepted.add(relative);
+      records.add(record);
+    }
+    records.sort((a, b) => (b['id'] as int).compareTo(a['id'] as int));
+    final index = jsonDecode(await _file('people/index.json').readAsString());
+    if (canonical(index) != canonical(records))
+      throw const FormatException(
+        'people/index.json does not match people/{id}/person.json',
+      );
+    return records;
+  }
+
   Future<List<T>> _collection<T extends ToJsonItem>(
     String kind,
     T Function(Map<String, dynamic>) decode,
+    List raw,
   ) async {
-    final raw =
-        jsonDecode(await _file('$kind/list.json').readAsString()) as List;
     final ids = <int>{};
     final items = <T>[];
     for (final record in raw) {
@@ -197,9 +247,9 @@ class ReadyContent {
   }
 
   Future<String> _original(String prefix, String stem) async {
-    final files = await Directory(_file(prefix).path)
-        .list(followLinks: false)
-        .toList();
+    final files = await Directory(
+      _file(prefix).path,
+    ).list(followLinks: false).toList();
     final originals = files
         .whereType<File>()
         .where((file) => path.basename(file.path).startsWith(stem))
@@ -236,10 +286,10 @@ class ReadyContent {
   }
 
   Future<MediaFileEvidence> _evidence(String name) async => MediaFileEvidence(
-    byteLength: await _file(name).length(),
-    extension: path.extension(name).substring(1),
-    isDecodable: true,
-  );
+        byteLength: await _file(name).length(),
+        extension: path.extension(name).substring(1),
+        isDecodable: true,
+      );
 
   Future<Duration> _audio(String name) async {
     final file = _file(name);

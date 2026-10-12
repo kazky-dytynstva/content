@@ -5,6 +5,7 @@ import 'package:dto/dto.dart';
 
 import 'ready_content.dart';
 import 'authoring.dart';
+import 'people_layout.dart';
 
 /// Validates the data/4 folder structure and content integrity
 class Data4Validator {
@@ -83,11 +84,13 @@ class Data4Validator {
 
     // Check for list.json files
     for (final folder in expectedFolders) {
-      final listFile = File('$rootPath/data/4/$folder/list.json');
+      final listFile = folder == 'people'
+          ? readyPeopleListFile(Directory(rootPath))
+          : File('$rootPath/data/4/$folder/list.json');
       if (!listFile.existsSync()) {
         errors.add('❌ Missing list.json in data/4/$folder');
       } else {
-        print('✅ data/4/$folder/list.json exists');
+        print('✅ ${listFile.path} exists');
       }
     }
   }
@@ -96,7 +99,7 @@ class Data4Validator {
   Future<void> _validatePeopleData() async {
     print('\n📋 Validating people data...');
 
-    final listFile = File('$rootPath/data/4/people/list.json');
+    final listFile = readyPeopleListFile(Directory(rootPath));
     if (!listFile.existsSync()) {
       return; // Already reported in structure check
     }
@@ -335,8 +338,9 @@ class Data4Validator {
       }
 
       // Check for thumbnail pattern: {index}.thumbnail.jpg
-      final thumbnailMatch = RegExp(r'^(\d+)\.thumbnail\.jpg$')
-          .firstMatch(fileName);
+      final thumbnailMatch = RegExp(
+        r'^(\d+)\.thumbnail\.jpg$',
+      ).firstMatch(fileName);
       if (thumbnailMatch != null) {
         final index = int.parse(thumbnailMatch.group(1)!);
         thumbnailImages.add(index);
@@ -344,8 +348,9 @@ class Data4Validator {
       }
 
       // Check for original pattern: {index}.original.{ext}
-      final originalMatch = RegExp(r'^(\d+)\.original\.(.+)$')
-          .firstMatch(fileName);
+      final originalMatch = RegExp(
+        r'^(\d+)\.original\.(.+)$',
+      ).firstMatch(fileName);
       if (originalMatch != null) {
         final index = int.parse(originalMatch.group(1)!);
         final ext = originalMatch.group(2)!;
@@ -485,6 +490,7 @@ class Data4Validator {
           // Check for unexpected files - should only have thumbnail and original
           for (final fileName in fileNames) {
             if (fileName != 'photo.thumbnail.jpg' &&
+                fileName != 'person.json' &&
                 !fileName.startsWith('photo.original.')) {
               errors.add('❌ Unexpected file in people/$id: $fileName');
             }
@@ -599,7 +605,7 @@ class Data4Validator {
 
   /// Validate compressed people file
   Future<void> _validateCompressedPeople() async {
-    final listFile = File('$rootPath/data/4/people/list.json');
+    final listFile = readyPeopleListFile(Directory(rootPath));
     final compressedFile = File('$rootPath/data/4/people/list.json.gz');
 
     if (!compressedFile.existsSync()) {

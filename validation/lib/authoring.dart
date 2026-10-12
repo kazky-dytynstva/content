@@ -5,6 +5,8 @@ import 'package:crypto/crypto.dart';
 import 'package:dto/dto.dart';
 import 'package:path/path.dart' as path;
 
+import 'people_layout.dart';
+
 class AuthoringValidator {
   final Directory root;
   AuthoringValidator(this.root);
@@ -130,8 +132,9 @@ class AuthoringValidator {
         }
         _require(
           previous.manifest['revision'] == revision &&
-              !DateTime.parse(previous.manifest['savedAt'] as String)
-                  .isAfter(DateTime.parse(manifest['savedAt'] as String)),
+              !DateTime.parse(
+                previous.manifest['savedAt'] as String,
+              ).isAfter(DateTime.parse(manifest['savedAt'] as String)),
         );
         revisions.add(previous);
         accepted.add(name);
@@ -156,12 +159,10 @@ class AuthoringValidator {
       }
     }
     _require(files.keys.every(accepted.contains));
-    final people = (jsonDecode(
-      await File(path.join(root.path, 'data/4/people/list.json'))
-          .readAsString(),
-    ) as List)
-        .map((person) => (person as Map)['id'])
-        .toSet();
+    final people =
+        (jsonDecode(await readyPeopleListFile(root).readAsString()) as List)
+            .map((person) => (person as Map)['id'])
+            .toSet();
     for (final entry in records.entries.where(
       (entry) => entry.key.startsWith('v1/drafts/'),
     )) {
@@ -215,8 +216,9 @@ class AuthoringValidator {
       (manifest['targetId'] == null) == (manifest['baseFingerprint'] == null),
     );
     _require(
-      !DateTime.parse(manifest['savedAt'] as String)
-          .isBefore(DateTime.parse(manifest['createdAt'] as String)),
+      !DateTime.parse(
+        manifest['savedAt'] as String,
+      ).isBefore(DateTime.parse(manifest['createdAt'] as String)),
     );
     final media = <Map<String, dynamic>>[];
     final refs = <Map<String, dynamic>>[];
@@ -234,8 +236,9 @@ class AuthoringValidator {
       );
       _require(
         data['path'] is String &&
-            RegExp('^media/${data['sha256']}\\.[a-z0-9]{1,10}\$')
-                .hasMatch(data['path'] as String),
+            RegExp(
+              '^media/${data['sha256']}\\.[a-z0-9]{1,10}\$',
+            ).hasMatch(data['path'] as String),
       );
       media.add(data);
     }
