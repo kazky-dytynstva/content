@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "audio/original.mp3",
+      "sha": "ece56c8ec843a64463b8a103099cff0e9338b883",
+      "bytes": 2284995
+    },
+    {
+      "path": "audio/thumbnail.m4a",
+      "sha": "be025672e0742b94fb818431dabf1cfe5a247f55",
+      "bytes": 1924009
+    },
+    {
+      "path": "img/0.original.jpg",
+      "sha": "00eafd83fa66edb84d09c441ab04d58da4468100",
+      "bytes": 264894
+    },
+    {
+      "path": "img/0.thumbnail.jpg",
+      "sha": "00eafd83fa66edb84d09c441ab04d58da4468100",
+      "bytes": 264894
+    }
+  ]
+}

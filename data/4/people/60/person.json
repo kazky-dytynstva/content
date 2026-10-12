@@ -1,0 +1,12 @@
+{
+  "id": 60,
+  "name": "Мирослав",
+  "surname": "Вересюк",
+  "gender": "male",
+  "url": "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D0%B5%D1%81%D1%8E%D0%BA_%D0%9C%D0%B8%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+  "info": "Сучасний український поет",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

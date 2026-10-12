@@ -1,0 +1,12 @@
+{
+  "id": 11,
+  "name": "Жанна",
+  "surname": "Хома",
+  "gender": "female",
+  "url": "https://instagram.com/dariimikey",
+  "info": "Дитяча письменниця, авторка циклу казок «Маленькі історії Дарчика та Міккі»",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

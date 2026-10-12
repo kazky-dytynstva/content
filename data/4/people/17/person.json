@@ -1,0 +1,10 @@
+{
+  "id": 17,
+  "name": "Валентина",
+  "surname": "Байкова",
+  "gender": "female",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

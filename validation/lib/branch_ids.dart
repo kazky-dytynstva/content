@@ -25,10 +25,25 @@ Future<void> validateBranchIds(
     return result.stdout as String;
   }
 
+  Future<bool> exists(String revision, String file) async =>
+      (await Process.run(
+              'git',
+              [
+                'cat-file',
+                '-e',
+                '$revision:$file',
+              ],
+              workingDirectory: repository.path))
+          .exitCode ==
+      0;
+
   Future<Set<int>> ids(String revision, String kind) async {
-    final records = jsonDecode(
-      await git(['show', '$revision:data/4/$kind/list.json']),
-    ) as List;
+    // Revisions before the split layout only have list.json.
+    final index = 'data/4/$kind/index.json';
+    final catalogue =
+        await exists(revision, index) ? index : 'data/4/$kind/list.json';
+    final records =
+        jsonDecode(await git(['show', '$revision:$catalogue'])) as List;
     final result = <int>{};
     for (final record in records) {
       final id = (record as Map)['id'];
@@ -50,9 +65,9 @@ Future<void> validateBranchIds(
     ]),
   );
   for (final file in receipts.where((name) => name.endsWith('/receipt.json'))) {
-    if (!RegExp(r'^authoring/v1/applied/[0-9a-f]{32}/receipt\.json$')
-        .hasMatch(file))
-      throw const FormatException('Invalid receipt path');
+    if (!RegExp(
+      r'^authoring/v1/applied/[0-9a-f]{32}/receipt\.json$',
+    ).hasMatch(file)) throw const FormatException('Invalid receipt path');
     final receipt = jsonDecode(await git(['show', '$base:$file'])) as Map;
     final target = receipt['targetId'];
     final kind = switch (receipt['kind']) {
@@ -68,10 +83,13 @@ Future<void> validateBranchIds(
     final original = await ids(ancestor, kind);
     final target = await ids(base, kind);
     final proposed = await ids(head, kind);
-    final collisions = collidingIds(original, {
-      ...target,
-      ...baseReservations[kind]!,
-    }, proposed);
+    final collisions = collidingIds(
+        original,
+        {
+          ...target,
+          ...baseReservations[kind]!,
+        },
+        proposed);
     if (collisions.isNotEmpty)
       throw FormatException(
         'Independent $kind ID allocation collision: $collisions',

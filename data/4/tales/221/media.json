@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "audio/original.wav",
+      "sha": "446207fcb8dcd2a72987ebae4c54780aa632c3fa",
+      "bytes": 30392650
+    },
+    {
+      "path": "audio/thumbnail.m4a",
+      "sha": "54d27f6d364701d6dfd40e4c8f043ea83cf679d6",
+      "bytes": 2244147
+    },
+    {
+      "path": "img/0.original.jpg",
+      "sha": "8decbb3873b37c5d35c737311c6ce0641fcf2762",
+      "bytes": 140241
+    },
+    {
+      "path": "img/0.thumbnail.jpg",
+      "sha": "0217584539e0044b05000f52d479e0ae847b97e4",
+      "bytes": 36846
+    },
+    {
+      "path": "img/1.original.jpg",
+      "sha": "ce6dd176d93fff1d9b3586c51a23ec78907ad3e0",
+      "bytes": 379613
+    },
+    {
+      "path": "img/1.thumbnail.jpg",
+      "sha": "c8fe4b80fdd2d7982578e0c89250afd6af17996d",
+      "bytes": 56254
+    },
+    {
+      "path": "img/2.original.jpg",
+      "sha": "a14f594ae33e4ac0492f42050b8dc1c7852af75c",
+      "bytes": 497481
+    },
+    {
+      "path": "img/2.thumbnail.jpg",
+      "sha": "7fe56c8c9d1e39ead4010e692e4fc5dafcebe31c",
+      "bytes": 44410
+    },
+    {
+      "path": "img/3.original.jpg",
+      "sha": "1b1cf2591f129710c922ba54cf101ab2f1ca9f0f",
+      "bytes": 461427
+    },
+    {
+      "path": "img/3.thumbnail.jpg",
+      "sha": "5d30c69bc6234d2f25643b8619d4d55e3ba07903",
+      "bytes": 47598
+    }
+  ]
+}

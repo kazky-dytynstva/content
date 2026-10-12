@@ -1,0 +1,14 @@
+{
+  "id": 85,
+  "name": "Тіна",
+  "surname": "Кароль",
+  "gender": "female",
+  "url": "https://uk.wikipedia.org/wiki/%D0%A2%D1%96%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%BE%D0%BB%D1%8C",
+  "info": "Українська співачка та акторка, телеведуча, громадська діячка",
+  "roles": [
+    "author",
+    "reader"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095",
+  "update_date": "2026-02-08T12:45:47.050850"
+}

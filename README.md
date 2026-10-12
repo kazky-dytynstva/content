@@ -45,6 +45,37 @@ See [content-archived-v3](https://github.com/kazky-dytynstva/content-archived-v3
 5. Commit, push, and create PR
 6. Merge to `main` after validation passes
 
+### People layout
+
+```
+data/4/people/
+  index.json        # derived: all person.json records, sorted by id desc
+  list.json.gz      # derived: mobile delivery (production projection)
+  {id}/
+    person.json     # source of truth for one person
+    photo.original.{ext}
+    photo.thumbnail.jpg
+```
+
+When editing a person by hand, update `{id}/person.json`, `index.json` and
+`list.json.gz` together; validation rejects any mismatch. The console app
+writes all three in one commit.
+
+### Tales layout
+
+```
+data/4/tales/
+  index.json        # derived: every tale.json without `text`, sorted by id desc
+  list.json.gz      # derived: mobile delivery (production projection)
+  {id}/
+    tale.json       # source of truth for one tale
+    img/            # {n}.original.{ext} + {n}.thumbnail.jpg
+    audio/          # original.{ext} + thumbnail.m4a (audio tales only)
+```
+
+The same rule applies: `{id}/tale.json`, its `index.json` entry and its
+`list.json.gz` entry change together.
+
 ## Validation
 
 Before committing changes to version 4:

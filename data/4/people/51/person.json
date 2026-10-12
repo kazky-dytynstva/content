@@ -1,0 +1,13 @@
+{
+  "id": 51,
+  "name": "Андрій",
+  "surname": "Антонов",
+  "gender": "male",
+  "url": "https://www.linkedin.com/in/andriiantonov/",
+  "info": "Автор сервісу \"Казки дитинства\"",
+  "roles": [
+    "crew"
+  ],
+  "create_date": "2025-12-19T08:12:03.762974",
+  "update_date": "2026-02-08T12:33:22.424708"
+}

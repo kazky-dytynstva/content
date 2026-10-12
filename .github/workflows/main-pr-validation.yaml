@@ -80,27 +80,20 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Configure FVM
-        env:
-          FLUTTER_VERSION: ${{ steps.sdk.outputs.version }}
-        run: |
-          dart pub global activate fvm 3.2.1
-          dart pub global run fvm:main use "$FLUTTER_VERSION" --force --skip-pub-get
-
       - name: Install audio validation tools
         run: sudo -n apt-get update && sudo -n apt-get install -y ffmpeg
       
       - name: Get Dart dependencies
         working-directory: ./validation
-        run: dart pub global run fvm:main dart pub get --enforce-lockfile
+        run: dart pub get --enforce-lockfile
 
       - name: Analyze pipeline
         working-directory: ./validation
-        run: dart pub global run fvm:main dart analyze lib/ready_content.dart lib/authoring.dart lib/mobile_delivery.dart lib/branch_ids.dart lib/validate_data_4.dart bin/validate_data_4.dart bin/build_mobile_delivery.dart bin/validate_branch_ids.dart test
+        run: dart analyze
 
       - name: Run isolated pipeline fixtures
         working-directory: ./validation
-        run: dart pub global run fvm:main dart test --reporter expanded
+        run: dart test --reporter expanded
 
       - name: Check independent ID allocations
         working-directory: ./validation
@@ -109,15 +102,11 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           ANCESTOR=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
-          dart pub global run fvm:main dart run bin/validate_branch_ids.dart .. "$ANCESTOR" "$BASE_SHA" "$HEAD_SHA"
+          dart run bin/validate_branch_ids.dart .. "$ANCESTOR" "$BASE_SHA" "$HEAD_SHA"
       
-      - name: Run Dart validation script
+      - name: Validate content and build mobile payload
         working-directory: ./validation
-        run: dart pub global run fvm:main dart run bin/validate_data_4.dart ..
-
-      - name: Build isolated mobile payload
-        working-directory: ./validation
-        run: dart pub global run fvm:main dart run bin/build_mobile_delivery.dart .. "$RUNNER_TEMP/mobile-delivery"
+        run: dart run bin/build_mobile_delivery.dart .. "$RUNNER_TEMP/mobile-delivery"
 
       - name: Retain validated mobile payload
         uses: actions/upload-artifact@v4

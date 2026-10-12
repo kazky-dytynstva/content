@@ -1,0 +1,13 @@
+{
+  "id": 46,
+  "name": "Таріна",
+  "surname": "Карасівна",
+  "gender": "female",
+  "url": "https://www.instagram.com/karasivna/",
+  "info": "Юрист, блогер, 5 дипломів",
+  "roles": [
+    "author",
+    "reader"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

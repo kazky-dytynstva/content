@@ -1,0 +1,12 @@
+{
+  "id": 49,
+  "name": "Денис",
+  "surname": "Проуторов",
+  "gender": "male",
+  "url": "https://instagram.com/dennyprout",
+  "info": "Організатор свят з міста Дніпро, озвучка казок",
+  "roles": [
+    "reader"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 4,
+  "name": "Інна",
+  "surname": "Яворська",
+  "gender": "female",
+  "roles": [
+    "reader"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

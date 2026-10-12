@@ -44,8 +44,11 @@ are separate mutation tools and are never invoked by the validation pipeline.
 - `AuthoringValidator` checks the console's version-1 JSON contract, not ready
   field completeness. It verifies IDs, typed references, contiguous revision
   history, applied receipts, immutable media names/sizes/SHA-256, duplicate
-  active targets and retained media. Unknown keys/schema versions, pending
-  staging, promotion markers and unrecognized files fail closed. This is a
+  active targets and retained draft media. Applied entries may contain only a
+  receipt because promotion deletes the draft manifest and media; older applied
+  entries with retained manifests are also validated. Unknown keys/schema
+  versions, pending staging, promotion markers and unrecognized files fail
+  closed. This is a
   read-only schema adapter, not a second draft writer or serializer; changes to
   the console contract require coordinated version/fixture updates here.
 - `validate_branch_ids.dart` compares immutable ancestor/base/head collections
@@ -96,9 +99,7 @@ collection JSON/gzip, unaffected originals and byte-preserving renames.
 No audio files changed. Full local validation passes for **99 people and
 254 tales**, with zero errors. Hosted and client rollout gates below remain open.
 
-Scoped analysis matching CI is clean. Full-package analysis still reports the
-pre-existing missing `lints` include, removed `avoid_returning_null_for_future`
-rule and unused import in the unrelated mutation script `lib/run.dart`.
+Full-package analysis (`dart analyze`, also run by CI) is clean.
 
 The artifact is verification output, not a replacement for current raw-GitHub
 delivery. Hosted CI, branch protection, supported-release mobile tests, legacy
@@ -117,27 +118,33 @@ The `validate_data_4.dart` script performs the following checks:
 ### 2. Folder Structure
 - ✅ Validates presence of `data/4/people` folder
 - ✅ Validates presence of `data/4/tales` folder
-- ✅ Checks for `list.json` in both folders
+- ✅ Checks for `people/index.json` and `tales/index.json`
 
 ### 3. JSON Parsing
-- ✅ Parses `data/4/people/list.json` into `PersonDto` list
-- ✅ Parses `data/4/tales/list.json` into `TaleDto` list
+- ✅ Parses every `data/4/people/{id}/person.json` into `PersonDto`
+- ✅ Parses every `data/4/tales/{id}/tale.json` into `TaleDto`
 - ✅ Detects duplicate IDs in both lists
+- ✅ Requires `people/index.json` to equal every `people/{id}/person.json`
+  (same ID as the folder), sorted by ID descending
+- ✅ Requires `tales/index.json` to equal every `tales/{id}/tale.json` without
+  its `text` field (same ID as the folder), sorted by ID descending
 
 ### 4. People Folder Structure
 For each person in the list:
 - ✅ Checks that a folder exists with the person's ID
+- ❌ Error if `person.json` is missing
 - ❌ Error if `photo.thumbnail.jpg` is missing
 - ❌ Error if `photo.original.*` is missing (any format accepted)
-- ❌ Error if folder contains more than 2 files
 - ❌ Error if folder contains unexpected files
-- ❌ Error for orphaned folders (folders without corresponding entry in list.json)
+- ❌ Error for orphaned folders (folders without corresponding entry in index.json)
 
 Expected structure:
 ```
 data/4/people/
-  list.json
+  index.json
+  list.json.gz          # Compressed production projection (gzip)
   {id}/
+    person.json
     photo.thumbnail.jpg
     photo.original.{ext}  # Any format: jpg, png, jpeg, webp, etc.
 ```
@@ -145,19 +152,21 @@ data/4/people/
 ### 5. Tales Folder Structure
 For each tale in the list:
 - ✅ Checks that a folder exists with the tale's ID
+- ❌ Error if `tale.json` is missing
 - ❌ Error if `img/` folder is missing
 - ❌ Error if `img/` folder doesn't have valid image pairs
 - ❌ Error if tale has "audio" tag but `audio/` folder is missing
 - ❌ Error if tale has `audio/` folder but no "audio" tag
 - ❌ Error for unexpected files or folders
-- ❌ Error for orphaned folders (folders without corresponding entry in list.json)
+- ❌ Error for orphaned folders (folders without corresponding entry in index.json)
 
 Expected structure:
 ```
 data/4/tales/
-  list.json
-  list.json.gz        # Compressed version (gzip)
+  index.json          # Derived: every tale.json without `text`
+  list.json.gz        # Compressed production projection (gzip)
   {id}/
+    tale.json
     img/
       0.thumbnail.jpg
       0.original.{ext}  # Any format
@@ -173,7 +182,8 @@ data/4/tales/
 - ✅ Checks that `list.json.gz` exists for tales
 - ✅ Checks that `list.json.gz` exists for people
 - ✅ Validates compressed files can be decompressed
-- ✅ Compares decompressed content matches original `list.json`
+- ✅ Compares decompressed content with the production projection of every
+  `person.json` / `tale.json`
 - ❌ Error if compressed file is missing
 - ❌ Error if decompressed content doesn't match original
 - ❌ Error if item counts differ between compressed and uncompressed
@@ -196,7 +206,7 @@ Tales with the "audio" tag **must** have an `audio/` folder containing:
 Tales **without** the "audio" tag must **not** have an `audio/` folder.
 
 ### Person Photos  
-Each person folder must have exactly 2 files:
+Each person folder must have `person.json` plus exactly one photo pair:
 - `photo.thumbnail.jpg` - Required thumbnail (must be JPG format)
 - `photo.original.{ext}` - Required original (any format, but only ONE file)
 

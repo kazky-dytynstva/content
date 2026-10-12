@@ -1,0 +1,12 @@
+{
+  "id": 42,
+  "name": "Забіне",
+  "surname": "Больман",
+  "gender": "female",
+  "url": "https://en.wikipedia.org/wiki/Sabine_Bohlmann",
+  "info": "Німецька дитяча письменниця",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

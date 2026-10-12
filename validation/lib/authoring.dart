@@ -5,6 +5,8 @@ import 'package:crypto/crypto.dart';
 import 'package:dto/dto.dart';
 import 'package:path/path.dart' as path;
 
+import 'people_layout.dart';
+
 class AuthoringValidator {
   final Directory root;
   AuthoringValidator(this.root);
@@ -21,15 +23,12 @@ class AuthoringValidator {
     final folders = <String>{};
     final names = <String>{};
     final ids = <String>{};
-    final records =
-        <
-          String,
-          ({
-            Map<String, dynamic> manifest,
-            List<Map<String, dynamic>> media,
-            List<Map<String, dynamic>> refs,
-          })
-        >{};
+    final records = <String,
+        ({
+      Map<String, dynamic> manifest,
+      List<Map<String, dynamic>> media,
+      List<Map<String, dynamic>> refs,
+    })>{};
     final targets = <String>{};
     await for (final entry in authoring.list(
       recursive: true,
@@ -61,19 +60,13 @@ class AuthoringValidator {
       }
     }
     final accepted = <String>{};
+    final appliedKinds = <String, String>{};
     for (final folder in folders) {
-      final currentName = '$folder/manifest.json';
-      final current = await _record(files[currentName]);
-      final manifest = current.manifest;
-      _require(manifest['id'] == folder.split('/').last);
-      records[folder] = current;
-      accepted.add(currentName);
-      if (folder.startsWith('v1/drafts/') && manifest['targetId'] != null) {
-        _require(targets.add('${manifest['kind']}:${manifest['targetId']}'));
-      }
-      if (folder.startsWith('v1/applied/')) {
+      final isApplied = folder.startsWith('v1/applied/');
+      Map<String, dynamic>? receipt;
+      if (isApplied) {
         final name = '$folder/receipt.json';
-        final receipt = await _json(files[name], 8192);
+        receipt = await _json(files[name], 8192);
         _fields(receipt, {
           'schemaVersion': _version,
           'draftId': _draftId,
@@ -94,22 +87,42 @@ class AuthoringValidator {
         ]) {
           _require(receipt[key] != null);
         }
-        _require(
-          receipt['draftId'] == manifest['id'] &&
-              receipt['kind'] == manifest['kind'] &&
-              receipt['revision'] == manifest['revision'] &&
-              (manifest['targetId'] == null ||
-                  receipt['targetId'] == manifest['targetId']),
-        );
+        _require(receipt['draftId'] == folder.split('/').last);
+        appliedKinds[folder] = receipt['kind'] as String;
         accepted.add(name);
       }
+      final currentName = '$folder/manifest.json';
+      final currentFile = files[currentName];
+      if (currentFile == null) {
+        _require(isApplied);
+        continue;
+      }
+      final current = await _record(currentFile);
+      final manifest = current.manifest;
+      _require(manifest['id'] == folder.split('/').last);
+      records[folder] = current;
+      accepted.add(currentName);
+      if (folder.startsWith('v1/drafts/') && manifest['targetId'] != null) {
+        _require(targets.add('${manifest['kind']}:${manifest['targetId']}'));
+      }
+      if (isApplied) {
+        final appliedReceipt = receipt!;
+        _require(
+          appliedReceipt['draftId'] == manifest['id'] &&
+              appliedReceipt['kind'] == manifest['kind'] &&
+              appliedReceipt['revision'] == manifest['revision'] &&
+              (manifest['targetId'] == null ||
+                  appliedReceipt['targetId'] == manifest['targetId']),
+        );
+      }
       final revisions = [current];
-      for (
-        var revision = 1;
-        revision < (manifest['revision'] as int);
-        revision++
-      ) {
+      // Deleted drafts are tombstones: media and history may be removed.
+      final isTombstone = folder.startsWith('v1/deleted/');
+      for (var revision = 1;
+          revision < (manifest['revision'] as int);
+          revision++) {
         final name = '$folder/history/$revision.json';
+        if (isTombstone && files[name] == null) continue;
         final previous = await _record(files[name]);
         for (final key in [
           'id',
@@ -122,8 +135,9 @@ class AuthoringValidator {
         }
         _require(
           previous.manifest['revision'] == revision &&
-              !DateTime.parse(previous.manifest['savedAt'] as String)
-                  .isAfter(DateTime.parse(manifest['savedAt'] as String)),
+              !DateTime.parse(
+                previous.manifest['savedAt'] as String,
+              ).isAfter(DateTime.parse(manifest['savedAt'] as String)),
         );
         revisions.add(previous);
         accepted.add(name);
@@ -131,6 +145,7 @@ class AuthoringValidator {
       for (final revision in revisions) {
         for (final media in revision.media) {
           final file = files['$folder/${media['path']}'];
+          if (isTombstone && file == null) continue;
           _require(file != null && await file.length() == media['byteLength']);
         }
       }
@@ -148,10 +163,10 @@ class AuthoringValidator {
       }
     }
     _require(files.keys.every(accepted.contains));
-    final people = (jsonDecode(
-      await File(path.join(root.path, 'data/4/people/list.json'))
-          .readAsString(),
-    ) as List).map((person) => (person as Map)['id']).toSet();
+    final people =
+        (jsonDecode(await readyPeopleListFile(root).readAsString()) as List)
+            .map((person) => (person as Map)['id'])
+            .toSet();
     for (final entry in records.entries.where(
       (entry) => entry.key.startsWith('v1/drafts/'),
     )) {
@@ -161,20 +176,20 @@ class AuthoringValidator {
         } else {
           final id = reference['draftId'];
           final person = records['v1/drafts/$id'] ?? records['v1/applied/$id'];
-          _require(person != null && person.manifest['kind'] == 'person');
+          final kind =
+              person?.manifest['kind'] ?? appliedKinds['v1/applied/$id'];
+          _require(kind == 'person');
         }
       }
     }
   }
 
   Future<
-    ({
-      Map<String, dynamic> manifest,
-      List<Map<String, dynamic>> media,
-      List<Map<String, dynamic>> refs,
-    })
-  >
-  _record(File? file) async {
+      ({
+        Map<String, dynamic> manifest,
+        List<Map<String, dynamic>> media,
+        List<Map<String, dynamic>> refs,
+      })> _record(File? file) async {
     final record = await _json(file, 8 * 1024 * 1024);
     _require(
       record.keys.toSet().containsAll(['manifest', 'payload']) &&
@@ -205,8 +220,9 @@ class AuthoringValidator {
       (manifest['targetId'] == null) == (manifest['baseFingerprint'] == null),
     );
     _require(
-      !DateTime.parse(manifest['savedAt'] as String)
-          .isBefore(DateTime.parse(manifest['createdAt'] as String)),
+      !DateTime.parse(
+        manifest['savedAt'] as String,
+      ).isBefore(DateTime.parse(manifest['createdAt'] as String)),
     );
     final media = <Map<String, dynamic>>[];
     final refs = <Map<String, dynamic>>[];
@@ -224,16 +240,17 @@ class AuthoringValidator {
       );
       _require(
         data['path'] is String &&
-            RegExp('^media/${data['sha256']}\\.[a-z0-9]{1,10}\$')
-                .hasMatch(data['path'] as String),
+            RegExp(
+              '^media/${data['sha256']}\\.[a-z0-9]{1,10}\$',
+            ).hasMatch(data['path'] as String),
       );
       media.add(data);
     }
 
     void pair(Object value) => _fields(value as Map<String, dynamic>, {
-      'original': mediaFile,
-      'thumbnail': mediaFile,
-    });
+          'original': mediaFile,
+          'thumbnail': mediaFile,
+        });
     void reference(Object value) {
       final data = value as Map<String, dynamic>;
       _fields(data, {
@@ -245,8 +262,8 @@ class AuthoringValidator {
         data['kind'] == 'ready'
             ? data['contentId'] != null && data['draftId'] == null
             : data['kind'] == 'draft' &&
-                  data['draftId'] != null &&
-                  data['contentId'] == null,
+                data['draftId'] != null &&
+                data['contentId'] == null,
       );
       refs.add(data);
     }
@@ -266,9 +283,10 @@ class AuthoringValidator {
         'url': _string,
         'info': _string,
         'roles': (value) => _list(
-          value,
-          (role) => _enum(role, PersonRoleDto.values.map((item) => item.name)),
-        ),
+              value,
+              (role) =>
+                  _enum(role, PersonRoleDto.values.map((item) => item.name)),
+            ),
         'photo': pair,
       });
     } else {
@@ -276,47 +294,47 @@ class AuthoringValidator {
         ...common,
         'summary': _string,
         'tags': (value) => _list(
-          value,
-          (tag) => _enum(tag, TaleTag.values.map((item) => item.name)),
-        ),
+              value,
+              (tag) => _enum(tag, TaleTag.values.map((item) => item.name)),
+            ),
         'text': (value) => _fields(value as Map<String, dynamic>, {
-          'minReadingTime': _integer,
-          'maxReadingTime': _integer,
-          'items': (value) => _list(value, (item) {
-            final data = item as Map<String, dynamic>;
-            _fields(data, {
-              'kind': (value) => _enum(value, ['text', 'image']),
-              'text': _string,
-              'imageIndex': _integer,
-            });
-            _require(
-              data['kind'] == 'text'
-                  ? data['imageIndex'] == null
-                  : data['kind'] == 'image' && data['text'] == null,
-            );
-          }),
-        }),
+              'minReadingTime': _integer,
+              'maxReadingTime': _integer,
+              'items': (value) => _list(value, (item) {
+                    final data = item as Map<String, dynamic>;
+                    _fields(data, {
+                      'kind': (value) => _enum(value, ['text', 'image']),
+                      'text': _string,
+                      'imageIndex': _integer,
+                    });
+                    _require(
+                      data['kind'] == 'text'
+                          ? data['imageIndex'] == null
+                          : data['kind'] == 'image' && data['text'] == null,
+                    );
+                  }),
+            }),
         'audio': (value) => _fields(value as Map<String, dynamic>, {
-          'fileSize': _integer,
-          'duration': _integer,
-          'files': pair,
-        }),
+              'fileSize': _integer,
+              'duration': _integer,
+              'files': pair,
+            }),
         'images': (value) => _list(
-          value,
-          (item) => _fields(item as Map<String, dynamic>, {
-            'index': _integer,
-            'files': pair,
-          }),
-        ),
+              value,
+              (item) => _fields(item as Map<String, dynamic>, {
+                'index': _integer,
+                'files': pair,
+              }),
+            ),
         'adminConfig': (value) => _fields(value as Map<String, dynamic>, {
-          'isHidden': _boolean,
-          'isReviewed': _boolean,
-          'comment': _string,
-        }),
+              'isHidden': _boolean,
+              'isReviewed': _boolean,
+              'comment': _string,
+            }),
         'crew': (value) => _fields(value as Map<String, dynamic>, {
-          for (final role in PersonRoleDto.values)
-            role.name: (value) => _list(value, reference),
-        }),
+              for (final role in PersonRoleDto.values)
+                role.name: (value) => _list(value, reference),
+            }),
       });
     }
     return (manifest: manifest, media: media, refs: refs);
@@ -355,11 +373,11 @@ class AuthoringValidator {
   void _revision(Object value) =>
       _require(value is int && value >= 1 && value <= 100000);
   void _contentId(Object value) => _require(
-    value is int &&
-        value >= 0 &&
-        value != TaleDto.stubId &&
-        value <= 9007199254740991,
-  );
+        value is int &&
+            value >= 0 &&
+            value != TaleDto.stubId &&
+            value <= 9007199254740991,
+      );
   void _draftId(Object value) =>
       _require(value is String && RegExp(r'^[0-9a-f]{32}$').hasMatch(value));
   void _digest(Object value) =>

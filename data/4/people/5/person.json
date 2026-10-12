@@ -1,0 +1,12 @@
+{
+  "id": 5,
+  "name": "Галина",
+  "surname": "Мирослава",
+  "gender": "female",
+  "url": "https://kazky.org.ua/zbirky/bohdanija",
+  "info": "Автор численних дитячих віршів та творів",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}
