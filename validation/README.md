@@ -99,9 +99,7 @@ collection JSON/gzip, unaffected originals and byte-preserving renames.
 No audio files changed. Full local validation passes for **99 people and
 254 tales**, with zero errors. Hosted and client rollout gates below remain open.
 
-Scoped analysis matching CI is clean. Full-package analysis still reports the
-pre-existing missing `lints` include, removed `avoid_returning_null_for_future`
-rule and unused import in the unrelated mutation script `lib/run.dart`.
+Full-package analysis (`dart analyze`, also run by CI) is clean.
 
 The artifact is verification output, not a replacement for current raw-GitHub
 delivery. Hosted CI, branch protection, supported-release mobile tests, legacy

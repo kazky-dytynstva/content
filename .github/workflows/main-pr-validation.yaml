@@ -89,7 +89,7 @@ jobs:
 
       - name: Analyze pipeline
         working-directory: ./validation
-        run: dart analyze lib/ready_content.dart lib/authoring.dart lib/mobile_delivery.dart lib/branch_ids.dart lib/validate_data_4.dart bin/validate_data_4.dart bin/build_mobile_delivery.dart bin/validate_branch_ids.dart test
+        run: dart analyze
 
       - name: Run isolated pipeline fixtures
         working-directory: ./validation
