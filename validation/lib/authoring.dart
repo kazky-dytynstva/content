@@ -116,10 +116,13 @@ class AuthoringValidator {
         );
       }
       final revisions = [current];
+      // Deleted drafts are tombstones: media and history may be removed.
+      final isTombstone = folder.startsWith('v1/deleted/');
       for (var revision = 1;
           revision < (manifest['revision'] as int);
           revision++) {
         final name = '$folder/history/$revision.json';
+        if (isTombstone && files[name] == null) continue;
         final previous = await _record(files[name]);
         for (final key in [
           'id',
@@ -142,6 +145,7 @@ class AuthoringValidator {
       for (final revision in revisions) {
         for (final media in revision.media) {
           final file = files['$folder/${media['path']}'];
+          if (isTombstone && file == null) continue;
           _require(file != null && await file.length() == media['byteLength']);
         }
       }

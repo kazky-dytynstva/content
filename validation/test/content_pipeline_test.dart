@@ -417,6 +417,40 @@ void main() {
     expect(await snapshot(Directory('${root.path}/data')), before);
   });
 
+  for (final damage in ['none', 'media-size']) {
+    test('deleted draft tombstone without media or history: $damage',
+        () async {
+      final file = await draft(root);
+      final record =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+      final bytes = utf8.encode('removed draft media');
+      final digest = sha256.convert(bytes).toString();
+      (record['payload'] as Map)['photo'] = {
+        'original': {
+          'path': 'media/$digest.jpg',
+          'sha256': digest,
+          'byteLength': bytes.length,
+        },
+      };
+      (record['manifest'] as Map)['revision'] = 2;
+      final deleted = Directory(
+        '${root.path}/authoring/v1/deleted/${'a' * 32}',
+      );
+      await deleted.create(recursive: true);
+      await File('${deleted.path}/manifest.json')
+          .writeAsString(jsonEncode(record));
+      await file.parent.delete(recursive: true);
+      if (damage == 'media-size') {
+        // Media that is still present must keep matching the manifest.
+        final media = File('${deleted.path}/media/$digest.jpg');
+        await media.parent.create();
+        await media.writeAsBytes([...bytes, 0]);
+      }
+      final result = await Data4Validator(root.path).validate();
+      expect(result.success, damage == 'none', reason: result.errors.join());
+    });
+  }
+
   for (final damage in [
     'version',
     'revision',
