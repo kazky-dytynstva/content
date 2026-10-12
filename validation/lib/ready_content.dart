@@ -151,22 +151,15 @@ class ReadyContent {
     }
   }
 
-  /// People records from either the legacy `people/list.json` or the split
-  /// layout (`people/{id}/person.json` + derived `people/index.json`).
+  /// People records from `people/{id}/person.json`, which the derived
+  /// `people/index.json` must match exactly.
   Future<List> _peopleRecords(Set<String> accepted) async {
     Future<bool> isFile(String relative) async =>
         await FileSystemEntity.type(_file(relative).path, followLinks: false) ==
         FileSystemEntityType.file;
 
-    final legacy = await isFile('people/list.json');
-    if (legacy == await isFile('people/index.json'))
-      throw const FormatException(
-        'Expected exactly one of people/list.json or people/index.json',
-      );
-    if (legacy) {
-      accepted.add('people/list.json');
-      return jsonDecode(await _file('people/list.json').readAsString()) as List;
-    }
+    if (!await isFile('people/index.json'))
+      throw const FormatException('Missing people/index.json');
     accepted.add('people/index.json');
     final records = <Map>[];
     await for (final entry in Directory(

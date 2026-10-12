@@ -88,7 +88,7 @@ class Data4Validator {
           ? readyPeopleListFile(Directory(rootPath))
           : File('$rootPath/data/4/$folder/list.json');
       if (!listFile.existsSync()) {
-        errors.add('❌ Missing list.json in data/4/$folder');
+        errors.add('❌ Missing ${listFile.path}');
       } else {
         print('✅ ${listFile.path} exists');
       }
@@ -130,7 +130,7 @@ class Data4Validator {
       // Check for duplicate IDs
       _checkDuplicateIds(people.map((p) => p.id).toList(), 'people');
     } catch (e) {
-      errors.add('❌ Failed to parse people/list.json: $e');
+      errors.add('❌ Failed to parse people/index.json: $e');
     }
   }
 
@@ -182,7 +182,7 @@ class Data4Validator {
     // Check for orphaned folders (folders without corresponding person in list)
     for (final folderId in folderIds) {
       if (!people.any((p) => p.id == folderId)) {
-        errors.add('❌ Orphaned person folder: $folderId (not in list.json)');
+        errors.add('❌ Orphaned person folder: $folderId (not in index.json)');
       }
     }
 

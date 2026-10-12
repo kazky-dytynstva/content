@@ -120,27 +120,31 @@ The `validate_data_4.dart` script performs the following checks:
 ### 2. Folder Structure
 - ✅ Validates presence of `data/4/people` folder
 - ✅ Validates presence of `data/4/tales` folder
-- ✅ Checks for `list.json` in both folders
+- ✅ Checks for `people/index.json` and `tales/list.json`
 
 ### 3. JSON Parsing
-- ✅ Parses `data/4/people/list.json` into `PersonDto` list
+- ✅ Parses `data/4/people/index.json` into `PersonDto` list
 - ✅ Parses `data/4/tales/list.json` into `TaleDto` list
 - ✅ Detects duplicate IDs in both lists
+- ✅ Requires `people/index.json` to equal every `people/{id}/person.json`
+  (same ID as the folder), sorted by ID descending
 
 ### 4. People Folder Structure
 For each person in the list:
 - ✅ Checks that a folder exists with the person's ID
+- ❌ Error if `person.json` is missing
 - ❌ Error if `photo.thumbnail.jpg` is missing
 - ❌ Error if `photo.original.*` is missing (any format accepted)
-- ❌ Error if folder contains more than 2 files
 - ❌ Error if folder contains unexpected files
-- ❌ Error for orphaned folders (folders without corresponding entry in list.json)
+- ❌ Error for orphaned folders (folders without corresponding entry in index.json)
 
 Expected structure:
 ```
 data/4/people/
-  list.json
+  index.json
+  list.json.gz          # Compressed production projection (gzip)
   {id}/
+    person.json
     photo.thumbnail.jpg
     photo.original.{ext}  # Any format: jpg, png, jpeg, webp, etc.
 ```

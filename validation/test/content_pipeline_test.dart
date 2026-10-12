@@ -8,7 +8,6 @@ import 'package:test/test.dart';
 import 'package:validation/validate_data_4.dart';
 import 'package:validation/mobile_delivery.dart';
 import 'package:validation/branch_ids.dart';
-import 'package:validation/people_layout.dart';
 
 void main() {
   late Directory root;
@@ -21,13 +20,16 @@ void main() {
   test(
     'CLI rejects invalid metadata with assertions disabled and matching gzip',
     () async {
-      final file = File('${root.path}/data/4/people/list.json');
-      final records = jsonDecode(await file.readAsString()) as List;
-      (records.single as Map)['name'] = '';
-      final encoded = jsonEncode(records);
-      await file.writeAsString(encoded);
+      final people = '${root.path}/data/4/people';
+      final record = jsonDecode(
+        await File('$people/3/person.json').readAsString(),
+      ) as Map<String, dynamic>;
+      record['name'] = '';
+      await File('$people/3/person.json').writeAsString(jsonEncode(record));
+      final encoded = jsonEncode([record]);
+      await File('$people/index.json').writeAsString(encoded);
       await File(
-        '${file.path}.gz',
+        '$people/list.json.gz',
       ).writeAsBytes(gzip.encode(utf8.encode(encoded)));
       final before = await snapshot(root);
       final result = await Process.run(Platform.resolvedExecutable, [
@@ -223,7 +225,7 @@ void main() {
     await git(['add', '.']);
     await git(['commit', '-m', 'ancestor']);
     final ancestor = await git(['rev-parse', 'HEAD']);
-    final file = File('${root.path}/data/4/people/list.json');
+    final file = File('${root.path}/data/4/people/index.json');
     final records = jsonDecode(await file.readAsString()) as List;
     records.add({...records.first as Map, 'id': 4});
     await file.writeAsString(jsonEncode(records));
@@ -242,16 +244,19 @@ void main() {
     await validateBranchIds(root, ancestor, ancestor, head);
   });
 
-  test('branch IDs compare legacy and split people revisions', () async {
+  test('branch IDs read list.json at revisions before the people split',
+      () async {
     Future<String> git(List<String> arguments) => runGit(root, arguments);
 
+    final index = File('${root.path}/data/4/people/index.json');
+    final list = File('${root.path}/data/4/people/list.json');
+    final records = jsonDecode(await index.readAsString()) as List;
     await git(['init', '--initial-branch=fixture']);
-    await git(['add', '.']);
+    await index.rename(list.path);
+    await git(['add', '-A']);
     await git(['commit', '-m', 'legacy ancestor']);
     final ancestor = await git(['rev-parse', 'HEAD']);
-    await splitPeople(root);
-    final index = File('${root.path}/data/4/people/index.json');
-    final records = jsonDecode(await index.readAsString()) as List;
+    await list.rename(index.path);
     await index.writeAsString(
       jsonEncode([
         {...records.first as Map, 'id': 4},
@@ -262,12 +267,10 @@ void main() {
     await git(['commit', '-m', 'split base allocation']);
     final base = await git(['rev-parse', 'HEAD']);
     await git(['checkout', '--detach', ancestor]);
-    final list = File('${root.path}/data/4/people/list.json');
-    final legacy = jsonDecode(await list.readAsString()) as List;
     await list.writeAsString(
       jsonEncode([
-        ...legacy,
-        {...legacy.first as Map, 'id': 4},
+        ...records,
+        {...records.first as Map, 'id': 4},
       ]),
     );
     await git(['add', '.']);
@@ -280,52 +283,16 @@ void main() {
     await validateBranchIds(root, ancestor, ancestor, base);
   });
 
-  test(
-    'split people layout validates and keeps mobile delivery identical',
-    () async {
-      final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
-      addTearDown(() => parent.delete(recursive: true));
-      final before = Directory('${parent.path}/before');
-      final after = Directory('${parent.path}/after');
-      await MobileDelivery().build(root, before);
-      final legacy = jsonDecode(
-        await File(
-          '${root.path}/data/4/people/list.json',
-        ).readAsString(),
-      ) as List;
-
-      expect(await splitPeople(root), isTrue);
-      expect(await splitPeople(root), isFalse);
-
-      final people = '${root.path}/data/4/people';
-      expect(await File('$people/list.json').exists(), isFalse);
-      expect(
-        jsonDecode(await File('$people/index.json').readAsString()),
-        legacy,
-      );
-      expect(
-        jsonDecode(await File('$people/3/person.json').readAsString()),
-        legacy.single,
-      );
-      expect((await Data4Validator(root.path).validate()).errors, isEmpty);
-      await MobileDelivery().build(root, after);
-      expect(
-        await File('${after.path}/data/4/people/list.json.gz').readAsBytes(),
-        await File('${before.path}/data/4/people/list.json.gz').readAsBytes(),
-      );
-    },
-  );
-
   for (final damage in [
     'index',
     'missing-person',
     'folder-id',
     'both-layouts',
+    'missing-index',
     'gzip',
     'orphan-folder',
   ]) {
-    test('rejects split people $damage without rewriting content', () async {
-      await splitPeople(root);
+    test('rejects people $damage without rewriting content', () async {
       final people = '${root.path}/data/4/people';
       final person = File('$people/3/person.json');
       final record =
@@ -342,6 +309,8 @@ void main() {
           await writeIndex({...record, 'id': 4});
         case 'both-layouts':
           await File('$people/list.json').writeAsString(jsonEncode([record]));
+        case 'missing-index':
+          await File('$people/index.json').rename('$people/list.json');
         case 'gzip':
           final edited = {...record, 'name': 'Renamed Person'};
           await person.writeAsString(jsonEncode(edited));
@@ -418,8 +387,7 @@ void main() {
   });
 
   for (final damage in ['none', 'media-size']) {
-    test('deleted draft tombstone without media or history: $damage',
-        () async {
+    test('deleted draft tombstone without media or history: $damage', () async {
       final file = await draft(root);
       final record =
           jsonDecode(await file.readAsString()) as Map<String, dynamic>;
@@ -609,12 +577,20 @@ Future<void> writeCollection(
   String kind,
   List<ToJsonItem> items,
 ) async {
-  final file = File('${root.path}/data/4/$kind/list.json');
-  await file.parent.create(recursive: true);
-  await file.writeAsString(
-    jsonEncode(items.map((item) => item.toJson()).toList()),
-  );
-  await File('${file.path}.gz').writeAsBytes(
+  final folder = Directory('${root.path}/data/4/$kind');
+  await folder.create(recursive: true);
+  final records = items.map((item) => item.toJson()).toList();
+  if (kind == 'people') {
+    for (final record in records) {
+      final person = File('${folder.path}/${record['id']}/person.json');
+      await person.parent.create(recursive: true);
+      await person.writeAsString(jsonEncode(record));
+    }
+  }
+  await File(
+    '${folder.path}/${kind == 'people' ? 'index.json' : 'list.json'}',
+  ).writeAsString(jsonEncode(records));
+  await File('${folder.path}/list.json.gz').writeAsBytes(
     DTOCompression<ToJsonItem>().compress(items, (item) => item.toProdJson()),
   );
 }
