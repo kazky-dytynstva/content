@@ -8,6 +8,7 @@ import 'package:test/test.dart';
 import 'package:validation/validate_data_4.dart';
 import 'package:validation/mobile_delivery.dart';
 import 'package:validation/branch_ids.dart';
+import 'package:validation/media_manifest.dart';
 import 'package:validation/tales_layout.dart';
 
 void main() {
@@ -363,6 +364,82 @@ void main() {
       }
       final before = await snapshot(root);
       expect((await Data4Validator(root.path).validate()).success, isFalse);
+      expect(await snapshot(root), before);
+    });
+  }
+
+  test('media manifests list every media file and keep delivery identical',
+      () async {
+    final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
+    addTearDown(() => parent.delete(recursive: true));
+    await MobileDelivery().build(root, Directory('${parent.path}/before'));
+
+    expect(await writeMediaManifests(root), 2);
+    expect(await writeMediaManifests(root), 0);
+
+    final bytes = await File('${root.path}/data/4/tales/7/img/0.thumbnail.jpg')
+        .readAsBytes();
+    final tale = jsonDecode(
+      await File('${root.path}/data/4/tales/7/media.json').readAsString(),
+    );
+    expect(tale['files'], [
+      {
+        'path': 'img/0.original.jpg',
+        'sha': gitBlobSha(bytes),
+        'bytes': bytes.length,
+      },
+      {
+        'path': 'img/0.thumbnail.jpg',
+        'sha': gitBlobSha(bytes),
+        'bytes': bytes.length,
+      },
+    ]);
+    final person = jsonDecode(
+      await File('${root.path}/data/4/people/3/media.json').readAsString(),
+    );
+    expect(
+      (person['files'] as List).map((file) => file['path']),
+      ['photo.original.jpg', 'photo.thumbnail.jpg'],
+    );
+    expect((await Data4Validator(root.path).validate()).errors, isEmpty);
+    await MobileDelivery().build(root, Directory('${parent.path}/after'));
+    expect(
+      await snapshot(Directory('${parent.path}/after/data')).then(
+        (files) => files.values.toList(),
+      ),
+      await snapshot(Directory('${parent.path}/before/data')).then(
+        (files) => files.values.toList(),
+      ),
+    );
+  });
+
+  for (final damage in ['sha', 'bytes', 'missing', 'extra', 'stale']) {
+    test('rejects media.json with $damage entry without rewriting', () async {
+      await writeMediaManifests(root);
+      final manifest = File('${root.path}/data/4/tales/7/media.json');
+      final data =
+          jsonDecode(await manifest.readAsString()) as Map<String, dynamic>;
+      final files = (data['files'] as List).cast<Map<String, dynamic>>();
+      switch (damage) {
+        case 'sha':
+          files.first['sha'] = '0' * 40;
+        case 'bytes':
+          files.first['bytes'] = 1;
+        case 'missing':
+          files.removeLast();
+        case 'extra':
+          files.add({...files.first, 'path': 'img/1.original.jpg'});
+        case 'stale':
+          final thumbnail = image.encodeJpg(image.Image(width: 5, height: 5));
+          await File(
+            '${root.path}/data/4/tales/7/img/0.thumbnail.jpg',
+          ).writeAsBytes(thumbnail);
+      }
+      if (damage != 'stale') await manifest.writeAsString(jsonEncode(data));
+      final before = await snapshot(root);
+      final result = await Data4Validator(root.path).validate();
+      expect(result.success, isFalse);
+      expect(result.errors.join(), contains('Media manifest'));
       expect(await snapshot(root), before);
     });
   }

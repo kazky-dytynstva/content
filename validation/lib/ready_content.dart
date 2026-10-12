@@ -7,6 +7,7 @@ import 'package:dto/dto.dart';
 import 'package:image/image.dart' as image;
 import 'package:path/path.dart' as path;
 
+import 'media_manifest.dart';
 import 'tales_layout.dart';
 
 String canonical(Object? value) {
@@ -140,6 +141,22 @@ class ReadyContent {
           readyPersonIds: ids,
         ),
       );
+    }
+    for (final prefix in [
+      for (final person in people) 'people/${person.id}',
+      for (final tale in tales) 'tales/${tale.id}',
+    ]) {
+      final manifest = '$prefix/$mediaManifestName';
+      if (await FileSystemEntity.type(
+            _file(manifest).path,
+            followLinks: false,
+          ) !=
+          FileSystemEntityType.file) continue;
+      accepted.add(manifest);
+      final recorded = jsonDecode(await _file(manifest).readAsString());
+      final actual = await buildMediaManifest(Directory(_file(prefix).path));
+      if (canonical(recorded) != canonical(actual))
+        throw FormatException('Media manifest does not match files: $manifest');
     }
     await for (final entry in Directory(
       _file('').path,

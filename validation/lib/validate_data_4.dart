@@ -296,7 +296,7 @@ class Data4Validator {
           errors.add('❌ Unexpected folder in tales/${tale.id}: $name');
         }
       } else if (entry is File) {
-        if (name == 'tale.json') continue;
+        if (name == 'tale.json' || name == 'media.json') continue;
         if (name == '.DS_Store') {
           errors.add('Unexpected file in tales/${tale.id}: $name');
         } else {
@@ -491,6 +491,7 @@ class Data4Validator {
           for (final fileName in fileNames) {
             if (fileName != 'photo.thumbnail.jpg' &&
                 fileName != 'person.json' &&
+                fileName != 'media.json' &&
                 !fileName.startsWith('photo.original.')) {
               errors.add('❌ Unexpected file in people/$id: $fileName');
             }
