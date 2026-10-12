@@ -1,0 +1,12 @@
+{
+  "id": 36,
+  "name": "Вільгельм",
+  "surname": "Грімм",
+  "gender": "male",
+  "url": "https://uk.wikipedia.org/wiki/%D0%91%D1%80%D0%B0%D1%82%D0%B8_%D0%93%D1%80%D1%96%D0%BC%D0%BC",
+  "info": "Німецький науковець, казкар та мовознавць",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

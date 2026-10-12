@@ -1,0 +1,14 @@
+{
+  "id": 80,
+  "name": "Анна",
+  "surname": "Чернявська",
+  "gender": "female",
+  "url": "https://www.instagram.com/anna_cherniavska9",
+  "info": "Письменниця-початківець, громадська діячка, учителька",
+  "roles": [
+    "author",
+    "reader"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095",
+  "update_date": "2026-02-08T12:45:47.068485"
+}

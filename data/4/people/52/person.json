@@ -1,0 +1,13 @@
+{
+  "id": 52,
+  "name": "Юлія",
+  "surname": "Антонова",
+  "gender": "female",
+  "url": "https://www.facebook.com/vitainlumine",
+  "info": "Муза, арт-терапевт",
+  "roles": [
+    "author",
+    "graphic"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

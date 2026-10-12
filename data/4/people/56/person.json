@@ -1,0 +1,13 @@
+{
+  "id": 56,
+  "name": "Олександр",
+  "surname": "Єрох",
+  "gender": "male",
+  "url": "https://www.facebook.com/profile.php?id=100009929326762",
+  "info": "Зранку - поет, а надвечір - казкар",
+  "roles": [
+    "author",
+    "reader"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

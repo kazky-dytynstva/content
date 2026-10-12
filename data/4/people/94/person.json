@@ -1,0 +1,13 @@
+{
+  "id": 94,
+  "name": "Сергій",
+  "surname": "Бондаренко",
+  "gender": "male",
+  "url": "https://www.linkedin.com/in/sergii-bondarenko-i/",
+  "info": "Fullstack magic developer",
+  "roles": [
+    "crew"
+  ],
+  "create_date": "2025-11-28T21:46:14.147095",
+  "update_date": "2026-02-08T12:45:47.010591"
+}

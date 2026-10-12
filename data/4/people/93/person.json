@@ -1,0 +1,13 @@
+{
+  "id": 93,
+  "name": "Богдан",
+  "surname": "Дмитрів",
+  "gender": "male",
+  "url": "https://www.linkedin.com/in/bohdan-dmytriv/",
+  "info": "Back-end magic dev",
+  "roles": [
+    "crew"
+  ],
+  "create_date": "2025-11-28T21:46:13.147095",
+  "update_date": "2026-02-08T12:45:47.016075"
+}

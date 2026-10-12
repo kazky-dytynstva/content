@@ -1,0 +1,12 @@
+{
+  "id": 23,
+  "name": "Григорій",
+  "surname": "Бойко",
+  "gender": "male",
+  "url": "https://uk.wikipedia.org/wiki/%D0%91%D0%BE%D0%B9%D0%BA%D0%BE_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%96%D0%B9_%D0%9F%D0%B8%D0%BB%D0%B8%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+  "info": "Український письменник, поет і перекладач",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

@@ -1,0 +1,13 @@
+{
+  "id": 95,
+  "name": "Марія",
+  "surname": "Возняк",
+  "gender": "female",
+  "url": "https://www.instagram.com/mariaavozniak",
+  "info": "Пишу твори, навчаюсь у ШУЖ, дарую дітям магію казок.",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:15.147095",
+  "update_date": "2026-02-08T12:45:47.003905"
+}

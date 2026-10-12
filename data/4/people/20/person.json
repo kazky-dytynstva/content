@@ -1,0 +1,12 @@
+{
+  "id": 20,
+  "name": "Самуїл",
+  "surname": "Маршак",
+  "gender": "male",
+  "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%88%D0%B0%D0%BA_%D0%A1%D0%B0%D0%BC%D1%83%D1%97%D0%BB_%D0%AF%D0%BA%D0%BE%D0%B2%D0%B8%D1%87",
+  "info": "Радянський дитячий письменник, поет, перекладач, драматург, критик",
+  "roles": [
+    "author"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}

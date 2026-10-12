@@ -1,0 +1,13 @@
+{
+  "id": 88,
+  "name": "Ольга",
+  "surname": "Токар",
+  "gender": "female",
+  "url": "https://www.facebook.com/notyolgatokar/",
+  "info": "Вокальний аранжувальник та композитор.",
+  "roles": [
+    "reader"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095",
+  "update_date": "2026-02-08T12:45:47.039224"
+}

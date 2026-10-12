@@ -1,0 +1,10 @@
+{
+  "id": 31,
+  "name": "Сергій",
+  "surname": "Татієнко",
+  "gender": "male",
+  "roles": [
+    "musician"
+  ],
+  "create_date": "2025-11-28T21:46:11.147095"
+}
