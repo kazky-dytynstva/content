@@ -130,6 +130,7 @@ class AuthoringValidator {
           'targetId',
           'baseFingerprint',
           'createdAt',
+          'createdBy',
         ]) {
           _require(previous.manifest[key] == manifest[key]);
         }
@@ -205,6 +206,7 @@ class AuthoringValidator {
       'savedAt': _date,
       'targetId': _contentId,
       'baseFingerprint': _digest,
+      'createdBy': _author,
     });
     for (final key in [
       'schemaVersion',
@@ -364,6 +366,8 @@ class AuthoringValidator {
   void _enum(Object value, Iterable<String> values) =>
       _require(value is String && values.contains(value));
   void _string(Object value) => _require(value is String);
+  void _author(Object value) =>
+      _require(value is String && value.isNotEmpty && value.length <= 100);
   void _boolean(Object value) => _require(value is bool);
   void _integer(Object value) => _require(value is int);
   void _date(Object value) =>

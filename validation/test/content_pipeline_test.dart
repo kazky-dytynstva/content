@@ -551,6 +551,32 @@ void main() {
     });
   }
 
+  test('draft manifests may record their author', () async {
+    final manifest = await draft(root);
+    final record =
+        jsonDecode(await manifest.readAsString()) as Map<String, dynamic>;
+    (record['manifest'] as Map)['createdBy'] = 'Andrii';
+    await manifest.writeAsString(jsonEncode(record));
+
+    expect((await Data4Validator(root.path).validate()).errors, isEmpty);
+  });
+
+  test('a draft author must not change between revisions', () async {
+    final manifest = await draft(root);
+    final record =
+        jsonDecode(await manifest.readAsString()) as Map<String, dynamic>;
+    (record['manifest'] as Map)['createdBy'] = 'Andrii';
+    final history = File('${manifest.parent.path}/history/1.json');
+    await history.parent.create();
+    await history.writeAsString(jsonEncode(record));
+    (record['manifest'] as Map)
+      ..['revision'] = 2
+      ..['createdBy'] = 'Someone else';
+    await manifest.writeAsString(jsonEncode(record));
+
+    expect((await Data4Validator(root.path).validate()).success, isFalse);
+  });
+
   for (final damage in [
     'version',
     'revision',
@@ -559,6 +585,7 @@ void main() {
     'receipt',
     'media-hash',
     'unknown',
+    'empty-author',
   ]) {
     test('rejects authoring $damage and retains evidence', () async {
       final manifest = await draft(root);
@@ -585,6 +612,8 @@ void main() {
           await file.writeAsString('wrong hash');
         case 'unknown':
           (record['payload'] as Map)['unexpected'] = true;
+        case 'empty-author':
+          (record['manifest'] as Map)['createdBy'] = '';
       }
       await manifest.writeAsString(jsonEncode(record));
       final before = await snapshot(root);
