@@ -180,9 +180,8 @@ void main() {
       ]);
       expect(encoded.exitCode, 0, reason: encoded.stderr.toString());
       final file = File('${root.path}/data/4/tales/list.json');
-      final data =
-          (jsonDecode(await file.readAsString()) as List).single
-              as Map<String, dynamic>;
+      final data = (jsonDecode(await file.readAsString()) as List).single
+          as Map<String, dynamic>;
       data['tags'] = ['text', 'audio'];
       data['audio'] = {
         'duration': 500000,
@@ -263,7 +262,9 @@ void main() {
     await validateBranchIds(root, ancestor, ancestor, head);
   });
 
-  test('delivery allowlist is unchanged by draft-only edits and readable by mobile DTOs', () async {
+  test(
+      'delivery allowlist is unchanged by draft-only edits and readable by mobile DTOs',
+      () async {
     final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
     addTearDown(() => parent.delete(recursive: true));
     final before = Directory('${parent.path}/before');
@@ -272,9 +273,9 @@ void main() {
     await draft(root);
     await MobileDelivery().build(root, after);
     Future<Map<String, String>> relative(Directory folder) async => {
-      for (final entry in (await snapshot(folder)).entries)
-        entry.key.substring(folder.path.length): entry.value,
-    };
+          for (final entry in (await snapshot(folder)).entries)
+            entry.key.substring(folder.path.length): entry.value,
+        };
     expect(await relative(before), await relative(after));
     expect((await relative(after)).keys.toSet(), {
       '/data/4/people/list.json.gz',
@@ -485,9 +486,9 @@ Future<void> writeCollection(
 }
 
 Future<Map<String, String>> snapshot(Directory root) async => {
-  await for (final entry in root.list(recursive: true, followLinks: false))
-    if (entry is File) entry.path: base64Encode(await entry.readAsBytes()),
-};
+      await for (final entry in root.list(recursive: true, followLinks: false))
+        if (entry is File) entry.path: base64Encode(await entry.readAsBytes()),
+    };
 
 Future<File> draft(Directory root) async {
   final file = File(
