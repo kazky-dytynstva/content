@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "path": "photo.original.webp",
+      "sha": "2f4b34c8d7b07448fac7e1c22d149e5e8d8e05dc",
+      "bytes": 143984
+    },
+    {
+      "path": "photo.thumbnail.jpg",
+      "sha": "33cf38fc9aa7294261467a317a7976b3a09dec41",
+      "bytes": 117162
+    }
+  ]
+}

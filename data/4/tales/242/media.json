@@ -1,0 +1,34 @@
+{
+  "files": [
+    {
+      "path": "img/0.original.jpg",
+      "sha": "20ec9397e0e076d7eb8b94ab3a0a6765dbd04bc3",
+      "bytes": 145920
+    },
+    {
+      "path": "img/0.thumbnail.jpg",
+      "sha": "9a1bbd86d256b0302524bb2c79f50f71cf942047",
+      "bytes": 104073
+    },
+    {
+      "path": "img/1.original.jpg",
+      "sha": "2698291ae5eb0d2dd4bbd831455a0b82e43886b3",
+      "bytes": 133479
+    },
+    {
+      "path": "img/1.thumbnail.jpg",
+      "sha": "0d0c5b4e42fdd4d759bb3f8fb5c15b4a21224d3e",
+      "bytes": 89003
+    },
+    {
+      "path": "img/2.original.jpg",
+      "sha": "f054ab3b18425cae65c9d923e3fcd21a7b96e91d",
+      "bytes": 196874
+    },
+    {
+      "path": "img/2.thumbnail.jpg",
+      "sha": "d5e4140532a76722c82b8294aef6d141b61cd377",
+      "bytes": 129544
+    }
+  ]
+}
