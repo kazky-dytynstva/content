@@ -8,6 +8,7 @@ import 'package:test/test.dart';
 import 'package:validation/validate_data_4.dart';
 import 'package:validation/mobile_delivery.dart';
 import 'package:validation/branch_ids.dart';
+import 'package:validation/tales_layout.dart';
 
 void main() {
   late Directory root;
@@ -317,6 +318,77 @@ void main() {
           await writeIndex(edited);
         case 'orphan-folder':
           await Directory('$people/5').create();
+      }
+      final before = await snapshot(root);
+      expect((await Data4Validator(root.path).validate()).success, isFalse);
+      expect(await snapshot(root), before);
+    });
+  }
+
+  test('tales split keeps mobile delivery identical and drops text from index',
+      () async {
+    final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
+    addTearDown(() => parent.delete(recursive: true));
+    final before = Directory('${parent.path}/before');
+    final after = Directory('${parent.path}/after');
+    await MobileDelivery().build(root, before);
+    final tales = '${root.path}/data/4/tales';
+    final legacy =
+        (jsonDecode(await File('$tales/list.json').readAsString()) as List)
+            .single as Map<String, dynamic>;
+
+    expect(await splitTales(root), isTrue);
+    expect(await splitTales(root), isFalse);
+
+    expect(await File('$tales/list.json').exists(), isFalse);
+    expect(
+      jsonDecode(await File('$tales/7/tale.json').readAsString()),
+      legacy,
+    );
+    final index =
+        jsonDecode(await File('$tales/index.json').readAsString()) as List;
+    expect(index.single, {...legacy}..remove('text'));
+    expect((await Data4Validator(root.path).validate()).errors, isEmpty);
+    await MobileDelivery().build(root, after);
+    expect(
+      await File('${after.path}/data/4/tales/list.json.gz').readAsBytes(),
+      await File('${before.path}/data/4/tales/list.json.gz').readAsBytes(),
+    );
+  });
+
+  for (final damage in [
+    'index-text',
+    'index-name',
+    'missing-tale',
+    'folder-id',
+    'both-layouts',
+    'gzip',
+  ]) {
+    test('rejects split tales $damage without rewriting content', () async {
+      await splitTales(root);
+      final tales = '${root.path}/data/4/tales';
+      final tale = File('$tales/7/tale.json');
+      final record =
+          jsonDecode(await tale.readAsString()) as Map<String, dynamic>;
+      final entry = taleIndexEntry(record);
+      Future<void> writeIndex(Map<String, dynamic> entry) =>
+          File('$tales/index.json').writeAsString(jsonEncode([entry]));
+      switch (damage) {
+        case 'index-text':
+          await writeIndex(record);
+        case 'index-name':
+          await writeIndex({...entry, 'name': 'Other Tale'});
+        case 'missing-tale':
+          await tale.delete();
+        case 'folder-id':
+          await tale.writeAsString(jsonEncode({...record, 'id': 8}));
+          await writeIndex({...entry, 'id': 8});
+        case 'both-layouts':
+          await File('$tales/list.json').writeAsString(jsonEncode([record]));
+        case 'gzip':
+          final edited = {...record, 'name': 'Renamed Tale'};
+          await tale.writeAsString(jsonEncode(edited));
+          await writeIndex(taleIndexEntry(edited));
       }
       final before = await snapshot(root);
       expect((await Data4Validator(root.path).validate()).success, isFalse);

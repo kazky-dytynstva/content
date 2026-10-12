@@ -6,6 +6,7 @@ import 'package:dto/dto.dart';
 import 'ready_content.dart';
 import 'authoring.dart';
 import 'people_layout.dart';
+import 'tales_layout.dart';
 
 /// Validates the data/4 folder structure and content integrity
 class Data4Validator {
@@ -86,7 +87,7 @@ class Data4Validator {
     for (final folder in expectedFolders) {
       final listFile = folder == 'people'
           ? readyPeopleListFile(Directory(rootPath))
-          : File('$rootPath/data/4/$folder/list.json');
+          : readyTalesListFile(Directory(rootPath));
       if (!listFile.existsSync()) {
         errors.add('❌ Missing ${listFile.path}');
       } else {
@@ -193,21 +194,18 @@ class Data4Validator {
   Future<void> _validateTalesData() async {
     print('\n📚 Validating tales data...');
 
-    final listFile = File('$rootPath/data/4/tales/list.json');
-    if (!listFile.existsSync()) {
+    if (!readyTalesListFile(Directory(rootPath)).existsSync()) {
       return; // Already reported in structure check
     }
 
     try {
-      // Read and parse JSON
-      final content = await listFile.readAsString();
-      final jsonList = jsonDecode(content) as List<dynamic>;
+      final jsonList = await readyTaleRecords(Directory(rootPath));
 
       // Try to parse into TaleDto list
       final tales = <TaleDto>[];
       for (var i = 0; i < jsonList.length; i++) {
         try {
-          final tale = TaleDto.fromJson(jsonList[i] as Map<String, dynamic>);
+          final tale = TaleDto.fromJson(jsonList[i]);
           tales.add(tale);
         } catch (e) {
           errors.add('❌ Failed to parse tale at index $i: $e');
@@ -222,7 +220,7 @@ class Data4Validator {
       // Check for duplicate IDs
       _checkDuplicateIds(tales.map((t) => t.id).toList(), 'tales');
     } catch (e) {
-      errors.add('❌ Failed to parse tales/list.json: $e');
+      errors.add('❌ Failed to parse tales: $e');
     }
   }
 
@@ -259,7 +257,8 @@ class Data4Validator {
     // Check for orphaned folders (folders without corresponding tale in list)
     for (final folderId in folderIds) {
       if (!tales.any((t) => t.id == folderId)) {
-        errors.add('❌ Orphaned tale folder: $folderId (not in list.json)');
+        errors
+            .add('❌ Orphaned tale folder: $folderId (not in tales catalogue)');
       }
     }
 
@@ -297,6 +296,7 @@ class Data4Validator {
           errors.add('❌ Unexpected folder in tales/${tale.id}: $name');
         }
       } else if (entry is File) {
+        if (name == 'tale.json') continue;
         if (name == '.DS_Store') {
           errors.add('Unexpected file in tales/${tale.id}: $name');
         } else {
@@ -555,7 +555,6 @@ class Data4Validator {
 
   /// Validate compressed tales file
   Future<void> _validateCompressedTales() async {
-    final listFile = File('$rootPath/data/4/tales/list.json');
     final compressedFile = File('$rootPath/data/4/tales/list.json.gz');
 
     if (!compressedFile.existsSync()) {
@@ -564,12 +563,8 @@ class Data4Validator {
     }
 
     try {
-      // Read and parse original JSON
-      final originalContent = await listFile.readAsString();
-      final originalJson = jsonDecode(originalContent) as List<dynamic>;
-      final originalTales = originalJson
-          .map((json) => TaleDto.fromJson(json as Map<String, dynamic>))
-          .toList();
+      final originalJson = await readyTaleRecords(Directory(rootPath));
+      final originalTales = originalJson.map(TaleDto.fromJson).toList();
 
       // Decompress and parse compressed file
       final compressedBytes = await compressedFile.readAsBytes();
