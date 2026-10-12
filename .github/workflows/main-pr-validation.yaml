@@ -104,7 +104,7 @@ jobs:
           ANCESTOR=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
           dart run bin/validate_branch_ids.dart .. "$ANCESTOR" "$BASE_SHA" "$HEAD_SHA"
       
-      - name: Build isolated mobile payload
+      - name: Validate content and build mobile payload
         working-directory: ./validation
         run: dart run bin/build_mobile_delivery.dart .. "$RUNNER_TEMP/mobile-delivery"
 
