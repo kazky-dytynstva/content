@@ -53,6 +53,7 @@ data/4/people/
   list.json.gz      # derived: mobile delivery (production projection)
   {id}/
     person.json     # source of truth for one person
+    media.json      # derived: path, git blob sha and size of every media file
     photo.original.{ext}
     photo.thumbnail.jpg
 ```
@@ -69,12 +70,16 @@ data/4/tales/
   list.json.gz      # derived: mobile delivery (production projection)
   {id}/
     tale.json       # source of truth for one tale
+    media.json      # derived: path, git blob sha and size of every media file
     img/            # {n}.original.{ext} + {n}.thumbnail.jpg
     audio/          # original.{ext} + thumbnail.m4a (audio tales only)
 ```
 
 The same rule applies: `{id}/tale.json`, its `index.json` entry and its
 `list.json.gz` entry change together.
+
+After adding, replacing or removing media files by hand, regenerate the
+manifests from `validation/`: `fvm dart run bin/write_media_manifests.dart`.
 
 ## Validation
 

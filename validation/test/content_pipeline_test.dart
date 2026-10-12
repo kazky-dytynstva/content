@@ -185,6 +185,7 @@ void main() {
         thumbnail.path,
       ]);
       expect(encoded.exitCode, 0, reason: encoded.stderr.toString());
+      await writeMediaManifests(root);
       final file = File('${root.path}/data/4/tales/7/tale.json');
       final data =
           jsonDecode(await file.readAsString()) as Map<String, dynamic>;
@@ -373,8 +374,9 @@ void main() {
     final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
     addTearDown(() => parent.delete(recursive: true));
     await MobileDelivery().build(root, Directory('${parent.path}/before'));
+    await File('${root.path}/data/4/tales/7/media.json').delete();
 
-    expect(await writeMediaManifests(root), 2);
+    expect(await writeMediaManifests(root), 1);
     expect(await writeMediaManifests(root), 0);
 
     final bytes = await File('${root.path}/data/4/tales/7/img/0.thumbnail.jpg')
@@ -413,9 +415,15 @@ void main() {
     );
   });
 
-  for (final damage in ['sha', 'bytes', 'missing', 'extra', 'stale']) {
+  for (final damage in [
+    'sha',
+    'bytes',
+    'missing',
+    'extra',
+    'stale',
+    'no-manifest',
+  ]) {
     test('rejects media.json with $damage entry without rewriting', () async {
-      await writeMediaManifests(root);
       final manifest = File('${root.path}/data/4/tales/7/media.json');
       final data =
           jsonDecode(await manifest.readAsString()) as Map<String, dynamic>;
@@ -434,8 +442,12 @@ void main() {
           await File(
             '${root.path}/data/4/tales/7/img/0.thumbnail.jpg',
           ).writeAsBytes(thumbnail);
+        case 'no-manifest':
+          await manifest.delete();
       }
-      if (damage != 'stale') await manifest.writeAsString(jsonEncode(data));
+      if (damage != 'stale' && damage != 'no-manifest') {
+        await manifest.writeAsString(jsonEncode(data));
+      }
       final before = await snapshot(root);
       final result = await Data4Validator(root.path).validate();
       expect(result.success, isFalse);
@@ -690,6 +702,7 @@ Future<void> fixture(Directory root) async {
     await file.parent.create(recursive: true);
     await file.writeAsBytes(bytes);
   }
+  await writeMediaManifests(root);
 }
 
 Future<void> writeCollection(
