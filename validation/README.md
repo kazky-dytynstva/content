@@ -120,14 +120,16 @@ The `validate_data_4.dart` script performs the following checks:
 ### 2. Folder Structure
 - ✅ Validates presence of `data/4/people` folder
 - ✅ Validates presence of `data/4/tales` folder
-- ✅ Checks for `people/index.json` and `tales/list.json`
+- ✅ Checks for `people/index.json` and `tales/index.json`
 
 ### 3. JSON Parsing
-- ✅ Parses `data/4/people/index.json` into `PersonDto` list
-- ✅ Parses `data/4/tales/list.json` into `TaleDto` list
+- ✅ Parses every `data/4/people/{id}/person.json` into `PersonDto`
+- ✅ Parses every `data/4/tales/{id}/tale.json` into `TaleDto`
 - ✅ Detects duplicate IDs in both lists
 - ✅ Requires `people/index.json` to equal every `people/{id}/person.json`
   (same ID as the folder), sorted by ID descending
+- ✅ Requires `tales/index.json` to equal every `tales/{id}/tale.json` without
+  its `text` field (same ID as the folder), sorted by ID descending
 
 ### 4. People Folder Structure
 For each person in the list:
@@ -152,19 +154,21 @@ data/4/people/
 ### 5. Tales Folder Structure
 For each tale in the list:
 - ✅ Checks that a folder exists with the tale's ID
+- ❌ Error if `tale.json` is missing
 - ❌ Error if `img/` folder is missing
 - ❌ Error if `img/` folder doesn't have valid image pairs
 - ❌ Error if tale has "audio" tag but `audio/` folder is missing
 - ❌ Error if tale has `audio/` folder but no "audio" tag
 - ❌ Error for unexpected files or folders
-- ❌ Error for orphaned folders (folders without corresponding entry in list.json)
+- ❌ Error for orphaned folders (folders without corresponding entry in index.json)
 
 Expected structure:
 ```
 data/4/tales/
-  list.json
-  list.json.gz        # Compressed version (gzip)
+  index.json          # Derived: every tale.json without `text`
+  list.json.gz        # Compressed production projection (gzip)
   {id}/
+    tale.json
     img/
       0.thumbnail.jpg
       0.original.{ext}  # Any format
@@ -180,7 +184,8 @@ data/4/tales/
 - ✅ Checks that `list.json.gz` exists for tales
 - ✅ Checks that `list.json.gz` exists for people
 - ✅ Validates compressed files can be decompressed
-- ✅ Compares decompressed content matches original `list.json`
+- ✅ Compares decompressed content with the production projection of every
+  `person.json` / `tale.json`
 - ❌ Error if compressed file is missing
 - ❌ Error if decompressed content doesn't match original
 - ❌ Error if item counts differ between compressed and uncompressed
@@ -203,7 +208,7 @@ Tales with the "audio" tag **must** have an `audio/` folder containing:
 Tales **without** the "audio" tag must **not** have an `audio/` folder.
 
 ### Person Photos  
-Each person folder must have exactly 2 files:
+Each person folder must have `person.json` plus exactly one photo pair:
 - `photo.thumbnail.jpg` - Required thumbnail (must be JPG format)
 - `photo.original.{ext}` - Required original (any format, but only ONE file)
 

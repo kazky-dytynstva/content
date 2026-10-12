@@ -55,7 +55,6 @@ class ReadyContent {
         'tale.json',
         accepted,
         indexEntry: taleIndexEntry,
-        legacy: true,
       ),
     );
     final directories = <String>{'people', 'tales'};
@@ -157,24 +156,16 @@ class ReadyContent {
 
   /// Records of [kind] from `{kind}/{id}/[item]`; the derived `{kind}/index.json`
   /// must equal them mapped through [indexEntry], sorted by ID descending.
-  /// With [legacy], a lone `{kind}/list.json` is accepted instead.
   Future<List> _splitRecords(
     String kind,
     String item,
     Set<String> accepted, {
     Map<String, dynamic> Function(Map<String, dynamic>)? indexEntry,
-    bool legacy = false,
   }) async {
     Future<bool> isFile(String relative) async =>
         await FileSystemEntity.type(_file(relative).path, followLinks: false) ==
         FileSystemEntityType.file;
 
-    if (legacy &&
-        await isFile('$kind/list.json') &&
-        !await isFile('$kind/index.json')) {
-      accepted.add('$kind/list.json');
-      return jsonDecode(await _file('$kind/list.json').readAsString()) as List;
-    }
     if (!await isFile('$kind/index.json'))
       throw FormatException('Missing $kind/index.json');
     accepted.add('$kind/index.json');

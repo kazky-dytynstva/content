@@ -184,9 +184,9 @@ void main() {
         thumbnail.path,
       ]);
       expect(encoded.exitCode, 0, reason: encoded.stderr.toString());
-      final file = File('${root.path}/data/4/tales/list.json');
-      final data = (jsonDecode(await file.readAsString()) as List).single
-          as Map<String, dynamic>;
+      final file = File('${root.path}/data/4/tales/7/tale.json');
+      final data =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
       data['tags'] = ['text', 'audio'];
       data['audio'] = {
         'duration': 500000,
@@ -325,47 +325,16 @@ void main() {
     });
   }
 
-  test('tales split keeps mobile delivery identical and drops text from index',
-      () async {
-    final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
-    addTearDown(() => parent.delete(recursive: true));
-    final before = Directory('${parent.path}/before');
-    final after = Directory('${parent.path}/after');
-    await MobileDelivery().build(root, before);
-    final tales = '${root.path}/data/4/tales';
-    final legacy =
-        (jsonDecode(await File('$tales/list.json').readAsString()) as List)
-            .single as Map<String, dynamic>;
-
-    expect(await splitTales(root), isTrue);
-    expect(await splitTales(root), isFalse);
-
-    expect(await File('$tales/list.json').exists(), isFalse);
-    expect(
-      jsonDecode(await File('$tales/7/tale.json').readAsString()),
-      legacy,
-    );
-    final index =
-        jsonDecode(await File('$tales/index.json').readAsString()) as List;
-    expect(index.single, {...legacy}..remove('text'));
-    expect((await Data4Validator(root.path).validate()).errors, isEmpty);
-    await MobileDelivery().build(root, after);
-    expect(
-      await File('${after.path}/data/4/tales/list.json.gz').readAsBytes(),
-      await File('${before.path}/data/4/tales/list.json.gz').readAsBytes(),
-    );
-  });
-
   for (final damage in [
     'index-text',
     'index-name',
     'missing-tale',
+    'missing-index',
     'folder-id',
     'both-layouts',
     'gzip',
   ]) {
-    test('rejects split tales $damage without rewriting content', () async {
-      await splitTales(root);
+    test('rejects tales $damage without rewriting content', () async {
       final tales = '${root.path}/data/4/tales';
       final tale = File('$tales/7/tale.json');
       final record =
@@ -380,6 +349,8 @@ void main() {
           await writeIndex({...entry, 'name': 'Other Tale'});
         case 'missing-tale':
           await tale.delete();
+        case 'missing-index':
+          await File('$tales/index.json').rename('$tales/list.json');
         case 'folder-id':
           await tale.writeAsString(jsonEncode({...record, 'id': 8}));
           await writeIndex({...entry, 'id': 8});
@@ -537,7 +508,6 @@ void main() {
     'name',
     'tags',
     'crew',
-    'duplicate',
     'fractional',
     'nested-fractional',
     'gzip',
@@ -546,9 +516,9 @@ void main() {
     'symlink',
   ]) {
     test('rejects $damage without rewriting content', () async {
-      final file = File('${root.path}/data/4/tales/list.json');
-      final records = jsonDecode(await file.readAsString()) as List;
-      final tale = records.single as Map<String, dynamic>;
+      final file = File('${root.path}/data/4/tales/7/tale.json');
+      final tale =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
       switch (damage) {
         case 'name':
           tale['name'] = '';
@@ -558,15 +528,13 @@ void main() {
           tale['crew'] = {
             'authors': [404],
           };
-        case 'duplicate':
-          records.add(Map<String, dynamic>.of(tale));
         case 'fractional':
           tale['id'] = 7.5;
         case 'nested-fractional':
           (tale['text'] as Map)['min_reading_time'] = 1.5;
         case 'gzip':
           await File(
-            '${file.path}.gz',
+            '${root.path}/data/4/tales/list.json.gz',
           ).writeAsBytes(gzip.encode(utf8.encode('[]')));
         case 'media':
           await File(
@@ -579,7 +547,10 @@ void main() {
         case 'symlink':
           await Link('${root.path}/data/4/tales/7/link').create(file.path);
       }
-      await file.writeAsString(jsonEncode(records));
+      await file.writeAsString(jsonEncode(tale));
+      await File(
+        '${root.path}/data/4/tales/index.json',
+      ).writeAsString(jsonEncode([taleIndexEntry(tale)]));
       final before = await snapshot(root);
       expect((await Data4Validator(root.path).validate()).success, isFalse);
       expect(await snapshot(root), before);
@@ -652,16 +623,18 @@ Future<void> writeCollection(
   final folder = Directory('${root.path}/data/4/$kind');
   await folder.create(recursive: true);
   final records = items.map((item) => item.toJson()).toList();
-  if (kind == 'people') {
-    for (final record in records) {
-      final person = File('${folder.path}/${record['id']}/person.json');
-      await person.parent.create(recursive: true);
-      await person.writeAsString(jsonEncode(record));
-    }
+  for (final record in records) {
+    final item = File(
+      '${folder.path}/${record['id']}/${kind == 'people' ? 'person' : 'tale'}.json',
+    );
+    await item.parent.create(recursive: true);
+    await item.writeAsString(jsonEncode(record));
   }
-  await File(
-    '${folder.path}/${kind == 'people' ? 'index.json' : 'list.json'}',
-  ).writeAsString(jsonEncode(records));
+  await File('${folder.path}/index.json').writeAsString(
+    jsonEncode(
+      kind == 'people' ? records : records.map(taleIndexEntry).toList(),
+    ),
+  );
   await File('${folder.path}/list.json.gz').writeAsBytes(
     DTOCompression<ToJsonItem>().compress(items, (item) => item.toProdJson()),
   );
