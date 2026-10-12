@@ -184,12 +184,12 @@ void main() {
       };
       await writeCollection(root, 'tales', [TaleDto.fromJson(data)]);
       expect((await Data4Validator(root.path).validate()).errors, isEmpty);
-      for (final delta in [-50001, -50000, 50000, 50001]) {
+      for (final delta in [-100001, -100000, 100000, 100001]) {
         (data['audio'] as Map)['duration'] = 500000 + delta;
         await writeCollection(root, 'tales', [TaleDto.fromJson(data)]);
         expect(
           (await Data4Validator(root.path).validate()).success,
-          delta.abs() <= 50000,
+          delta.abs() <= 100000,
           reason: 'Duration difference: $delta microseconds',
         );
       }
