@@ -44,8 +44,11 @@ are separate mutation tools and are never invoked by the validation pipeline.
 - `AuthoringValidator` checks the console's version-1 JSON contract, not ready
   field completeness. It verifies IDs, typed references, contiguous revision
   history, applied receipts, immutable media names/sizes/SHA-256, duplicate
-  active targets and retained media. Unknown keys/schema versions, pending
-  staging, promotion markers and unrecognized files fail closed. This is a
+  active targets and retained draft media. Applied entries may contain only a
+  receipt because promotion deletes the draft manifest and media; older applied
+  entries with retained manifests are also validated. Unknown keys/schema
+  versions, pending staging, promotion markers and unrecognized files fail
+  closed. This is a
   read-only schema adapter, not a second draft writer or serializer; changes to
   the console contract require coordinated version/fixture updates here.
 - `validate_branch_ids.dart` compares immutable ancestor/base/head collections

@@ -45,6 +45,7 @@ void main() {
     'receipt-target',
     'reference',
     'media-size',
+    'receipt-only',
   ]) {
     test('authoring history receipts and typed references: $damage', () async {
       final file = await draft(root);
@@ -85,6 +86,11 @@ void main() {
       );
       if (damage == 'history')
         await File('${applied.path}/history/1.json').delete();
+      if (damage == 'receipt-only') {
+        await File('${applied.path}/manifest.json').delete();
+        await Directory('${applied.path}/history').delete(recursive: true);
+        await Directory('${applied.path}/media').delete(recursive: true);
+      }
       final tale = File(
         '${root.path}/authoring/v1/drafts/${'c' * 32}/manifest.json',
       );
@@ -117,7 +123,7 @@ void main() {
       final result = await Data4Validator(root.path).validate();
       expect(
         result.success,
-        damage == 'none',
+        damage == 'none' || damage == 'receipt-only',
         reason: result.errors.join('\n'),
       );
     });

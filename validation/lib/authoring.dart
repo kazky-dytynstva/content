@@ -61,19 +61,13 @@ class AuthoringValidator {
       }
     }
     final accepted = <String>{};
+    final appliedKinds = <String, String>{};
     for (final folder in folders) {
-      final currentName = '$folder/manifest.json';
-      final current = await _record(files[currentName]);
-      final manifest = current.manifest;
-      _require(manifest['id'] == folder.split('/').last);
-      records[folder] = current;
-      accepted.add(currentName);
-      if (folder.startsWith('v1/drafts/') && manifest['targetId'] != null) {
-        _require(targets.add('${manifest['kind']}:${manifest['targetId']}'));
-      }
-      if (folder.startsWith('v1/applied/')) {
+      final isApplied = folder.startsWith('v1/applied/');
+      Map<String, dynamic>? receipt;
+      if (isApplied) {
         final name = '$folder/receipt.json';
-        final receipt = await _json(files[name], 8192);
+        receipt = await _json(files[name], 8192);
         _fields(receipt, {
           'schemaVersion': _version,
           'draftId': _draftId,
@@ -94,14 +88,33 @@ class AuthoringValidator {
         ]) {
           _require(receipt[key] != null);
         }
-        _require(
-          receipt['draftId'] == manifest['id'] &&
-              receipt['kind'] == manifest['kind'] &&
-              receipt['revision'] == manifest['revision'] &&
-              (manifest['targetId'] == null ||
-                  receipt['targetId'] == manifest['targetId']),
-        );
+        _require(receipt['draftId'] == folder.split('/').last);
+        appliedKinds[folder] = receipt['kind'] as String;
         accepted.add(name);
+      }
+      final currentName = '$folder/manifest.json';
+      final currentFile = files[currentName];
+      if (currentFile == null) {
+        _require(isApplied);
+        continue;
+      }
+      final current = await _record(currentFile);
+      final manifest = current.manifest;
+      _require(manifest['id'] == folder.split('/').last);
+      records[folder] = current;
+      accepted.add(currentName);
+      if (folder.startsWith('v1/drafts/') && manifest['targetId'] != null) {
+        _require(targets.add('${manifest['kind']}:${manifest['targetId']}'));
+      }
+      if (isApplied) {
+        final appliedReceipt = receipt!;
+        _require(
+          appliedReceipt['draftId'] == manifest['id'] &&
+              appliedReceipt['kind'] == manifest['kind'] &&
+              appliedReceipt['revision'] == manifest['revision'] &&
+              (manifest['targetId'] == null ||
+                  appliedReceipt['targetId'] == manifest['targetId']),
+        );
       }
       final revisions = [current];
       for (
@@ -160,8 +173,11 @@ class AuthoringValidator {
           _require(people.contains(reference['contentId']));
         } else {
           final id = reference['draftId'];
-          final person = records['v1/drafts/$id'] ?? records['v1/applied/$id'];
-          _require(person != null && person.manifest['kind'] == 'person');
+          final person =
+              records['v1/drafts/$id'] ?? records['v1/applied/$id'];
+          final kind =
+              person?.manifest['kind'] ?? appliedKinds['v1/applied/$id'];
+          _require(kind == 'person');
         }
       }
     }
