@@ -68,6 +68,7 @@ Run isolated tests from this directory:
 fvm dart test --reporter expanded
 fvm dart run bin/build_mobile_delivery.dart .. /absolute/new-output-directory
 fvm dart run bin/validate_branch_ids.dart .. ANCESTOR_SHA BASE_SHA HEAD_SHA
+fvm dart run bin/write_media_manifests.dart   # after changing media by hand
 ```
 
 Local verification: **32 tests**, including real JPEG/WAV/AAC decoding, real
@@ -128,6 +129,8 @@ The `validate_data_4.dart` script performs the following checks:
   (same ID as the folder), sorted by ID descending
 - ✅ Requires `tales/index.json` to equal every `tales/{id}/tale.json` without
   its `text` field (same ID as the folder), sorted by ID descending
+- ✅ Requires every person and tale folder to have a `media.json` listing
+  exactly its media files, each with the correct git blob SHA and size
 
 ### 4. People Folder Structure
 For each person in the list:
@@ -145,6 +148,7 @@ data/4/people/
   list.json.gz          # Compressed production projection (gzip)
   {id}/
     person.json
+    media.json
     photo.thumbnail.jpg
     photo.original.{ext}  # Any format: jpg, png, jpeg, webp, etc.
 ```
@@ -167,6 +171,7 @@ data/4/tales/
   list.json.gz        # Compressed production projection (gzip)
   {id}/
     tale.json
+    media.json
     img/
       0.thumbnail.jpg
       0.original.{ext}  # Any format

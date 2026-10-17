@@ -23,9 +23,9 @@ void main() {
     'CLI rejects invalid metadata with assertions disabled and matching gzip',
     () async {
       final people = '${root.path}/data/4/people';
-      final record = jsonDecode(
-        await File('$people/3/person.json').readAsString(),
-      ) as Map<String, dynamic>;
+      final record =
+          jsonDecode(await File('$people/3/person.json').readAsString())
+              as Map<String, dynamic>;
       record['name'] = '';
       await File('$people/3/person.json').writeAsString(jsonEncode(record));
       final encoded = jsonEncode([record]);
@@ -185,6 +185,7 @@ void main() {
         thumbnail.path,
       ]);
       expect(encoded.exitCode, 0, reason: encoded.stderr.toString());
+      await writeMediaManifests(root);
       final file = File('${root.path}/data/4/tales/7/tale.json');
       final data =
           jsonDecode(await file.readAsString()) as Map<String, dynamic>;
@@ -246,44 +247,46 @@ void main() {
     await validateBranchIds(root, ancestor, ancestor, head);
   });
 
-  test('branch IDs read list.json at revisions before the people split',
-      () async {
-    Future<String> git(List<String> arguments) => runGit(root, arguments);
+  test(
+    'branch IDs read list.json at revisions before the people split',
+    () async {
+      Future<String> git(List<String> arguments) => runGit(root, arguments);
 
-    final index = File('${root.path}/data/4/people/index.json');
-    final list = File('${root.path}/data/4/people/list.json');
-    final records = jsonDecode(await index.readAsString()) as List;
-    await git(['init', '--initial-branch=fixture']);
-    await index.rename(list.path);
-    await git(['add', '-A']);
-    await git(['commit', '-m', 'legacy ancestor']);
-    final ancestor = await git(['rev-parse', 'HEAD']);
-    await list.rename(index.path);
-    await index.writeAsString(
-      jsonEncode([
-        {...records.first as Map, 'id': 4},
-        ...records,
-      ]),
-    );
-    await git(['add', '-A']);
-    await git(['commit', '-m', 'split base allocation']);
-    final base = await git(['rev-parse', 'HEAD']);
-    await git(['checkout', '--detach', ancestor]);
-    await list.writeAsString(
-      jsonEncode([
-        ...records,
-        {...records.first as Map, 'id': 4},
-      ]),
-    );
-    await git(['add', '.']);
-    await git(['commit', '-m', 'legacy head allocation']);
-    final head = await git(['rev-parse', 'HEAD']);
-    await expectLater(
-      validateBranchIds(root, ancestor, base, head),
-      throwsFormatException,
-    );
-    await validateBranchIds(root, ancestor, ancestor, base);
-  });
+      final index = File('${root.path}/data/4/people/index.json');
+      final list = File('${root.path}/data/4/people/list.json');
+      final records = jsonDecode(await index.readAsString()) as List;
+      await git(['init', '--initial-branch=fixture']);
+      await index.rename(list.path);
+      await git(['add', '-A']);
+      await git(['commit', '-m', 'legacy ancestor']);
+      final ancestor = await git(['rev-parse', 'HEAD']);
+      await list.rename(index.path);
+      await index.writeAsString(
+        jsonEncode([
+          {...records.first as Map, 'id': 4},
+          ...records,
+        ]),
+      );
+      await git(['add', '-A']);
+      await git(['commit', '-m', 'split base allocation']);
+      final base = await git(['rev-parse', 'HEAD']);
+      await git(['checkout', '--detach', ancestor]);
+      await list.writeAsString(
+        jsonEncode([
+          ...records,
+          {...records.first as Map, 'id': 4},
+        ]),
+      );
+      await git(['add', '.']);
+      await git(['commit', '-m', 'legacy head allocation']);
+      final head = await git(['rev-parse', 'HEAD']);
+      await expectLater(
+        validateBranchIds(root, ancestor, base, head),
+        throwsFormatException,
+      );
+      await validateBranchIds(root, ancestor, ancestor, base);
+    },
+  );
 
   for (final damage in [
     'index',
@@ -368,54 +371,64 @@ void main() {
     });
   }
 
-  test('media manifests list every media file and keep delivery identical',
-      () async {
-    final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
-    addTearDown(() => parent.delete(recursive: true));
-    await MobileDelivery().build(root, Directory('${parent.path}/before'));
+  test(
+    'media manifests list every media file and keep delivery identical',
+    () async {
+      final parent = await Directory.systemTemp.createTemp('mobile_delivery_');
+      addTearDown(() => parent.delete(recursive: true));
+      await MobileDelivery().build(root, Directory('${parent.path}/before'));
+      await File('${root.path}/data/4/tales/7/media.json').delete();
 
-    expect(await writeMediaManifests(root), 2);
-    expect(await writeMediaManifests(root), 0);
+      expect(await writeMediaManifests(root), 1);
+      expect(await writeMediaManifests(root), 0);
 
-    final bytes = await File('${root.path}/data/4/tales/7/img/0.thumbnail.jpg')
-        .readAsBytes();
-    final tale = jsonDecode(
-      await File('${root.path}/data/4/tales/7/media.json').readAsString(),
-    );
-    expect(tale['files'], [
-      {
-        'path': 'img/0.original.jpg',
-        'sha': gitBlobSha(bytes),
-        'bytes': bytes.length,
-      },
-      {
-        'path': 'img/0.thumbnail.jpg',
-        'sha': gitBlobSha(bytes),
-        'bytes': bytes.length,
-      },
-    ]);
-    final person = jsonDecode(
-      await File('${root.path}/data/4/people/3/media.json').readAsString(),
-    );
-    expect(
-      (person['files'] as List).map((file) => file['path']),
-      ['photo.original.jpg', 'photo.thumbnail.jpg'],
-    );
-    expect((await Data4Validator(root.path).validate()).errors, isEmpty);
-    await MobileDelivery().build(root, Directory('${parent.path}/after'));
-    expect(
-      await snapshot(Directory('${parent.path}/after/data')).then(
-        (files) => files.values.toList(),
-      ),
-      await snapshot(Directory('${parent.path}/before/data')).then(
-        (files) => files.values.toList(),
-      ),
-    );
-  });
+      final bytes = await File(
+        '${root.path}/data/4/tales/7/img/0.thumbnail.jpg',
+      ).readAsBytes();
+      final tale = jsonDecode(
+        await File('${root.path}/data/4/tales/7/media.json').readAsString(),
+      );
+      expect(tale['files'], [
+        {
+          'path': 'img/0.original.jpg',
+          'sha': gitBlobSha(bytes),
+          'bytes': bytes.length,
+        },
+        {
+          'path': 'img/0.thumbnail.jpg',
+          'sha': gitBlobSha(bytes),
+          'bytes': bytes.length,
+        },
+      ]);
+      final person = jsonDecode(
+        await File('${root.path}/data/4/people/3/media.json').readAsString(),
+      );
+      expect((person['files'] as List).map((file) => file['path']), [
+        'photo.original.jpg',
+        'photo.thumbnail.jpg',
+      ]);
+      expect((await Data4Validator(root.path).validate()).errors, isEmpty);
+      await MobileDelivery().build(root, Directory('${parent.path}/after'));
+      expect(
+        await snapshot(
+          Directory('${parent.path}/after/data'),
+        ).then((files) => files.values.toList()),
+        await snapshot(
+          Directory('${parent.path}/before/data'),
+        ).then((files) => files.values.toList()),
+      );
+    },
+  );
 
-  for (final damage in ['sha', 'bytes', 'missing', 'extra', 'stale']) {
+  for (final damage in [
+    'sha',
+    'bytes',
+    'missing',
+    'extra',
+    'stale',
+    'no-manifest',
+  ]) {
     test('rejects media.json with $damage entry without rewriting', () async {
-      await writeMediaManifests(root);
       final manifest = File('${root.path}/data/4/tales/7/media.json');
       final data =
           jsonDecode(await manifest.readAsString()) as Map<String, dynamic>;
@@ -434,8 +447,12 @@ void main() {
           await File(
             '${root.path}/data/4/tales/7/img/0.thumbnail.jpg',
           ).writeAsBytes(thumbnail);
+        case 'no-manifest':
+          await manifest.delete();
       }
-      if (damage != 'stale') await manifest.writeAsString(jsonEncode(data));
+      if (damage != 'stale' && damage != 'no-manifest') {
+        await manifest.writeAsString(jsonEncode(data));
+      }
       final before = await snapshot(root);
       final result = await Data4Validator(root.path).validate();
       expect(result.success, isFalse);
@@ -455,9 +472,9 @@ void main() {
       await draft(root);
       await MobileDelivery().build(root, after);
       Future<Map<String, String>> relative(Directory folder) async => {
-            for (final entry in (await snapshot(folder)).entries)
-              entry.key.substring(folder.path.length): entry.value,
-          };
+        for (final entry in (await snapshot(folder)).entries)
+          entry.key.substring(folder.path.length): entry.value,
+      };
       expect(await relative(before), await relative(after));
       expect((await relative(after)).keys.toSet(), {
         '/data/4/people/list.json.gz',
@@ -525,8 +542,9 @@ void main() {
         '${root.path}/authoring/v1/deleted/${'a' * 32}',
       );
       await deleted.create(recursive: true);
-      await File('${deleted.path}/manifest.json')
-          .writeAsString(jsonEncode(record));
+      await File(
+        '${deleted.path}/manifest.json',
+      ).writeAsString(jsonEncode(record));
       await file.parent.delete(recursive: true);
       if (damage == 'media-size') {
         // Media that is still present must keep matching the manifest.
@@ -539,6 +557,32 @@ void main() {
     });
   }
 
+  test('draft manifests may record their author', () async {
+    final manifest = await draft(root);
+    final record =
+        jsonDecode(await manifest.readAsString()) as Map<String, dynamic>;
+    (record['manifest'] as Map)['createdBy'] = 'Andrii';
+    await manifest.writeAsString(jsonEncode(record));
+
+    expect((await Data4Validator(root.path).validate()).errors, isEmpty);
+  });
+
+  test('a draft author must not change between revisions', () async {
+    final manifest = await draft(root);
+    final record =
+        jsonDecode(await manifest.readAsString()) as Map<String, dynamic>;
+    (record['manifest'] as Map)['createdBy'] = 'Andrii';
+    final history = File('${manifest.parent.path}/history/1.json');
+    await history.parent.create();
+    await history.writeAsString(jsonEncode(record));
+    (record['manifest'] as Map)
+      ..['revision'] = 2
+      ..['createdBy'] = 'Someone else';
+    await manifest.writeAsString(jsonEncode(record));
+
+    expect((await Data4Validator(root.path).validate()).success, isFalse);
+  });
+
   for (final damage in [
     'version',
     'revision',
@@ -547,6 +591,7 @@ void main() {
     'receipt',
     'media-hash',
     'unknown',
+    'empty-author',
   ]) {
     test('rejects authoring $damage and retains evidence', () async {
       final manifest = await draft(root);
@@ -573,6 +618,8 @@ void main() {
           await file.writeAsString('wrong hash');
         case 'unknown':
           (record['payload'] as Map)['unexpected'] = true;
+        case 'empty-author':
+          (record['manifest'] as Map)['createdBy'] = '';
       }
       await manifest.writeAsString(jsonEncode(record));
       final before = await snapshot(root);
@@ -690,6 +737,7 @@ Future<void> fixture(Directory root) async {
     await file.parent.create(recursive: true);
     await file.writeAsBytes(bytes);
   }
+  await writeMediaManifests(root);
 }
 
 Future<void> writeCollection(
@@ -718,9 +766,9 @@ Future<void> writeCollection(
 }
 
 Future<Map<String, String>> snapshot(Directory root) async => {
-      await for (final entry in root.list(recursive: true, followLinks: false))
-        if (entry is File) entry.path: base64Encode(await entry.readAsBytes()),
-    };
+  await for (final entry in root.list(recursive: true, followLinks: false))
+    if (entry is File) entry.path: base64Encode(await entry.readAsBytes()),
+};
 
 Future<String> runGit(Directory root, List<String> arguments) async {
   final result = await Process.run(

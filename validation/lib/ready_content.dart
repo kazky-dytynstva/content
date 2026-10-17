@@ -151,7 +151,8 @@ class ReadyContent {
             _file(manifest).path,
             followLinks: false,
           ) !=
-          FileSystemEntityType.file) continue;
+          FileSystemEntityType.file)
+        throw FormatException('Media manifest missing: $manifest');
       accepted.add(manifest);
       final recorded = jsonDecode(await _file(manifest).readAsString());
       final actual = await buildMediaManifest(Directory(_file(prefix).path));
