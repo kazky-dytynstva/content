@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "path": "photo.original.jpg",
+      "sha": "c24f465438bfa1f9df4f682a1a22e08bf9a5ef66",
+      "bytes": 76076
+    },
+    {
+      "path": "photo.thumbnail.jpg",
+      "sha": "00d81cb824ed5287cd310512c9d481cb6e9f8b26",
+      "bytes": 38491
+    }
+  ]
+}
