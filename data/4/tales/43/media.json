@@ -1,6 +1,16 @@
 {
   "files": [
     {
+      "path": "audio/original.mp3",
+      "sha": "1bd7196e9d5da7267279faf0f27cf8cf303f289f",
+      "bytes": 3844844
+    },
+    {
+      "path": "audio/thumbnail.m4a",
+      "sha": "66afb5ba024904ac477cf33b3cf1db8a0970d1af",
+      "bytes": 2538815
+    },
+    {
       "path": "img/0.original.jpg",
       "sha": "7c38a17366bf4b92f9c7ef53530fbd733528be09",
       "bytes": 196831
